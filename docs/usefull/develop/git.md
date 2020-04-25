@@ -169,5 +169,26 @@ git push -u origin --all
 git push -u origin --tags
 ```
 
+## 删除所有commit记录
+```
+删除.git文件夹可能会导致git存储库中的问题。如果要删除所有提交历史记录，但将代码保持在当前状态，可以按照以下方式安全地执行此操作：
 
+尝试  运行  git checkout --orphan latest_branch
+添加所有文件git add -A
+提交更改git commit -am "commit message"
+删除分支git branch -D master
+将当前分支重命名git branch -m master
+最后，强制更新存储库。git push -f origin master
+```
+## git删除本地分支和远程分支
+```
+删除远程分支
+git branch -a 先查看远程分支
+
+远程：
+git push origin --delete 分支名
+本地：
+git branch -d 分支名
+
+```
 
