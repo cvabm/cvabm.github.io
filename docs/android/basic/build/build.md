@@ -1,0 +1,369 @@
+# 编译和打包
+[[toc]]
+## 混淆
+<https://www.jianshu.com/p/7436a1a32891>  
+
+```
+buildTypes {
+release {
+minifyEnabled true
+proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+}
+}
+
+如果报错 ，在混淆文件末端加上：
+-ignorewarnings
+-keep
+```
+
+
+## debug版本证书（获取shar1值)
+android默认C:\Users\Administrator\.android\debug.keystore  
+密码：android  
+第一步、打开Android Studio的Terminal工具  
+第二步、输入命令：keytool -v -list -keystore keystore文件路径  
+第三步、输入Keystore密码    
+即可获取编译的shar1值  
+
+
+## 加快编译速度
+```
+写到build.gradle文件中。
+
+
+android{
+...
+tasks.whenTaskAdded { task ->
+if (task.name.contains("lint")
+//如果instant run不生效，把clean这行干掉
+||task.name.equals("clean")
+//如果项目中有用到aidl则不可以舍弃这个任务
+||task.name.contains("Aidl")
+//用不到测试的时候就可以先关闭
+||task.name.contains("mockableAndroidJar")
+||task.name.contains("UnitTest")
+||task.name.contains("AndroidTest")
+//用不到NDK和JNI的也关闭掉
+|| task.name.contains("Ndk")
+|| task.name.contains("Jni")
+) {
+task.enabled = false
+}
+}
+}
+```
+## gradle命令
+```
+
+./gradlew -v 版本号，首次运行，没有gradle的要下载的哦。
+./gradlew clean 删除HelloWord/app目录下的build文件夹
+./gradlew build 检查依赖并编译打包
+./gradlew assembleDebug 编译并打Debug包
+./gradlew assembleRelease 编译并打Release的包
+./gradlew installRelease Release模式打包并安装
+./gradlew uninstallRelease 卸载Release模式包
+```
+
+## 动态加载so，jar包
+<https://www.jianshu.com/p/ea66f6e28788>  
+
+
+## 静默安装自启动  
+```
+package com.tmai.general.business.login;
+
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+
+import com.tmai.general.business.R;
+
+import org.csr.core.util.ToastUtil;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+/**
+ * @author zzc 更新安裝APK
+ * @time 2016.09.18
+ */
+public class DownloadApp {
+    private ProgressDialog mpDialog;// 创建进度条
+    private Context mContext;
+    private boolean isSelect = true;
+    // APK的安装路径
+    private static final String apkPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/updateApkFile/"; //保存下载文件的路径
+    private String mUrl;
+    private boolean isMust;
+
+    //isSelect 是否强制升级 ，是的话就直接下载更新不弹框
+    public DownloadApp(String url, Context ctx, boolean isMust) {
+        this.mUrl = url;
+        this.mContext = ctx;
+        this.isMust = isMust;
+    }
+
+    /**
+     * 提示用户更新
+     *
+     * @param content 更新内容
+     */
+    public void uploadApp(String content, boolean isSelect) {
+        if (!isSelect) {
+            downloadApk(false);
+            return;
+        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setMessage("有新版本升级，是否下载安装？\n" + content);
+        builder.setTitle("系统版本更新");// str可以提示的内容显示
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                mpDialog = new ProgressDialog(mContext, R.style.activity_dialog);
+                mpDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                mpDialog.setTitle("提示");
+                mpDialog.setMessage("正在下载中，请稍后");
+                mpDialog.setIndeterminate(false);// 进度条是否明确
+                mpDialog.setCancelable(false);// 点击返回按钮的时候无法取消对话框
+                mpDialog.setCanceledOnTouchOutside(false);// 点击对话框外部取消对话框显示
+                mpDialog.setProgress(0);// 设置初始进度条为0
+                mpDialog.incrementProgressBy(1);// 设置进度条增涨。
+                mpDialog.show();
+                downloadApk(true);
+                dialog.dismiss();
+            }
+        });
+        builder.setCancelable(false);
+        if (!isMust) {
+            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+        }
+        builder.create().show();
+    }
+
+    /**
+     * 下载apk
+     */
+    public void downloadApk(boolean isShow) {
+        this.isSelect = isShow;
+        //开启另一线程下载
+        Thread downLoadThread = new Thread(downApkRunnable);
+        downLoadThread.start();
+    }
+
+    /**
+     * 从服务器下载新版apk的线程
+     */
+    private Runnable downApkRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+                //如果没有SD卡
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder.setTitle("提示");
+                builder.setMessage("当前设备无SD卡，数据无法下载");
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
+            } else {
+                InputStream is = null;
+                FileOutputStream fos = null;
+                try {
+                    //服务器上新版apk地址
+                    URL url = new URL(mUrl);
+                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                    httpURLConnection.setConnectTimeout(30000);
+                    httpURLConnection.setReadTimeout(30000);
+                    httpURLConnection.setDoInput(true);
+                    httpURLConnection.connect();
+                    int length = httpURLConnection.getContentLength();
+                    if (isSelect) {
+                        mpDialog.setMax(length);
+                    }
+                    is = httpURLConnection.getInputStream();
+                    File file = new File(apkPath);
+                    if (!file.exists()) {
+                        //如果文件夹不存在,则创建
+                        file.mkdir();
+                    }
+                    //下载服务器中新版本软件（写文件）
+                    String path = apkPath + "detectionface.apk";
+                    File apkFile = new File(path);
+                    fos = new FileOutputStream(apkFile);
+                    int count = 0;
+                    byte buf[] = new byte[10240];
+                    do {
+                        int numRead = is.read(buf);
+                        count += numRead;
+                        //更新进度条
+                        if (isSelect) {
+                            mpDialog.setProgress(count);
+                        }
+                        if (numRead <= 0) {
+                            //下载完成通知安装
+                            sendMsg(2);
+                            break;
+                        }
+                        fos.write(buf, 0, numRead);
+
+                    } while (true);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    sendMsg(-1);
+                } finally {
+                    try {
+                        if (fos != null) {
+                            fos.close();
+                        }
+                        if (is != null) {
+                            is.close();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    };
+
+    // 安装apk方法
+    private void installApk(String filename) {
+        File file = new File(filename);
+        Intent intent = new Intent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.putExtra("SILENT_INSTALL", 2);
+        String type = "application/vnd.android.package-archive";
+        intent.setDataAndType(Uri.fromFile(file), type);
+        mContext.startActivity(intent);
+        if (mpDialog != null) {
+            mpDialog.cancel();
+        }
+    }
+
+    private void sendMsg(int flag) {
+        Message msg = handler.obtainMessage();
+        msg.what = flag;
+        handler.sendMessage(msg);
+    }
+
+    private final Handler handler = new Handler(Looper.myLooper()) {
+        public void handleMessage(Message msg) {
+            if (!Thread.currentThread().isInterrupted()) {
+                switch (msg.what) {
+                    case 2:
+                        if (isSelect) {
+                            mpDialog.setMessage("文件下载完成");
+                        }
+                        String apkName = apkPath + "detectionface.apk";
+                        installApk(apkName);
+                        break;
+                    case -1:
+                        if (isSelect) {
+                            mpDialog.setMessage("下载失败！");
+                            mpDialog.setCanceledOnTouchOutside(true);
+                        } else {
+                            ToastUtil.toastShort(mContext, "app下载失败！");
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            super.handleMessage(msg);
+        }
+    };
+}
+```
+
+## 调用系统浏览器下载避免权限无法安装的问题  
+```
+  Intent intent = new Intent();
+//                            intent.setAction("android.intent.action.VIEW");
+//                            Uri content_url = Uri.parse(downloadUrl);
+//                            intent.setData(content_url);
+//                            startActivity(intent);
+
+```
+```
+protected void installApk(File file) {
+Intent intent = new Intent();
+intent.setAction("android.intent.action.VIEW");
+intent.addCategory("android.intent.category.DEFAULT");
+//注意:这两个要一起设两个参数,一个是uri,一个是type,因为单独设的话会出现.清空前一个的设置.
+intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+startActivity(intent);
+}
+
+
+
+//传递一个Apk的file就可以
+protected void installApk(File file) {
+//参照需要启动的Activity的filter配置去进行Intent设制就可以
+// <action android:name="android.intent.action.VIEW" />
+//        <category android:name="android.intent.category.DEFAULT" />
+//        <data android:scheme="content" />
+//        <data android:scheme="file" />
+//        <data android:mimeType="application/vnd.android.package-archive" />
+Intent intent = new Intent();
+intent.setAction("android.intent.action.VIEW");
+intent.addCategory("android.intent.category.DEFAULT");
+// intent.setType("application/vnd.android.package-archive");
+// intent.setData(Uri.fromFile(file));
+//注意:这两个要一起设两个参数,一个是uri,一个是type,因为单独设的话会出现清空前一个的设置.
+intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+startActivity(intent);
+}
+```
+
+
+
+
+## 打jar包aar包
+```
+打jar包
+在app下添加依赖 compile project(':core')
+Jar包位置：build--libs
+ 
+打aar包
+位置：build -- outputs -- aar
+引用：
+project的gradle：
+ flatDir {
+   dirs 'libs'
+  }
+app的gradle：
+compile(name: 'common-debug', ext: 'aar')
+```
+## android将so打到jar包中并运行
+<https://blog.csdn.net/s569646547/article/details/51822014>  
+## 生成.so文件
+<https://www.jianshu.com/p/3494741f0ad1>   
+步骤：  
+1：配置ndk路径  
+1：写一个java类，编译生成.class  
+2：用命令把.class转编译成.h文件  
+3：在jniutil.c中我们需要导入上边的.h文件，然后实现具体的test方法。  
+
+## ndk开发
+<https://www.cnblogs.com/yejiurui/p/3476565.html>  
