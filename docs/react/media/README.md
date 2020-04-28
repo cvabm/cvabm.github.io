@@ -75,16 +75,26 @@ pc.onicecandidate = function(event) {if (event.candidate)
 硬件只能被一个流占用，多个RTCPeerConnection可以共享这一个流。
 ```
 
+## 一些demo和相关网站   
+<https://webrtc.org/getting-started/overview>    
+**webrtc APIs demo演示**  
+<https://webrtc.github.io/samples/>   
 
-## 官网  
-<https://webrtc.org/getting-started/overview>  
-## webrtc APIs demo演示
-<https://webrtc.github.io/samples/>
+ **android原生上使用webrtc**
+包括使用相机、屏幕共享、信令交互、多人视频    
 
-## android原生上使用webrtc
-包括使用相机、屏幕共享、信令交互、多人视频  
+<https://www.jianshu.com/p/eb5fd116e6c8>  
 
-<https://www.jianshu.com/p/eb5fd116e6c8>
+**音视频通话控制**  
+<https://github.com/react-native-webrtc/react-native-incall-manager>  
+**视频播放**  
+<https://github.com/react-native-community/react-native-video>  
+**webrtc**  
+<https://github.com/react-native-webrtc/react-native-webrtc>  
+**webrtc+janus手机端**  
+<https://github.com/atyenoria/react-native-webrtc-janus-gateway>  
+
+
 ## 基本概念
 
 >- NAT  
@@ -125,6 +135,43 @@ Channel 是传输层面的概念，也就是音视频数据最终要交由 chann
 >- **sdp**  
 SDP(Session Description Protocol) 的目的是在媒体会话中传递媒体信息。SDP在很多地方使用，WebRTC也会使用它做媒体信息交换。  
 
+## webrtc视频方向的设置
+```
+sdp信息中包装有个a=extmap:7 urn:3gpp:video-orientation 参数
+
+视频发送方将其视频方向进行封装（具体方式见9.3），封装以后，放在视频数据帧的一个扩展位置，然后随视频帧一起打包后通过rtp/rtcp/udp发送给接收方。
+接收方收到视频帧数据后，可以在帧的扩展位置将视频方向获取出来，然后，在实时的调整到surface view上面
+
+
+视频方向格式及编解码
+
+定义在rtp帧中的扩展数据，该数据是用一个8位字节进行编码的。前面四位是预留位，用于其他将来用途，
+后面四位中，从高到低，第一位是视频发送方camera的选项，可编码出2种camera选项；后三位是视频数据的方向，可以编码出8种视频方向
+
+编码：
+
+将camera选项位和视频方向位四位编码后的数据映射成十进制数字，就是该帧方向编码后的整数值了。
+比如发送方当前是后置摄像头并且视频顺时针旋转了90度，那么四位编码则是1011，转换成十进制就是11，那么接收方通过帧中的扩展位数据得到的就是11。
+
+位运算法则：total = (camera << 3) | orientation。
+
+ 
+
+解码：
+
+接收方的到11后，对应的转换成二进制就是1011，获取第四位就是发送方camera的选项，获取后三位就是视频的方向。
+
+位运算法则：
+
+Camera = (total & 0x08) >> 3;
+
+Orientation = total & 0x07;
+————————————————
+版权声明：本文为CSDN博主「晓昏行者」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/liangguangxiang/java/article/details/48526219
+
+
+```
 ## SDP详细介绍  
 **SDP主要包括以下信息：**  
 ```
@@ -260,16 +307,6 @@ a=* (zero or more media attribute lines)
 
 ```
 
-
-
-音视频通话控制  
-<https://github.com/react-native-webrtc/react-native-incall-manager>  
-视频播放  
-<https://github.com/react-native-community/react-native-video>  
-webrtc  
-<https://github.com/react-native-webrtc/react-native-webrtc>  
-webrtc+janus手机端  
-<https://github.com/atyenoria/react-native-webrtc-janus-gateway>  
 ## 强制WebRTC使用转发(relay)模式
 <https://blog.csdn.net/foruok/article/details/72677338>
 

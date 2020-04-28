@@ -837,6 +837,141 @@ public class DownloadActivity extends AppCompatActivity {
 
 ```
 
+### Okhttp的websocket使用
+```
+import android.util.Log;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.WebSocket;
+import okhttp3.WebSocketListener;
+import okio.ByteString;
+public class WebsocketClient {
+    private static final int NORMAL_CLOSURE_STATUS = 1000;
+    private static OkHttpClient sClient;
+    private static WebSocket sWebSocket;
+    public static synchronized void startRequest() {
+        if (sClient == null) {
+            sClient = new OkHttpClient();
+        }
+        if (sWebSocket == null) {
+            Request request = new Request.Builder().url("ws://echo.websocket.org").build();
+            EchoWebSocketListener listener = new EchoWebSocketListener();
+            sWebSocket = sClient.newWebSocket(request, listener);
+        }
+    }
+    private static void sendMessage(WebSocket webSocket) {
+        webSocket.send("Knock, knock!");
+        webSocket.send("Hello!");
+        webSocket.send(ByteString.decodeHex("deadbeef"));
+    }
+    public static void sendMessage() {
+        WebSocket webSocket;
+        synchronized (WebsocketClient.class) {
+            webSocket = sWebSocket;
+        }
+        if (webSocket != null) {
+            sendMessage(webSocket);
+        }
+    }
+    public static synchronized void closeWebSocket() {
+        if (sWebSocket != null) {
+            sWebSocket.close(NORMAL_CLOSURE_STATUS, "Goodbye!");
+            sWebSocket = null;
+        }
+    }
+    public static synchronized void destroy() {
+        if (sClient != null) {
+            sClient.dispatcher().executorService().shutdown();
+            sClient = null;
+        }
+    }
+    private static void resetWebSocket() {
+        synchronized (WebsocketClient.class) {
+            sWebSocket = null;
+        }
+    }
+    public static class EchoWebSocketListener extends WebSocketListener {
+        private static final String TAG = "EchoWebSocketListener";
+        @Override
+        public void onOpen(WebSocket webSocket, Response response) {
+            sendMessage(webSocket);
+        }
+        @Override
+        public void onMessage(WebSocket webSocket, String text) {
+            Log.i(TAG, "Receiving: " + text);
+        }
+        @Override
+        public void onMessage(WebSocket webSocket, ByteString bytes) {
+            Log.i(TAG, "Receiving: " + bytes.hex());
+        }
+        @Override
+        public void onClosing(WebSocket webSocket, int code, String reason) {
+            webSocket.close(NORMAL_CLOSURE_STATUS, null);
+            Log.i(TAG, "Closing: " + code + " " + reason);
+            resetWebSocket();
+        }
+        @Override
+        public void onClosed(WebSocket webSocket, int code, String reason) {
+            Log.i(TAG, "Closed: " + code + " " + reason);
+        }
+        @Override
+        public void onFailure(WebSocket webSocket, Throwable t, Response response) {
+            t.printStackTrace();
+            resetWebSocket();
+        }
+    }
+}
+```
+
+**具体的websocket源码实现**
+
+**1、发送http请求进行握手**
+```
+  final Request request = originalRequest.newBuilder()
+        .header("Upgrade", "websocket")
+        .header("Connection", "Upgrade")
+        .header("Sec-WebSocket-Key", key)
+        .header("Sec-WebSocket-Version", "13")
+        .build();
+
+Upgrade 和 Connection header 向服务器表明，
+请求的目的就是要将客户端和服务器端的通讯协议从 HTTP 协议升级到 WebSocket 协议，同时在请求处理完成之后，连接不要断开。
+
+
+Sec-WebSocket-Key header值正是我们前面看到的key，
+它是 WebSocket 客户端发送的一个 base64 编码的密文，要求服务端必须返回一个对应加密的 
+“Sec-WebSocket-Accept” 应答，否则客户端会抛出 “Error during WebSocket handshake” 错误，并关闭连接。
+```
+**2、为数据收发做准备**
+```
+1.检查http响应
+checkResponse(Response response)
+
+2.初始化用于输入输出的 Source 和 Sink
+public final class RealConnection extends Http2Connection.Listener implements Connection {
+  . . . . . .
+  public RealWebSocket.Streams newWebSocketStreams(final StreamAllocation streamAllocation) {
+    return new RealWebSocket.Streams(true, source, sink) {
+      @Override public void close() throws IOException {
+        streamAllocation.streamFinished(true, streamAllocation.codec());
+      }
+    };
+  }
+
+```
+**3、调用回调 onOpen()**
+**4、初始化 Reader 和 Writer：**
+```
+OkHttp使用 WebSocketReader 和 WebSocketWriter 来处理数据的收发
+```
+**数据发送**
+通过 WebSocket 接口的 send(String text) 和 send(ByteString bytes) 分别发送文本的和二进制格式的消息。
+**数据保活**
+通过ping和pong
+
+
+
 ### httpclient
 ```
 HttpClient client = new DefaultHttpClient();
