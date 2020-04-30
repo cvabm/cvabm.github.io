@@ -33,6 +33,12 @@ Step 4: 指定二级域名
 Step 5: 指定配置文件
 ./ngrok -config ittun.yml start [proname]
 ```
+
+[ngrok](https://ngrok.com/)
+[内网穿透工具natapp](https://natapp.cn/) 
+<https://www.lihail.cn/pages/article/tool/Natapp.html#natapp>  
+
+
 ## 配置本地服务器
 ```
 1：myeclipse新建web项目2：http://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index 注册微信开发者账号

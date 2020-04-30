@@ -4,7 +4,7 @@ module.exports = {
   description: 'Vuepress blog demo',
   plugins: ['@vuepress/back-to-top'],
   themeConfig: {
-  
+   
     searchMaxSuggestions: 10,
     // 你的GitHub仓库，请正确填写
     repo: 'https://github.com/xxxxxxx/blog-demo',
