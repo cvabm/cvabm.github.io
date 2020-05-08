@@ -49,7 +49,7 @@ module.exports = {
           { text: '多线程', link: '/android/thread/' },
           { text: '架构模式', link: '/android/architectural_pattern/' },
           { text: '常见问题', link: '/android/question' },
-          { text: 'H5', link: '/android/h5' },
+          { text: '前端js/h5', link: '/android/h5' },
         ]
       },
       {

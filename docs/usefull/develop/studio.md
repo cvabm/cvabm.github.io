@@ -37,7 +37,14 @@ Android studio美化
 unitTest：ctrl +shift +f10
 隐藏所有除了代码以外的窗口 ctrl +shfit +f12
 
-studio快捷键：
+查看类和接口被哪些子类实现的快捷键
+
+如果你使用的是Android Studio中默认的快捷键方案的话，我们通过查看
+“File”->”settings” ->”keymap” ->在快速搜索栏中输入“imp”
+可以看出快捷键是 Ctrl+alt +B 或者同时按住ctrl +alt +鼠标左键
+
+
+
 遍历集合：对象.for ,对象.fori ,.forr 反向,  数字.for  
 
 判空： 对象.null  , 非空： 对象.nn
@@ -109,7 +116,10 @@ Ctrl+W 选中代码，连续按会有其他效果
 选中文本，按Alt+F3 ，逐个往下查找相同文本，并高亮显示。
 Ctrl+Up/Down 光标跳转到第一行或最后一行下
 Ctrl+B 快速打开光标处的类或方法 
-最常用快捷键
+
+
+
+
 1.Ctrl＋E，可以显示最近编辑的文件列表
 2.Shift＋Click可以关闭文件
 3.Ctrl＋[或]可以跳到大括号的开头结尾

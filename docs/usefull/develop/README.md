@@ -1,6 +1,6 @@
 # vscode
 
-## 快捷键
+## vscode快捷键
 >**关闭其他页**  
 `option + command + T`  
 

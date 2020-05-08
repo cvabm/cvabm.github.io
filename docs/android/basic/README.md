@@ -44,6 +44,38 @@ BACK键的顺序： onPause->onStop->onDestroy->onCreate->onStart->onResume
 ## Camera2
 <https://www.jianshu.com/p/73fed068a795>  
 
+## setPreviewCallbackWithBuffer
+作用：减少Camera预览时内存占用  
+```
+
+
+使用步骤:
+1 在打开摄像头预览前先分配一个buffer地址
+camera.setPreviewCallbackWithBuffer(h264Encoder);
+camera.addCallbackBuffer(mPreviewSize.width* mPreviewSize.height*3 / 2);
+camera.startPreview();
+1
+2
+3
+2 然后只用在onPreviewFrame中调用addCallbackBuffer(data)即可了,就可以一直复用原来开辟的那个内存空间了,视频数据data永远都只会保持在一个地址中,只是其中的内容在不断的变化
+————————————————
+版权声明：本文为CSDN博主「大大大超人」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/superman4933/java/article/details/55045676
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+### 使用系统相机拍照，获取照片  
 ```
 
 在相机app的activity配置如下即可：
