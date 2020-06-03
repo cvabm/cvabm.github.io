@@ -1,5 +1,11 @@
 # 常用片段  
+
+api使用示例搜索：  
+<https://www.programcreek.com/java-api-examples/index.php>
+
+
 [[toc]]
+
 ## 配置环境变量   
 ```
 JAVA_HOME=C:\Program Files\Java\jdk1.8.0_31

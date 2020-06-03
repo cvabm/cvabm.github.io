@@ -49,17 +49,17 @@ module.exports = {
           { text: '多线程', link: '/android/thread/' },
           { text: '架构模式', link: '/android/architectural_pattern/' },
           { text: '常见问题', link: '/android/question' },
-          { text: '前端js/h5', link: '/android/h5' },
         ]
       },
       {
-        text: 'React Native',items:[
+        text: 'RN/JS',items:[
           {text:'基础',link: '/react/basic/'},
           {text:'界面',link: '/react/view/'},
           {text:'网络',link: '/react/net/'},
           {text:'功能性',link: '/react/function/'},
           {text:'常见问题',link: '/react/error'},
-          {text:'音视频媒体',link: '/react/media/'}
+          {text:'音视频媒体',link: '/react/media/'},
+          {text:'JS',link: '/android/h5'}
         ]
       },
       { text: 'Linux', link: '/linux/' },
@@ -165,6 +165,7 @@ module.exports = {
       ],
       '/react/function/':[
         '',
+       'tv',
       ],
       '/react/view/': [
         '',

@@ -143,9 +143,14 @@ adb shell am start -W [packageName]/[packageName.launchActivity]
 adb -s cf264b8f shell wm size  //比如这时想指定 cf264b8f 这个设备来运行 adb 命令获取屏幕分辨率：
 adb shell pm clear <packagename>  //清除应用数据与缓存
 
+过滤日志  
+
+windows:
+adb logcat | find "meessage"  中文有乱码
+linux:
+adb logcat | grep "xxxx"
 
 保存log到txt文件:
-
 adb logcat > logcat/log.txt
 
 adb shell monkey -v –throttle 300 –pct-touch 30

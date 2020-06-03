@@ -15,14 +15,26 @@ Portal电脑端不必安装软件<https://www.iplaysoft.com/portal.html>
 <https://www.feem.io/#download>   
 <https://syncthing.net/>    
 
-网页传输<https://airportal.cn/>  
+网页传输  
+<https://www.ppzhilian.com/>  
+<https://airportal.cn/>  
 <https://github.com/leavesC/WifiP2P>  
 ## app内测分发
 蒲公英<https://www.pgyer.com/>  
 fir.im<https://fir.im/>
 
-## 免费资源
-小白接口<http://open.yesapi.cn/>
+## 免费api接口
+小白接口  
+<http://open.yesapi.cn/>  
+虚拟用户信息
+<https://randomuser.me/>  
+占位图（自定义尺寸）
+<https://placeimg.com/>
+
+打点调试接口
+<https://www.endpoints.dev/>
+
+
 
 ## app相关
 360加固宝<https://jiagu.360.cn/>  

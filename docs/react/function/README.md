@@ -523,3 +523,24 @@ this.panResponder1 = PanResponder.create({
 ```
 
 
+## 关闭软键盘
+
+```
+<TextInput
+          onSubmitEditing={Keyboard.dismiss}
+           ref='input'
+           style={styles.reply}
+           placeholder={this.state.placeholder}
+           numberOfLines={1}
+           value = {this.state.replyaccount}
+           underlineColorAndroid='transparent'
+           onChangeText={(text) => this.setState({ replyaccount: text})}
+/>
+
+关闭键盘：
+this.refs['input'].blur();
+
+```
+
+
+

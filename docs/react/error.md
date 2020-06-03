@@ -20,3 +20,11 @@ gradle最低为 4.10.1+ ，插件最低为 3.3.0 - 3.3.2
 默认主module名称为app，想自定义启动module，命令为：  
 
 react-native run-android --appFolder (appFolder为自己定义的module名)
+
+## 启动程序时报错，手动编译
+
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+
+
+## 启动白屏，清理缓存  
+进入android目录，执行 gradlew.bat clean。再重新启动  
