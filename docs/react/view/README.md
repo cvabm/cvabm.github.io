@@ -31,6 +31,24 @@ textinput
 react-native-radio-buttons-group  
 react-native-simple-radio-button  
 
+
+## 对话框dialog
+[react-native-modals](https://github.com/jacklam718/react-native-modals)
+
+
+## 进度条slider
+https://github.com/react-native-community/react-native-slider
+
+## 侧拉菜单
+https://github.com/root-two/react-native-drawer
+
+
+## 聊天界面UI 
+https://github.com/FaridSafi/react-native-gifted-chat  
+https://github.com/wix/react-native-gifted-chat
+## emoji字符串转换
+https://github.com/cribspot/emoji-utils
+
 ## 组件隐藏和显示
 ```
 1：设置style：display: none / flex  
