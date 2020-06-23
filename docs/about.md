@@ -56,3 +56,7 @@ module.exports = {
 修改大约24行处 color #000 ，即可将白色字体改为黑色
 
 ```
+
+
+## netlify提供的cdn加速
+<https://www.netlify.com/> 
