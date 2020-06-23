@@ -1,4 +1,4 @@
-# vuepress静态博客
+## vuepress使用
 [[toc]]
 ## 简单部署开发
 ### clone项目

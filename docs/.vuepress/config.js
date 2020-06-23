@@ -4,7 +4,7 @@ module.exports = {
   description: 'Vuepress blog demo',
   plugins: ['@vuepress/back-to-top'],
   themeConfig: {
-   
+  
     searchMaxSuggestions: 10,
     // 你的GitHub仓库，请正确填写
     repo: 'https://github.com/xxxxxxx/blog-demo',
@@ -17,7 +17,7 @@ module.exports = {
           { text: '日常工具', link: '/usefull/tool_guide/' },
           { text: '开发工具', link: '/usefull/develop/' },
           { text: '手机app', link: '/usefull/app/' },
-          { text: 'API文档', link: '/usefull/learn/' },
+          { text: 'API文档教程', link: '/usefull/learn/' },
           { text: '面试相关', link: '/usefull/interview/' },
           { text: '资源下载', link: '/usefull/datadownload/' },
           { text: '日常向', link: '/usefull/daily/' },
@@ -144,6 +144,7 @@ module.exports = {
       ],
       '/usefull/learn/': [
         '',
+        'teach',
       ],
       '/usefull/daily/': [
         '',
