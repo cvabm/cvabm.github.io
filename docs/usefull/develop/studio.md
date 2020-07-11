@@ -799,3 +799,6 @@ tools > Android > Sync Project with Gradle Files
 ```
 
 
+
+## Android Studio 3.5+ 去掉默认的androidx选项
+Tools ---> SDK Manager --> 删除Android Q，再新建项目时取消use androidx.artifacts即可

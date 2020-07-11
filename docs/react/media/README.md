@@ -409,6 +409,120 @@ googFrameRateSent：发送端实际发送的帧率，根据当前网络会进行
 ```
 
 
+## android编解码
+```
+软解码器：通常以OMX.google开头，或者不以OMX开头的也为软解码器
+硬解码器：通常以OMX.[hardware_vendor]开头
+```
+
+```
+
+高通软编解码
+OMX.google.aac.decoder
+OMX.google.amrnb.decoder
+OMX.google.flac.decoder
+OMX.google.g711.alaw.decoder
+OMX.google.g711.mlaw.decoder
+OMX.google.gsm.decoder
+OMX.google.mp3.decoder
+OMX.google.opus.decoder
+OMX.google.raw.decoder
+OMX.google.vorbis.decoder
+OMX.google.aac.encoder
+OMX.google.amrnb.encoder
+OMX.google.amrwb.encoder
+OMX.google.flac.encoder
+OMX.google.h264.decoder
+OMX.google.h263.decoder
+OMX.google.hevc.decoder
+OMX.google.mpeg4.decoder
+OMX.google.vp8.decoder
+OMX.google.vp9.decoder
+OMX.google.h264.encoder
+OMX.google.h263.encoder
+OMX.google.mpeg4.encoder
+OMX.google.vp8.encoder
+OMX.google.aac.decoder
+OMX.google.amrwb.decoder
+
+c2.android.vp8.decoder - 2048
+c2.android.vp8.encoder -2048
+c2.android.vp9.decoder - 2048
+c2.android.vp9.encoder -2048
+OMX.qti.audio.decoder.flac
+OMX.qti.video.decoder.divxsw
+OMX.qti.video.decoder.divx4sw
+OMX.qti.video.decoder.h263sw
+OMX.qti.video.decoder.mpeg4sw
+OMX.qti.video.decoder.vc1sw
+```
+
+```
+
+高通硬解
+OMX.qcom.video.decoder.avc - 264
+OMX.qcom.video.decoder.hevc -265
+OMX.qcom.video.decoder.mpeg2
+OMX.qcom.video.decoder.vp8 -2304
+OMX.qcom.video.decoder.vp9 -4320
+高通硬编
+OMX.qcom.video.encoder.heic
+OMX.qcom.video.encoder.avc -h264
+OMX.qcom.video.encoder.h263sw
+OMX.qcom.video.encoder.hevc -h265
+OMX.qcom.video.encoder.hevc.cq
+OMX.qcom.video.encoder.mpeg4sw -720
+OMX.qcom.video.encoder.vp8 -2304
+海思硬编
+OMX.hisi.video.encoder.avc
+OMX.hisi.video.encoder.hevc
+海思硬解
+OMX.hisi.video.decoder.avc
+OMX.hisi.video.decoder.hevc
+OMX.hisi.video.decoder.mpeg2
+OMX.hisi.video.decoder.mpeg4
+OMX.hisi.video.decoder.vp8  -1088
+```
+判断是否为软解  
+```
+判断规则见frameworks/av/media/libstagefright/OMXCodec.cpp：
+
+static bool IsSoftwareCodec(const char *componentName) {
+if (!strncmp("OMX.google.", componentName, 11)) {
+return true;
+}
+if (!strncmp("OMX.", componentName, 4)) {
+return false;
+}
+return true;
+}
+```
+相关文档  
+<https://android.googlesource.com/platform/frameworks/av/+/master/media/libstagefright/data/media_codecs_google_c2_video.xml>  
+
+
+
+
+### 华为对h264的支持
+```
+webrtc内部h264只支持两种 OMX.qcom. 和 OMX.Exynos.需改以下配置即可
+HardwareVideoEncoderFactory.java  
+
+   private boolean isHardwareSupportedInCurrentSdkH264(MediaCodecInfo info) {
+        if (H264_HW_EXCEPTION_MODELS.contains(Build.MODEL)) {
+            return false;
+        } else {
+            String name = info.getName();
+            return name.startsWith("OMX.qcom.") && VERSION.SDK_INT >= 19 || name.startsWith("OMX.Exynos.") && VERSION.SDK_INT >= 21 || name.startsWith("OMX.google.") && VERSION.SDK_INT >= 19;
+        }
+    }
+
+
+```
+
+
+
+
 
 
 ## chrome书签同步问题

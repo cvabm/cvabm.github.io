@@ -540,6 +540,31 @@ this.panResponder1 = PanResponder.create({
 关闭键盘：
 this.refs['input'].blur();
 
+secureTextEntry={true}  密码*显示
+
+```
+例：
+```
+ < TextInput style = {
+    {
+        textAlign: 'center',
+        paddingTop: 0,
+        paddingBottom: 0,
+        height: 30,
+        borderWidth: 1,
+        marginLeft: 5,
+        paddingLeft: 5,
+        borderColor: '#ccc',
+        borderRadius: 4,
+        width: 120,
+    }
+}
+returnKeyType = "search"placeholder = "请输入关键字"
+onChangeText = { (text) = >this.setState({
+        searchStr: text
+    })
+}
+/>/         
 ```
 
 

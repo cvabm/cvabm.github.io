@@ -14,6 +14,13 @@ Android图标生成
 <https://romannurik.github.io/AndroidAssetStudio/index.html>   
 <https://fontawesome.com/>  
 
+#### 可商用视频  
+
+<https://www.pexels.com/video>  
+
+<https://www.videezy.com/>(大部分是几十秒的高质量视频)
+
+
 ## 图片压缩
 <https://tinypng.com/>  
 <http://isparta.github.io/>  

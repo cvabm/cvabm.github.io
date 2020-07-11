@@ -49,10 +49,25 @@
 2.通过MediaCodec的Surface获取数据  
 mediacodec可以用来获得安卓底层的多媒体编码，可以用来编码和解码  
 
-#### mediacodec
+### mediacodec
 [MediaCodec硬解码详解](https://blog.csdn.net/LinChengChun/article/details/80219503)
-
-
+[官方解释](https://developer.android.com/reference/android/media/MediaCodec)
+mimetype选择解码器
+```
+"video/x-vnd.on2.vp8" - VP8 video (i.e. video in .webm)
+"video/x-vnd.on2.vp9" - VP9 video (i.e. video in .webm)
+"video/avc" - H.264/AVC video
+"video/hevc" - H.265/HEVC video
+"video/mp4v-es" - MPEG4 video
+"video/3gpp" - H.263 video
+"audio/3gpp" - AMR narrowband audio
+"audio/amr-wb" - AMR wideband audio
+"audio/mpeg" - MPEG1/2 audio layer III
+"audio/mp4a-latm" - AAC audio (note, this is raw AAC packets, not packaged in LATM!)
+"audio/vorbis" - vorbis audio
+"audio/g711-alaw" - G.711 alaw audio
+"audio/g711-mlaw" - G.711 ulaw audio
+```
 
 
 

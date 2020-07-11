@@ -58,5 +58,19 @@ module.exports = {
 ```
 
 
-## netlify提供的cdn加速
-<https://www.netlify.com/> 
+## netlify
+为静态网站提供托管和 serverless 后端服务，与 GitHub 相比，Netlify 托管的网站速度更快，也更稳定  
+
+<https://www.netlify.com/>   
+
+访问地址例：    
+<https://cvabm.netlify.app/>    
+
+
+## cdn加速
+
+#### cloudflare(国外最好免费CDN)
+使用介绍  
+<https://zhuanlan.zhihu.com/p/82909515>
+
+

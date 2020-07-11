@@ -1,10 +1,10 @@
 module.exports = {
-  base: '',
-  title: 'cvabm个人笔记',
+  base: '/blog/',
+  title: '首页',
   description: 'Vuepress blog demo',
   plugins: ['@vuepress/back-to-top'],
   themeConfig: {
-  
+
     searchMaxSuggestions: 10,
     // 你的GitHub仓库，请正确填写
     repo: 'https://github.com/xxxxxxx/blog-demo',

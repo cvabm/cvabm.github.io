@@ -50,8 +50,13 @@ hexo
 <https://www.jianshu.com/p/1c888a6b8297?utm_source=oschina-app>  
 vuepress  
 <https://segmentfault.com/a/1190000015237352?utm_source=tag-newest>  
-<https://vuepress.vuejs.org/zh/guide/getting-started.html#%E7%8E%B0%E6%9C%89%E9%A1%B9%E7%9B%AE>
-github pages教程<https://www.cnblogs.com/jackyroc/p/7681938.html>  
+<https://vuepress.vuejs.org/zh/guide/getting-started.html#%E7%8E%B0%E6%9C%89%E9%A1%B9%E7%9B%AE>  
+github pages教程  
+<https://www.cnblogs.com/jackyroc/p/7681938.html>  
+
+algolia搜索  
+[提交地址](https://docsearch.algolia.com/)  
+输入博客地址和邮箱即可
 
 
 ## 值得学习Android项目  

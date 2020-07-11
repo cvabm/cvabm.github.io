@@ -339,13 +339,14 @@ startActivity(intent);
 
 
 
-## 打jar包aar包
+## 打jar包
 ```
 打jar包
 在app下添加依赖 compile project(':core')
 Jar包位置：build--libs
- 
-打aar包
+```
+### 打aar包
+ ```
 位置：build -- outputs -- aar
 引用：
 project的gradle：
@@ -355,6 +356,12 @@ project的gradle：
 app的gradle：
 compile(name: 'common-debug', ext: 'aar')
 ```
+## 修改jar包内容
+1、studio打开jar包,复制要修改的.class文件内容，，新建一个同名文件，拷贝内容进去，然后rebuild   
+(注：按需添加缺失的依赖文件，只保证此.java文件编译正常即可)  
+2、拷贝编译出的.class文件，路径例：app/build/intermediates/javac/debug/classes/org/webrtc/DefaultVideoDecoderFactory.class    
+3、jar改为zip解压，将刚才.class文件覆盖，重新改为.jar即可  
+
 ## android将so打到jar包中并运行
 <https://blog.csdn.net/s569646547/article/details/51822014>  
 ## 生成.so文件

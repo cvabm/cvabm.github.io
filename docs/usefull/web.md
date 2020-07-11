@@ -10,6 +10,8 @@ http-server -c-1
 运行后在浏览器输入http://localhost:8080/或者http://127.0.0.1:8080
 ```
 
-## 博客
+### 页面调试工具
 
-<https://segmentfault.com/a/1190000017576714#item-8-9>
+#### 浏览器兼容性
+<https://caniuse.com/>   
+<http://html5test.com/>

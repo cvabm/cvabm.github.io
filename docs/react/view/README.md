@@ -22,10 +22,6 @@ StatusBar
 
 StatusBar.setHidden(true, 'slide') 
 ```
-textinput  
-```
- secureTextEntry={true}  密码*显示
-```
 
 ## 单选框
 react-native-radio-buttons-group  
@@ -83,3 +79,24 @@ ScrollView 必须有一个确定的高度才能正常工作，
 要么给它设置一个高度(不建议), 要么所有的子元素都有确定的高度。通常将其样式设置为 flex: 1
 ```
 
+## Text组件
+### react native 0.59 安卓9上文字显示不全 
+```
+const React = require('react');
+const { Platform, Text } = require('react-native');
+
+const defaultFontFamily = {
+	...Platform.select({
+		android: { fontFamily: 'Roboto' }
+	})
+};
+
+const oldRender = Text.render;
+Text.render = function(...args) {
+	const origin = oldRender.call(this, ...args);
+	return React.cloneElement(origin, {
+		style: [defaultFontFamily, origin.props.style]
+	});
+};
+
+```
