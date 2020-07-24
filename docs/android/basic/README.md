@@ -66,7 +66,64 @@ camera.startPreview();
 ```
 
 
+### 获取摄像头所支持的所有分辨率
+```
+public class MainActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        TextureView textureView = new TextureView(this);
+        textureView.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() {
+            @Override
+            public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
+                try {
+                    Camera open = Camera.open();
+
+                    Camera.Parameters params = open.getParameters();
+
+                    List<Camera.Size> pictureSizes = params.getSupportedPictureSizes();
+                    int length = pictureSizes.size();
+                    for (int i = 0; i < length; i++) {
+                        Log.e("SupportedPictureSizes", "SupportedPictureSizes : " + pictureSizes.get(i).width + "x" + pictureSizes.get(i).height);
+                    }
+
+                    List<Camera.Size> previewSizes = params.getSupportedPreviewSizes();
+                    length = previewSizes.size();
+                    for (int i = 0; i < length; i++) {
+                        Log.e("SupportedPreviewSizes", "SupportedPreviewSizes : " + previewSizes.get(i).width + "x" + previewSizes.get(i).height);
+                    }
+
+                    open.setPreviewTexture(surface);
+                    open.startPreview();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
+
+            }
+
+            @Override
+            public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+                return false;
+            }
+
+            @Override
+            public void onSurfaceTextureUpdated(SurfaceTexture surface) {
+
+            }
+        });
+
+        setContentView(textureView);
+    }
+}
+
+```
 
 
 

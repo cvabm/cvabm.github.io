@@ -42,11 +42,12 @@ export default {
   & > .sidebar-links
     padding 1.5rem 0
     & > li > a.sidebar-link
-      font-size 0.9em
-      line-height 1
+      font-size 1.0em
+      line-height 1.5
       font-weight bold
     & > li:not(:first-child)
       margin-top 0.1rem
+//& > li > a.sidebar-link 侧边栏文字格式
 
 @media (max-width: $MQMobile)
   .sidebar

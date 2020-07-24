@@ -48,6 +48,7 @@ module.exports = {
           { text: '数据存储', link: '/android/datasave/' },
           { text: '多线程', link: '/android/thread/' },
           { text: '架构模式', link: '/android/architectural_pattern/' },
+          { text: 'JNI-NDK', link: '/android/ndk/' },
           { text: '常见问题', link: '/android/question' },
         ]
       },
@@ -103,6 +104,8 @@ module.exports = {
       ],
       '/android/media/': [
         '',
+        'ffmpeg',
+        'ffmpeg-command',
       ],
       '/android/datasave/': [
         '',

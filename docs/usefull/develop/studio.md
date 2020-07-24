@@ -539,8 +539,60 @@ repositories {
 switch改成if 
 
 ### 找不到so包  
-
 ![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/435765434.png)
+
+1、.so在jniLibs下
+```
+build.gradle文件：
+android {
+    ...
+    defaultConfig {
+        ...
+        ndk {
+            abiFilters "armeabi" //, "x86", "armeabi"  按需设置
+        }
+    }
+}
+
+setting.gradle文件:
+
+android.useDeprecatedNdk=true
+
+```
+2、.so在libs下
+```
+sourceSets {
+    main {
+        jniLibs.srcDirs = ['libs']
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### lock - open (11: 资源暂时不可用)  
 
 ```

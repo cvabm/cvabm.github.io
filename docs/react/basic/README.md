@@ -110,6 +110,9 @@ rn使用svg：
 svg转换  
 <https://react-svgr.com/playground/>
 
+svg2android  
+<http://inloop.github.io/svg2android/>  
+
 
 ## npm
 ### 常用命令
