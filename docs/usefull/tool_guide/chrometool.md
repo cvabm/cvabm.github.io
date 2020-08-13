@@ -5,8 +5,7 @@
 <https://www.runoob.com/w3cnote/google-chrome-shortcuts.html>    
 插件    
 <https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm?utm_source=chrome-app-launcher-info-dialog>    
-devices页面  
-<chrome://inspect/#devices>    
+
 
 
 常用  
@@ -24,3 +23,15 @@ chromeadb
 [easy-auto-refresh](https://chrome.google.com/webstore/detail/easy-auto-refresh/aabcgdmkeabbnleenpncegpcngjpnjkc)    
 [scrcpy](https://github.com/Genymobile/scrcpy)电脑控制手机（adb）  
 [Clear Cache](https://chrome.google.com/webstore/detail/clear-cache/cppjkneekbjaeellbfkmgnhonkkjfpdn)  
+
+
+
+devices页面   
+``` 
+chrome://inspect/#devices 
+```
+地址栏显示完整url  
+```
+chrome://flags/#omnibox-context-menu-show-full-urls
+重启，右键 - 总是显示完成url
+```

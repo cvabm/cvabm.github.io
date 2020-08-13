@@ -13,6 +13,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f https://gitee.com/cvabm/blog.git master
+git push -f https://gitee.com/cvabm/cvabm.git master
 
 cd -

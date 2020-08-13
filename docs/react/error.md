@@ -1,5 +1,22 @@
 # 常见报错
 [[toc]]
+
+## 运行慢 
+```
+判断命令行是否代理  
+curl https://www.google.com
+
+
+react native 运行慢
+
+在gradle.properties文件添加
+systemProp.http.proxyHost=127.0.0.1
+systemProp.http.proxyPort=1080
+systemProp.https.proxyHost=127.0.0.1
+systemProp.https.proxyPort=1080
+```
+
+
 ## null is not an object (evaluating '_RNGestureHandlerModule.default.Direction')
 
 
@@ -28,3 +45,15 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 
 ## 启动白屏，清理缓存  
 进入android目录，执行 gradlew.bat clean。再重新启动  
+
+
+## 跨域问题
+1、新建chrome快捷方式  
+2、右击 -快捷方式 - 属性 - 目标 -   
+```
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir=c:/Hello
+```
+
+
+#### npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+换vpn是网络问题 

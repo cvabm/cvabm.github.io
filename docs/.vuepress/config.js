@@ -1,7 +1,7 @@
 module.exports = {
-  base: '/blog/',
+  base: '',
   title: '首页',
-  description: 'Vuepress blog demo',
+  description: '笔记',
   plugins: ['@vuepress/back-to-top'],
   themeConfig: {
 

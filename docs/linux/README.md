@@ -1,7 +1,15 @@
 # Linux
 [[toc]]
 ## 常见问题
-repo upload 时报错<https://www.iteye.com/blog/yinger-fei-1535663>
+#### repo upload 时报错
+<https://www.iteye.com/blog/yinger-fei-1535663>
+
+#### Could not get lock /var/lib/apt/lists/lock
+执行 sudo rm /var/lib/apt/lists/lock
+
+
+
+
 ## 安装和更换JDK
 <https://www.jianshu.com/p/8e472580a350>
 ```

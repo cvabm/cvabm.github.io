@@ -100,3 +100,68 @@ Text.render = function(...args) {
 };
 
 ```
+
+
+## RN实现双击
+```
+onPress = { () = >{
+		let timer = null;
+		clearTimeout(timer);
+		clickTag++;
+		if (clickTag >= 2) {
+			clickTag = 0;
+		console.info(“执行”)
+		}
+		timer = setTimeout(() = >{
+			clickTag = 0;
+		},
+		500)
+	}
+}
+
+```
+
+## RN三连击
+```
+onPress = { () = >{
+
+		const currentTimestamp = new Date().getTime();
+		if ((currentTimestamp - clickTimeStamp < 500) || clickTimeStamp == 0) {
+			clickTime++;
+			clickTimeStamp = currentTimestamp;
+			if (clickTime >= 3) {
+				clickTime = 0;
+				clickTimeStamp = 0;
+				this.showDialog()
+			}
+		} else {
+			clickTime = 0;
+			clickTimeStamp = 0;
+			clickTime++;
+			clickTimeStamp = currentTimestamp;
+			if (clickTime >= 3) {
+				clickTime = 0;
+				clickTimeStamp = 0;
+				this.showDialog()
+			}
+		}
+	}
+}
+```
+
+
+## 判断页面是否为当前显示
+```
+    this.focusListener = this.props.navigation.addListener(
+      'focus',
+      (payload) => {
+        this.state.pageFocus = true;
+      },
+    );
+
+
+ componentWillUnmount() {
+    this.focusListener();
+ }
+```
+
