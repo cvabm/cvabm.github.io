@@ -173,9 +173,15 @@ int titleBarHeight = contentTop - statusBarHeight
 
 
 ## 屏幕适配
-<https://www.jianshu.com/p/98c0cf6bd373>  
-今日头条方案(9k star)
+
+今日头条方案
 <https://github.com/JessYanCoding/AndroidAutoSize>  
+smallWidth限定符方案
+<https://juejin.im/post/5ba197e46fb9a05d0b142c62>
+
+
+<https://www.jianshu.com/p/98c0cf6bd373>  
+
 <https://www.jianshu.com/p/5d5494dd6dbe>  
 <https://blog.csdn.net/u011200604/article/details/52786880>  
 

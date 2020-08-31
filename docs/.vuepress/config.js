@@ -4,10 +4,10 @@ module.exports = {
   description: '笔记',
   plugins: ['@vuepress/back-to-top'],
   themeConfig: {
-
+ 
     searchMaxSuggestions: 10,
     // 你的GitHub仓库，请正确填写
-    repo: 'https://github.com/xxxxxxx/blog-demo',
+    repo: 'https://github.com/cvabm/cvabm.github.io',
     // 自定义仓库链接文字。
     repoLabel: 'My GitHub',
     nav: [
@@ -47,7 +47,7 @@ module.exports = {
           { text: '音视频媒体', link: '/android/media/' },
           { text: '数据存储', link: '/android/datasave/' },
           { text: '多线程', link: '/android/thread/' },
-          { text: '架构模式', link: '/android/architectural_pattern/' },
+          { text: '设计模式', link: '/android/architectural_pattern/' },
           { text: 'JNI-NDK', link: '/android/ndk/' },
           { text: '常见问题', link: '/android/question' },
         ]
@@ -112,7 +112,8 @@ module.exports = {
       ],
       '/android/architectural_pattern/': [
         '',
-        'design_pattern'
+        'design_pattern',
+        'aop',
       ],
       '/android/thread/': [
         '',
@@ -175,9 +176,11 @@ module.exports = {
         '',
         'screen',
         'flatlist',
+        'react-navigation'
       ],
       '/react/basic/': [
         '',
+        'communication',
       ],
       '/react/media/':[
         '',

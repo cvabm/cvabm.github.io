@@ -64,10 +64,6 @@ var timestamp=new Date().getTime()；
 	   addPropagation();
 	};
 ```
-
-
-### Navigation prop  
-<https://reactnavigation.org/docs/zh-Hans/navigation-prop.html>  
 ### 截取/替换字符串, 字符串转数组, 字符串中空格/字母/数字的个数   
 <https://www.jianshu.com/p/7741d2db0338>  
 ### 遍历  

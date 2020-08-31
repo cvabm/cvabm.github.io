@@ -36,6 +36,8 @@ irfanview<https://www.irfanview.com/>
 ## 翻墙工具  
 个人在用<https://portal.cylink0123.icu>
 
+[v2rayN使用](https://www.boluo.in/1736.html)
+
 机场推荐  
 <https://owocat.xyz/2019/10/19/webc/>  
 

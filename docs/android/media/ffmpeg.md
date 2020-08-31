@@ -41,7 +41,16 @@ Then right click on "app" and you will see "Link C++ Project with Gradle"
 ```
 
 
-### 
+### 相关博客
+
+<https://github.com/FFmpeg/FFmpeg>  
+<https://ffmpeg.org/download.html#releases>    
+Android中集成FFmpeg及NDK基础知识  
+<https://juejin.im/post/5b631145e51d45162679f09e>  
+android移植ffmpeg播放rtsp   
+<https://github.com/shufanhao/FFmegClient>  
+<https://github.com/xufuji456/FFmpegAndroid>  
+<https://github.com/WritingMinds/ffmpeg-android-java>  
 
 
 

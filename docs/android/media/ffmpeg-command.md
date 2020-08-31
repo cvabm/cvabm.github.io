@@ -4,10 +4,9 @@
 ## 官方地址
 <https://ffmpeg.org/ffmpeg-all.html>
 
-## ffmpeg 
 
-
-
+#### 常用命令总结
+<https://hacpai.com/article/1595480295489>
 
 #### 通用参数解释
 [更多请参考](http://blog.csdn.net/maopig/article/details/6610257)	

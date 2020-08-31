@@ -17,18 +17,3 @@
 [GitHub - BelledonneCommunications/linphone-android: Linphone.org mirror for linphone-android ](https://gitlab.linphone.org/BC/public/linphone-android)  
 
 [Linphone sdk(V3、V4) Android Sip音视频通话demo源码-淘宝网](https://item.taobao.com/item.htm?id=587133228080)  
-
-
-## ffmpeg
-常用命令  
-<https://www.jianshu.com/p/63dec49dc864>  
-
-
-<https://github.com/FFmpeg/FFmpeg>  
-<https://ffmpeg.org/download.html#releases>    
-Android中集成FFmpeg及NDK基础知识  
-<https://juejin.im/post/5b631145e51d45162679f09e>  
-android移植ffmpeg播放rtsp   
-<https://github.com/shufanhao/FFmegClient>  
-<https://github.com/xufuji456/FFmpegAndroid>  
-<https://github.com/WritingMinds/ffmpeg-android-java>  

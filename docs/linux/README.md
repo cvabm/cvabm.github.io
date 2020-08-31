@@ -140,6 +140,13 @@ nCC	修改指定数目的行
 shutdown -s -t 1200  //在两分钟后关闭计算机
 shutdown /a  //取消关机命令
 dir列出所有文件和文件夹
+
+## windows查看文件被占用进程
+打開“資源監視器”。在“資源監視器”界面中，點擊第二個選項卡“CPU”。在“關聯的句柄”右側搜索框內輸入文件名稱，就可以查看該文件被那幾個程序佔用了。
+
+
+![图片](https://pic.imgdb.cn/item/5f4870cd160a154a67958bd8.jpg)
+
 ## CURL常用命令  
 <http://www.cnblogs.com/gbyukg/p/3326825.html>  
 
