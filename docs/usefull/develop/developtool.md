@@ -43,6 +43,49 @@ vim插件
 使用主题<https://www.jianshu.com/p/418ec70e7aed>  
 插件安装步骤<https://segmentfault.com/a/1190000018074705>  
 
+## vi学习记录
+```
+vi命令
+http://c.biancheng.net/view/519.html
+
+
+vi 文件名
+i文字前插入
+a文字后插入
+
+dd删除文字所在整一行
+x删除光标所在字符
+X删除光标前字符
+
+u撤回操作
+U撤回一系列操作
+
+dw删除整个单词
+
+复制黏贴
+v 移动选择文本 按y 移动到其他位置按p黏贴
+yy复制文本所在整一行
+
+插入
+o在文本底下插入一行
+
+:e ++enc=utf8
+:e ++enc=gbk
+
+Ctrl+u 上半页
+Ctrl+d 下半页
+Ctrl+f 下一页
+Ctrl+b 上一页
+
+[[ 返回文本开始
+]] 到达文本末尾
+
+/关键字 - 回车，再按n到达位置，按N定位上一个位置
+
+```
+
+
+
 ## editplus
 注册码在线生成<https://www.jb51.net/tools/editplus/>  
 

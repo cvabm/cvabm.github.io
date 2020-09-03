@@ -1001,6 +1001,28 @@ Constructor o = c.getDeclaredConstructor(String.class);
 
 ```
 
+```
+反射得到jar包方法的需要的参数列表：
+Class libClazz = dexClassLoader.loadClass("com.hdos.idCardUartDevice.publicSecurityIDCardLib");
+// 调用Class的 newInstance()方法，创建Class的对象 dynamic
+// Dynamic 是 dex文件中之前的一个接口类
+myLib = (MyLib) libClazz.newInstance();
+List<String> list = new ArrayList<>();
+Method[] methods = libClazz.getMethods();
+for (int i = 0; i < methods.length; i++) {
+String name = methods[i].getName();
+Class<?>[] parameterTypes = methods[i].getParameterTypes();
+list.add(name);
+
+}
+```
+
+
+### 反射库：
+<https://github.com/jOOQ/jOOR>  
+使用方法：
+<https://www.jianshu.com/p/e327caff92d0>
+
 ### 代码实例
 
 **简单用代码演示一下反射的一些操作!**

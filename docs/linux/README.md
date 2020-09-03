@@ -41,6 +41,7 @@ eclipse<https://www.cnblogs.com/leoking01/p/6605833.html>
 ## repo命令
 <https://source.android.google.cn/setup/develop/repo>
 ## 常用linux命令
+cd / 返回根目录
 命令大全<https://man.linuxde.net/>  
 中文readme<https://github.com/mzlogin/awesome-adb#%E5%91%BD%E4%BB%A4%E8%AF%AD%E6%B3%95>
 <https://github.com/mzlogin/awesome-adb>  

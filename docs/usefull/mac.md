@@ -32,7 +32,36 @@
 搜索书签： bm +关键字
 
 ### 虚拟机 
-<https://xclient.info/s/vmware-fusion.html>  
+<https://xclient.info/s/vmware-fusion.html>    
+相关问题：  
+不能为虚拟电脑打开一个新的任务  
+```
+
+
+惠普进入bios ----  开机按 F10 --  security ----- virtual su------ 设置为abled
+
+
+
+选中你的虚拟机， 设置--- 存储 ---选择控制器-ide下边的光盘----选择分配光驱后的光盘---
+选择iso文件 ---安装----
+
+
+在邮编单击storage,在存贮树中选中光驱，
+在属性中单击右边的小光盘标志，单击“choose a virtru..."，
+浏览到你的影像就可以了
+```
+共享粘贴板  
+```
+设置－－存储　－－－控制器　－－－－选中使用Ｉ０输入输出。。。。
+我的计算机－－－cd驱动器　－－－安装ｖｂｏｘｗｉｎｄｏｗ。。。
+设置－－－共享文件夹　－－－　
+```
+正在设定 ttf-mscorefonts-installer  
+```
+ubuntu,在安装wine时停在了“正在设定 ttf-mscorefonts-installer”,怎么确定啊：
+TAB 选择确定吧
+```
+
 ### 安装gradle  
 <https://www.jianshu.com/p/c28062f94809>  
 

@@ -111,8 +111,7 @@ charles
 ### 插件化：
 <https://github.com/Qihoo360/DroidPlugin/blob/master/readme_cn.md>  
 <https://github.com/shuai999/AndroidPluginDemo> 
-## 反编译：  
-<https://github.com/pxb1988/dex2jar>  
+
 ## 缓存diskLruCache：
 <https://www.jianshu.com/p/f9cfbea586c2>  
 <https://github.com/JakeWharton/DiskLruCache>  
@@ -125,8 +124,7 @@ charles
 卸载软件
 sudo apt-get remove 软件名  
 ```
-### 反编译工具集合：  
-<https://github.com/Juude/droidReverse>
+
 ### 屏幕截屏：
 <https://github.com/goodbranch/ScreenCapture>    
 
@@ -200,9 +198,6 @@ return result;
 <https://github.com/vondear/RxTools>      
 <http://r.codekk.com/r/type/android>    
 <https://github.com/XXApple/AndroidLibs>
-### 反射库：
-<https://github.com/jOOQ/jOOR>  
-使用方法：
-<https://www.jianshu.com/p/e327caff92d0>
+
 
                                                                                                                                                                 

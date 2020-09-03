@@ -1,6 +1,12 @@
 # file/image/text
 [[toc]]
 
+## 获取文件扩展名
+```
+String FileEnd = fName.substring(fName.lastIndexOf(".") + 1,
+fName.length()).toLowerCase();
+
+```
 ## 保存图片到本地
 ```
 public static String saveBitmapFile(Bitmap bitmap, String filePath) {

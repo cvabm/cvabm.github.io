@@ -3,14 +3,10 @@
 最牛逼的一个在线工具  
 <http://www.javadecompilers.com/>
 
-
-
-
 ## android逆向工具：
 <https://github.com/Juude/droidReverse>  
-## jadx
-<https://github.com/skylot/jadx>  
-
+## 工具 jadx、dex2jar、等
+<https://github.com/Juude/droidReverse>
 ## 其他
 <https://github.com/google/android-classyshark>  
 <https://github.com/skylot/jadx>  
@@ -20,6 +16,7 @@
 <https://sourceforge.net/projects/jadx/files/?source=navbar>  
 解压后：bin\ jadx-gui-bat ，打开即可  
  
+
 
 
 

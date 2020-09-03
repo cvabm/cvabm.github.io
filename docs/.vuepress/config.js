@@ -4,7 +4,7 @@ module.exports = {
   description: '笔记',
   plugins: ['@vuepress/back-to-top'],
   themeConfig: {
- 
+  
     searchMaxSuggestions: 10,
     // 你的GitHub仓库，请正确填写
     repo: 'https://github.com/cvabm/cvabm.github.io',
@@ -153,6 +153,7 @@ module.exports = {
       '/usefull/daily/': [
         '',
         'daily_first',
+        'windows',
       ],
       '/usefull/play/': [
         '',
