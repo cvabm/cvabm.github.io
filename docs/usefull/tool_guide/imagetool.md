@@ -1,6 +1,10 @@
 # 图形图像
 [[toc]]
 
+## 免费生成app不同分辨率图标
+<http://bingoicon.com/>  
+
+
 ## 免费素材
 <https://www.flaticon.com/>  
 阿里巴巴矢量图<https://www.iconfont.cn/>  
