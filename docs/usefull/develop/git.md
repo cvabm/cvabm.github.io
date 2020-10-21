@@ -8,6 +8,11 @@
 
 
 
+# 提交历史
+git log 
+git log --online :精简模式  
+
+
 
 
 ## 常用git命令
@@ -225,7 +230,7 @@ git branch -d 分支名
 ```
 
 ## git问题：
-1、You are about to commit CRLF line separators to the Git repository.
+## 1、You are about to commit CRLF line separators to the Git repository.
 It is recommended to set the core.autocrlf Git attribute to input and and avoid line separator issues.
 ```
 ① Git可以在你提交时自动地把行结束符CRLF转换成LF，而在签出代码时把LF转换成CRLF。用`core.autocrlf`来打开此项功能，如果是在Windows系统上，把它设置成`true`，这样当签出代码时，LF会被转换成CRLF：
@@ -245,4 +250,11 @@ $ git config --global core.autocrlf input
 ③如果你是Windows程序员，且正在开发仅运行在Windows上的项目，可以设置`false`取消此功能，把回车符记录在库中：
 
 $ git config --global core.autocrlf false
+```
+
+## 2、Could not resolve host: gitlab2.xxx.priv
+```
+1、先切到正常的网络，ping gitlab2.xxx.priv,得到ip:10.200.0.21
+2、修改C:\Windows\System32\drivers\etc\HOSTS文件，底部添加：
+10.200.0.21 gitlab2.xxx.priv
 ```
