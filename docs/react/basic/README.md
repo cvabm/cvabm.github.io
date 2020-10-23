@@ -208,3 +208,33 @@ demo例子
 
 
 
+## ui界面相关
+### 获取当前页面
+```
+
+const AppNavigator = createStackNavigator({
+    Login: {
+        screen: Login
+    },
+    CallVC: {
+        screen: CallVC,
+        navigationOptions: {
+            header: null,
+            gesturesEnabled: false
+        }
+    }
+}, {
+    mode: 'modal',
+    headerMode: 'none',             // 设置顶部导航条不显示
+    initialRouteName: 'Login',        // 默认的初始路由
+    transitionConfig: () => ({
+        screenInterpolator: (props) => {
+            const {index, isActive, route} = props.scene;
+            if (isActive) {
+                Global.currentPage = route.routeName;
+                console.log('当前页面：' + Global.currentPage)
+            }
+        },
+    }),
+})
+```
