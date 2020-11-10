@@ -11,6 +11,8 @@ module.exports = {
     }
   },
   themeConfig: {
+   //这里填写algolia搜索
+
     backToTop: true,
     smoothScroll: true,
     sidebarDepth: 0,
@@ -165,7 +167,6 @@ module.exports = {
         '',
         'daily_first',
         'windows',
-        'google',
       ],
       '/usefull/play/': [
         '',
