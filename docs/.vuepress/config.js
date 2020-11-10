@@ -1,10 +1,21 @@
 module.exports = {
-  base: '',
+  base: '/',
   title: '首页',
   description: '笔记',
   plugins: ['@vuepress/back-to-top'],
+  theme:'antdocs',
+  markdown: {
+    lineNumbers: false,
+    anchor: { 
+      permalinkBefore: false
+    }
+  },
   themeConfig: {
-  
+    backToTop: true,
+    smoothScroll: true,
+    sidebarDepth: 0,
+    lastUpdated: '上次更新',
+    editLinks: false,
     searchMaxSuggestions: 10,
     // 你的GitHub仓库，请正确填写
     repo: 'https://github.com/cvabm/cvabm.github.io',
@@ -154,6 +165,7 @@ module.exports = {
         '',
         'daily_first',
         'windows',
+        'google',
       ],
       '/usefull/play/': [
         '',
@@ -219,10 +231,6 @@ module.exports = {
       '/java/java_summary/':[
         '',
       ],
-    },
-    collapsable: false,
-    sidebarDepth: 0,
-    lastUpdated: 'Last Updated',
-    displayAllHeaders: false // 默认值：false
+    }
   }
 }

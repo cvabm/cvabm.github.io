@@ -25,6 +25,7 @@
 <https://www.macdo.cn>   
 <https://www.macapp.so>   
 
+
 ### alfred 
 快捷键  
 调用 ：option + 空格  
@@ -70,6 +71,53 @@ TAB 选择确定吧
 复制 shift + command + c   
 粘贴 shift + command + v  
 
+## mac快捷键
+
+常用  
+```
+Command-Z	撤消上一命令（有些 app 可让您撤消多次）
+Command-Shift-4	将所选屏幕内容捕捉到一个文件，或按空格键仅捕捉一个窗口
+
+Command-H	隐藏当前正在运行的 app 的窗口
+
+fn-Delete	向前删除（适用于便携式 Mac 的内建键盘）
+fn-上箭头	向上滚动一页（相当于 Page Up 键）
+fn-下箭头	向下滚动一页（相当于 Page Down 键）
+fn-左箭头	滚动至文稿开头（相当于 Home 键）
+fn-右箭头	滚动至文稿末尾（相当于 End 键）
+
+control + command + q 锁屏
+
+
+Command-减号 (–)	缩小所选项
+Command-加号 (+)或 Command-Shift-等号 (=)	放大所选项
+
+```
+```
+组合键	功能
+Command-C	将所选数据拷贝到剪贴板
+Command-X	移除选中的项目，然后将副本放在剪贴板中
+Command-V	将剪贴板副本放到（粘贴）到当前文稿或 app 中
+
+Command-Shift-3	将屏幕捕捉到文件
+Command-Shift-Control-3	将屏幕内容捕捉到剪贴板
+Command-Shift-4	将所选屏幕内容捕捉到一个文件，或按空格键仅捕捉一个窗口
+Command-Shift-Control-4	将所选屏幕内容捕捉到剪贴板，或按空格键仅捕捉一个窗口
+
+电源按钮	轻按可开机。在通电后，轻按“电源”按钮可使您的 Mac 唤醒或进入睡眠状态。
+按住电源按钮 1.5 秒	显示重新启动/睡眠/关闭对话框
+按住电源按钮 5 秒	强制 Mac 关机
+Control-电源按钮	显示重新启动/睡眠/关闭对话框
+Command-Control-电源按钮	强制 Mac 重新启动
+Command-Option-电源按钮	使电脑进入睡眠状态
+Command-Control-电源按钮	退出所有 app（会让您先存储对已打开文稿所作的更改），然后重新启动电脑
+Command-Option-Control-电源按钮	退出所有 app（会让您先存储对已打开文稿所作的更改），然后关闭电脑
+Shift-Control-电源按钮	使所有显示器进入睡眠状态
+Command-Shift-Q	注销
+Command-Shift-Option-Q	立即注销
+
+
+```
 
 ## 常见问题 
 ### Mac上“查询”后总显示“找不到结果” 、无法添加欧路词典
