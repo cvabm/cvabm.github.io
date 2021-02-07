@@ -75,6 +75,25 @@ vibrator.vibrate(new long[]{100,200,100}, 2);
 ```
 
 
+##　震动问题(android10无法后台震动)
+
+```
+ Vibrator mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+   long[] patern = {0,1000,1000};
+    AudioAttributes audioAttributes = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            audioAttributes = new AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .setUsage(AudioAttributes.USAGE_ALARM) //key
+                    .build();
+            mVibrator.vibrate(pattern, 1, audioAttributes);
+        }else {
+            mVibrator.vibrate(pattern, 1);
+        }
+        
+
+```
+
 ## usb摄像头demo  
 <https://github.com/jiangdongguo/AndroidUSBCamera>  
 ## android上访问u盘

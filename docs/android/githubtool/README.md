@@ -25,6 +25,10 @@ WebSocket库<https://socket.io/>
 [线程框架：]
 <https://github.com/OnlyTerminator/GeekThread>
 ## 权限相关  
+
+https://github.com/Karumi/Dexter  
+
+
 [andPermission](https://github.com/yanzhenjie/AndPermission/blob/master/README-CN.md)  
 ```
 boolean isNotWarn = false;

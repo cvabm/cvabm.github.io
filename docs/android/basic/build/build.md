@@ -374,3 +374,23 @@ compile(name: 'common-debug', ext: 'aar')
 
 ## ndk开发
 <https://www.cnblogs.com/yejiurui/p/3476565.html>  
+
+
+##　封装sdk
+```
+1、将 apply plugin: 'com.android.application'修改成apply plugin: 'com.android.library'
+2、去掉applicationId "com.mg.axe.helloworld"
+3、删除自定义的Application和在AndroidManifest.xml的配置
+4、去点入口的Activity，否则在Android Studio接入时会生成两个图标入口
+5、在build下的assembleRelease和assembleDebug都可以生成aar包
+6、aar解压即可得到jar
+7、引入：
+repositories{
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+      // implementation(name: 'aar包的名字', ext: 'aar')
+  implementation(name: 'game_sdk', ext: 'aar')
+  ```

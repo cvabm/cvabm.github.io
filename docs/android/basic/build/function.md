@@ -695,3 +695,14 @@ android{}内：
 apk安装遇到问题  
 1：Package couldn't be install... & provider is already used by    
 配置文件中的content provider设置authorities为不相同的  
+
+
+## 悬浮窗
+
+https://blog.csdn.net/dongzhong1990/article/details/80512706  
+
+
+
+## deeplink
+官网：https://developer.android.com/training/app-links  
+https://juejin.cn/post/6844903477571928071  

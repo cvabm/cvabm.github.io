@@ -165,3 +165,6 @@ onPress = { () = >{
  }
 ```
 
+##　react native启动页
+
+https://github.com/crazycodeboy/react-native-splash-screen 
