@@ -36,6 +36,8 @@ irfanview<https://www.irfanview.com/>
 ## 翻墙工具  
 个人在用<https://portal.cylink0123.icu>
 
+ssr下载：https://github.com/qingshuisiyuan/electron-ssr-backup/releases/tag/v0.2.6  
+
 [v2rayN使用](https://www.boluo.in/1736.html)
 
 机场推荐  

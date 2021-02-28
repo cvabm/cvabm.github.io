@@ -1,5 +1,85 @@
 # 网络
 [[toc]]
+
+## 忽略https证书问题(okhttp)
+
+```
+
+package in.minewave.room.frp;
+
+import okhttp3.OkHttpClient;
+
+import javax.net.ssl.*;
+
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * 封装的支持Https连接工具类
+ */
+public class HttpsUtils {
+    private MyTrustManager mMyTrustManager;
+
+    private SSLSocketFactory createSSLSocketFactory() {
+        SSLSocketFactory ssfFactory = null;
+        try {
+            mMyTrustManager = new MyTrustManager();
+            SSLContext sc = SSLContext.getInstance("TLS");
+            sc.init(null, new TrustManager[]{mMyTrustManager}, new SecureRandom());
+            ssfFactory = sc.getSocketFactory();
+        } catch (Exception ignored) {
+            ignored.printStackTrace();
+        }
+
+        return ssfFactory;
+    }
+
+    /**
+     * 实现X509TrustManager接口
+     */
+    public class MyTrustManager implements X509TrustManager {
+
+        @Override
+        public void checkClientTrusted(X509Certificate[] chain, String authType) {
+        }
+
+        @Override
+        public void checkServerTrusted(X509Certificate[] chain, String authType) {
+        }
+
+        @Override
+        public X509Certificate[] getAcceptedIssuers() {
+            return new X509Certificate[0];
+        }
+    }
+
+    /**
+     * 实现HostnameVerifier接口(信任所有的 https 证书。)
+     */
+    private class TrustAllHostnameVerifier implements HostnameVerifier {
+
+        @Override
+        public boolean verify(String hostname, SSLSession session) {
+            return true;
+        }
+    }
+
+    public OkHttpClient getTrustAllClient() {
+        OkHttpClient.Builder mBuilder = new OkHttpClient.Builder();
+        mBuilder.sslSocketFactory(createSSLSocketFactory(), mMyTrustManager)
+                .hostnameVerifier(new TrustAllHostnameVerifier());
+        mBuilder.connectTimeout(60, TimeUnit.SECONDS);//设置连接超时时间
+        mBuilder.readTimeout(60, TimeUnit.SECONDS);//设置读取超时时间
+        return mBuilder.build();
+    }
+}
+
+```
+
+
+
+
 ## 读取pem和bks证书
 
 ```

@@ -61,6 +61,10 @@ public class ExampleApplication extends Application {
 4：在网站上点击发推送进行测试
 ```
 
+## 华为收不到推送问题
+https://club.huawei.com/thread-18527641-1-1.html  
+
+
 
 
 ## 测试

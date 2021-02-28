@@ -568,4 +568,25 @@ onChangeText = { (text) = >this.setState({
 ```
 
 
+## react对话框
+
+https://www.jianshu.com/p/641785e5efe7  
+
+
+## react获取BuildConfig内容
+```
+
+https://github.com/luggit/react-native-config 
+
+如：
+public final class BuildConfig {
+  public static final boolean DEBUG = Boolean.parseBoolean("true");
+  public static final String APPLICATION_ID = "venus.plugin.base";
+  public static final String BUILD_TYPE = "debug";
+  public static final String FLAVOR = "";
+  public static final int VERSION_CODE = 1;
+  public static final String VERSION_NAME = "1.0";
+}
+
+```
 
