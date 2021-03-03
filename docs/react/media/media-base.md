@@ -39,8 +39,13 @@
 
 >- **GLSurfaceView**  
 在 SurfaceView 的基础上，它加入了EGL的管理，并自带了渲染线程。另外它定义了用户需要实现的Render接口，提供了用Strategy pattern更改具体Render行为的灵活性。  
->- **TextureView**  
+## TextureView
+```
 不包含Surface，所以其实就是一个普通的View，可以和其它普通View一样进行移动，旋转，缩放，动画等变化  
+```
+TextureView简单例子   
+<http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1213/2153.html>  
+
 >- **SurfaceTexture**
 从Camera中采集的数据或从解码器中取出的数据可以放到SurfaceTexture里进行二次处理，然后再交给View去展示  
 

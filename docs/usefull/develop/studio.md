@@ -447,7 +447,9 @@ make project 会自动生成ｊａｒ
 在main目录下新建jniLibs目录，新建 armeabi，把.so文件放入编译既可
 
 ```
-
+## 刪除空行
+ctrl +f  ：^\s*\n  
+Alt + x 执行regex
 ## 直接运行签名apk  
 <https://blog.csdn.net/baiaihan/article/details/89352798>  
 

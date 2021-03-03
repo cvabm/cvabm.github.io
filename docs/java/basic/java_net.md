@@ -15,8 +15,10 @@ post请求时，浏览器先发送headers，服务器响应100 continue，浏览
 再说一点，这里的区别是specification（规范）层面，而不是implementation（对规范的实现）
 ```
 
-
-###　frpc内网穿透
+### frpc内网穿透
 1、android端编译流程：
 
 https://github.com/FrpcCluster/frpc-Android/blob/master/Compile_zh.md
+
+https://github.com/mainfunx/frpc_android
+

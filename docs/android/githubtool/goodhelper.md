@@ -559,12 +559,13 @@ private static String readFromFile() {
 ```
 
 
-## butterknife
-
+## butterknife(已被viewbinding代替)
 使用方法总结<https://www.jianshu.com/p/3678aafdabc7>
 
 <https://github.com/JakeWharton/butterknife/blob/master/README.md>  
-### 使用：
+
+
+使用：  
 在本activity中 ButterKnife.bind(this)  
 
 1：绑定控件：
@@ -587,7 +588,6 @@ List<TextView> list;
 
 ButterKnife.apply(list, ENABLED, true);
 
-
 static final ButterKnife.Action<View> DISABLE = new ButterKnife.Action<View>() {
 @Override
 public void apply(View view, int index) {
@@ -607,6 +607,362 @@ tv.setText("world");
 }
 };
 ```
+
+## viewbinding
+```
+android {
+    // 相应的Module APP下的gradle中配置
+    viewBinding {
+        enabled = true
+    }
+}
+
+activity中：
+private ActivityMainBinding binding;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    binding = ActivityMainBinding.inflate(getLayoutInflater());
+    setContentView(binding.getRoot());
+    binding.tv.setText("abc");
+}
+
+fragment中：
+需销毁bingding
+onDestroy(){
+    binding = null; 
+}
+
+要求：
+1、android studio3.6及以上
+2、classpath在com.android.tools.build:gradle:3.6.0以上
+3、gradle版本在gradle-5.6.4-all以上.
+```
+
+## databinding
+```
+android{
+      dataBinding {
+        enabled = true
+    }
+}
+
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="user"
+            type="com.soft.learndemo.User" />
+    </data>
+    <Button
+        android:id="@+id/bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{user.firstName}" />
+</layout>
+
+
+//UI自动更新三种方式：
+BaseObservable、ObservableField、ObservableCollection
+
+BaseObservable：
+package com.soft.learndemo;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+public class User extends BaseObservable {
+    private String firstName;
+    @Bindable
+    public String getFirstName() {
+        return this.firstName;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+        notifyPropertyChanged(BR.firstName);
+    }
+}
+
+或：
+public class ObservableGoods {
+
+    private ObservableField<String> name;
+
+    private ObservableFloat price;
+
+    private ObservableField<String> details;
+
+    public ObservableGoods(String name, float price, String details) {
+        this.name = new ObservableField<>(name);
+        this.price = new ObservableFloat(price);
+        this.details = new ObservableField<>(details);
+    }
+
+    ```
+}
+
+ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+User user = new User();
+user.setFirstName("aaa");
+binding.setUser(user);
+binding.bt.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        user.setFirstName("改变了");
+    }
+});
+
+--------------------------------------------------------------------
+
+双向绑定
+只需在@后加"=" 即可
+
+ <EditText
+    android:id="@+id/et"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@={user.firstName}" />
+
+user对象则根据edittext输入而改变
+
+
+-----------------------------------------------------------------------
+绑定事件
+android:onClick
+android:onLongClick
+android:afterTextChanged
+android:onTextChanged
+···
+
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="com.soft.learndemo.User" />
+        <import type="com.soft.learndemo.UserPresenter" />
+        <variable
+            name="userInfo"
+            type="User" />
+        <variable
+            name="userPresenter"
+            type="UserPresenter" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        tools:context="com.leavesc.databinding_demo.MainActivity">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->userPresenter.onUserNameClick(userInfo)}"
+            android:text="@{userInfo.name}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userInfo.password}" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{userPresenter.afterTextChanged}"
+            android:hint="用户名" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{userPresenter.afterUserPasswordChanged}"
+            android:hint="密码" />
+    </LinearLayout>
+</layout>
+
+public class UserPresenter {
+    private static final String TAG = "log";
+    public void onUserNameClick(User user) {
+        Log.d(TAG, "onUserNameClick: "+user.getName());
+    }
+    public void afterTextChanged(Editable s) {
+        Log.d(TAG, "afterTextChanged: "+s.toString());
+    }
+    public void afterUserPasswordChanged(Editable s) {
+        Log.d(TAG, "afterUserPasswordChanged: "+s.toString());
+    }
+}
+
+ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    User user = new User();
+    user.setName("aaa");
+    binding.setUserInfo(user);
+
+    UserPresenter presenter = new UserPresenter();
+    binding.setUserPresenter(presenter);
+
+----------------------------------------------------------------------
+使用类方法
+public class StringUtils {
+    public static String toUpperCase(String str) {
+        return str.toUpperCase();
+    }
+}
+
+<import type="com.leavesc.databinding_demo.StringUtils" />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@{StringUtils.toUpperCase(userInfo.name)}" />
+-----------------------------------------------------------------------
+支持运算符
+例：
+<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{String.valueOf(userInfo.name.charAt(2))}" />
+```
+## app startup
+作用：将sdk等init方法从application中移动到contentprovider中，加快app启动速度(
+    因contentprovider先与application执行
+)
+## lifecycle
+```
+作用
+1、跟activity和fragment的生命周期分离、解耦，方便维护
+2、使组件在activity的周期方法之前执行，保证组件在activity销毁前已停止
+
+使用
+AppCompatActivity
+1、public class MyObserver implements LifecycleObserver {
+    private static final String TAG = "MyObserver";
+   // 使用注解  @OnLifecycleEvent 来表明该方法需要监听指定的生命周期事件
+   @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+   public void connectListener() {
+//        ...
+       Log.d(TAG, "connectListener:  --------   onResume" );
+   }
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+   public void disconnectListener() {
+//        ...
+       Log.d(TAG, "disconnectListener: -------   onPause");
+   }
+}
+
+onCreate(){
+getLifecycle().addObserver(new MyObserver());
+}
+
+-------------------------------------------------------------------------------------
+普通Activity
+public class MainActivity extends Activity implements LifecycleOwner {
+
+    private LifecycleRegistry mLifecycleRegistry;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mLifecycleRegistry = new LifecycleRegistry(this);
+        getLifecycle().addObserver(new MyObserver());
+        mLifecycleRegistry.markState(Lifecycle.State.CREATED);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mLifecycleRegistry.markState(Lifecycle.State.RESUMED);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mLifecycleRegistry.markState(Lifecycle.State.STARTED);
+    }
+
+    @NonNull
+    @Override
+    public Lifecycle getLifecycle() {
+        return mLifecycleRegistry;
+    }
+}
+
+```
+## LiveData
+```
+定义：
+持有界面代码 Lifecycle 的引用的一个数据容器，当数据变化，并处于前台生命周期时则通知更新UI
+优点：
+不用手动控制生命周期，不用担心内存泄露，数据变化时会收到通知。
+使用：
+public class MyViewModel extends ViewModel {
+    private MutableLiveData<List<User>> users;
+    public LiveData<List<User>> getUsers() {
+        if (users == null) {
+            users = new MutableLiveData<List<User>>();
+            loadUsers();
+        }
+        return users;
+    }
+
+    private void loadUsers() {
+        // Do an asynchronous operation to fetch users.
+    }
+}
+
+
+public class MyActivity extends AppCompatActivity {
+    public void onCreate(Bundle savedInstanceState) {
+        MyViewModel model = new ViewModelProvider(this).get(MyViewModel.class);
+        model.getUsers().observe(this, users -> {
+            // update UI
+        });
+    }
+}
+
+```
+## ViewModel
+
+```
+定义：
+为Activity 、Fragment存储数据，直到完全销毁。避免屏幕旋转等场景引起的问题
+```
+## WorkManager
+```
+作用：
+1.针对不需要及时完成的任务（发送应用程序日志，同步应用程序数据，备份用户数据等）,有利于省电
+2.保证任务一定会被执行
+
+
+设备处于充电，网络已连接，且电池电量充足的状态下，才出发我们设置的任务
+```
+
+//待续
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

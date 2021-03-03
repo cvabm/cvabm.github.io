@@ -26,7 +26,7 @@ WebSocket库<https://socket.io/>
 <https://github.com/OnlyTerminator/GeekThread>
 ## 权限相关  
 
-https://github.com/Karumi/Dexter  
+[Dexter](https://github.com/Karumi/Dexter)
 
 
 [andPermission](https://github.com/yanzhenjie/AndPermission/blob/master/README-CN.md)  
@@ -58,13 +58,6 @@ public void requstPermisson(View view) {
 
 <https://github.com/permissions-dispatcher/PermissionsDispatcher>    
 <https://github.com/tbruyelle/RxPermissions>    
-[android6.0权限适配：](https://github.com/jokermonn/permissions4m)  
-
-
-
-
-
-
 
 ## 支付(微信支付宝等)
 <https://github.com/mayubao/Android-Pay>  
@@ -83,8 +76,6 @@ public void requstPermisson(View view) {
 ## 常用轮子汇总
 <https://github.com/Trinea/android-open-project>  
 
-## postman请求https网址没有响应，但是用浏览器有响应
-<https://blog.csdn.net/ab411919134/article/details/81205793>
 ## 模拟http请求软件：代替postman的： 
 <https://paw.cloud>  
 ## curl：
@@ -92,6 +83,7 @@ public void requstPermisson(View view) {
 ### 带多参数：  
 <https://segmentfault.com/q/1010000008630196>
 ## 抓包：
+
 <https://github.com/jgilfelt/chuck>   
 wireshark  
 <https://blog.csdn.net/ch853199769/article/details/78753963>  
@@ -123,21 +115,11 @@ charles
 <https://github.com/square/duktape-android>  
 
 
-
-```
-卸载软件
-sudo apt-get remove 软件名  
-```
-
 ### 屏幕截屏：
 <https://github.com/goodbranch/ScreenCapture>    
 
 ```
-
 带状态栏和不带状态栏
-
-
-
 public static Bitmap captureWithoutStatusBar(Activity activity) {
 View view = activity.getWindow().getDecorView();
 view.setDrawingCacheEnabled(true);
@@ -151,7 +133,6 @@ view.destroyDrawingCache();
 return ret;
 }
 
-
 public static Bitmap captureWithStatusBar(Activity activity) {
 View view = activity.getWindow().getDecorView();
 view.setDrawingCacheEnabled(true);
@@ -163,8 +144,6 @@ Bitmap ret = Bitmap.createBitmap(bmp, 0, 0, width, height);
 view.destroyDrawingCache();
 return ret;
 }
-
-
 
 public static int getScreenHeight(Context context) {
 WindowManager wm = (WindowManager)context.getSystemService("window");
@@ -178,8 +157,6 @@ int width = wm.getDefaultDisplay().getWidth();
 return width;
 }
 
-
-
 public static int getStatusBarHeight(Context context) {
 int result = 0;
 int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -192,8 +169,6 @@ return result;
 
 ```
 
-
-
 说明： android5.0以前需要root，5.0之后开放了接口。  
 ### 滚动截屏（仿miui）
 <https://github.com/android-notes/auto-scroll-capture>   
@@ -202,6 +177,3 @@ return result;
 <https://github.com/vondear/RxTools>      
 <http://r.codekk.com/r/type/android>    
 <https://github.com/XXApple/AndroidLibs>
-
-
-                                                                                                                                                                

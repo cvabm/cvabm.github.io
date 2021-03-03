@@ -1,16 +1,10 @@
 # fragment
 
 ```
-  
-
-
 静态加载：需要给fragment 定义 id  或者tag
 
 新建fragment.xml，然后再主布局中引入。
   View view = inflater.inflate(R.layout.fragment, container, false);
-
-
-
 
 动态加载
           MyFragment fragment11 = new Fragment();
@@ -27,9 +21,6 @@
 - onCreateView()：当第一次在 Fragment 上绘制UI时，系统回调的方法。该方法返回一个View 对象，该对象表示 Fragment 的根视图；若 Fragment 不需要展示视图，则该方法可以返回 null。
 
 - onPause()：当用户离开 Fragment 时回调的方法（并不意味着该 Fragment 被销毁）。在该方法中，可以对 Fragment 的数据信息做一些持久化的保存工作，因为用户可能不再返回这个 Fragment。
-
-
-
 
 
 生命周期：

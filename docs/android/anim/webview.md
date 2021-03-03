@@ -286,8 +286,3 @@ HTML做出响应，基本能模拟出遥控器的效果
 user-scalable : 用户是否可以手动缩放，值可以是：
 ①yes、 true允许用户缩放；②no、false不允许用户缩放
 ```
-
-## TextureView简单例子 
-<http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1213/2153.html>  
-## spinner
-<http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0105/2264.html>  

@@ -8,7 +8,11 @@
 执行 sudo rm /var/lib/apt/lists/lock
 
 
+### linux卸载
 
+```
+sudo apt-get remove 软件名  
+```
 
 ## 安装和更换JDK
 <https://www.jianshu.com/p/8e472580a350>
@@ -736,6 +740,7 @@ rpm -ivh –>安装 rpm -V —>查看套件有否更动过
 rpm -e –>删除 rpm -Uvh —>升级安装 
 -nodeps –>强行安装 -test –>测试安装 
 ```
+
 
 
 

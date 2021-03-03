@@ -260,7 +260,30 @@ Snackbar.make(container, "This is a Snackbar", Snackbar.LENGTH_SHORT)
 </style>
 
 
+```
+## spinner
+```
+简单使用
 
+        ArrayList arrayList = new ArrayList();
+        arrayList.add("警务通");
+        arrayList.add("执法记录仪");
+        arrayList.add("会议系统");
+        arrayList.add("pc端");
+        arrayList.add("对讲机");
+        arrayList.add("电话");
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, arrayList);
+        this.spinner.setAdapter(arrayAdapter);
+        this.spinner2.setAdapter(arrayAdapter);
+        this.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long j) {
+                callee1_device_type = (i + 1) + "";
+                adapterView.setVisibility(View.VISIBLE);
+            }
+        });
 ```
 
 
