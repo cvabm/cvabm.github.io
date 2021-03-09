@@ -68,18 +68,14 @@ https://club.huawei.com/thread-18527641-1-1.html
 
 
 ## 测试
-百度云测、testin
-自动化测试框架  
-<https://www.cnblogs.com/zeo-to-one/p/6618611.html>  
-junit单元测试  
-<https://blog.csdn.net/a369414641/article/details/52912098>  
-
-
-## monkey测试
 ```
-开始monkey：
+monkey：
+adb shell monkey -p com.amplesky.client.cdc -v 1000
+停止：
+linux : ps | grep monkey
+windows top | grep monkey 
 
-
+存日志：
 adb shell monkey -p com.corerate.cep -v --throttle 300 --pct-touch 30 --pct-motion 20 --pct-nav 20 --pct-majornav 15 --pct-appswitch 5 --pct-anyevent 5 --pct-trackball 0 --pct-syskeys 0 -p '%s' 1000 > d:\111.txt
 
 windows停止monkey：
@@ -115,7 +111,11 @@ Kill 5037 （Windows CMD）
 - pause
 
 ```
-
+百度云测、testin
+自动化测试框架  
+<https://www.cnblogs.com/zeo-to-one/p/6618611.html>  
+junit单元测试  
+<https://blog.csdn.net/a369414641/article/details/52912098> 
 
 ## 验证码  
 <http://www.mob.com/#/index>   

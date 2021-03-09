@@ -31,6 +31,7 @@
 ## 生命周期
 HOME键的执行顺序：onPause->onStop->onRestart->onStart->onResume  
 BACK键的顺序： onPause->onStop->onDestroy->onCreate->onStart->onResume  
+锁屏顺序：onPause -> onStop -> onStart onResume
 ## 版本全局统一管理
 <http://wuxiaolong.me/2016/03/31/gradle4android2/>
 ## ConstraintLayout 属性详解 和Chain的使用  

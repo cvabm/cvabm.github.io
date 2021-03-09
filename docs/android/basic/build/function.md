@@ -484,16 +484,8 @@ guide_page_img
 ```
 
 ## 横竖屏切换
-**禁止横竖屏：**
 ```
-Activity不允许横竖屏切换 
-<activityandroid:configChanges="orientation"
-//默认束屏android:screenOrientation="landscape"
-//不允许横束屏切换 >
-```
-**监听横竖屏操作：**
-```
-
+监听：
 < activity 
 android:name="MyActivity"
 android:configChanges="orientation|keyboardHidden">
@@ -505,28 +497,15 @@ if (this.getResources().getConfiguration().orientation == Configuration.ORIENTAT
     }else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
                    //加入竖屏要处理的代码}}
 
-生命周期：
-
-这个生命周期跟清单文件里的配置有关系
-1、不设置Activity的android:configChanges时，切屏会重新调用各个生命周期
-默认首先销毁当前activity,然后重新加载
+切换横竖屏时生命周期变化：
+1、不设置Activity的android:configChanges: 
 Onpause onstop ondestory oncreate onstart onresume
-2、设置Activity的android:configChanges=”orientation|keyboardHidden”时，切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法
-游戏开发中, 屏幕的朝向都是写死的.
-
-也就是说：当API >12时，需要加入screenSize属性，否则屏幕切换时即使你设置了orientation系统也会重建Activity.
-
-
-横竖屏切换：
-
-切换时会自动查找布局文件：默认会执行销毁后重新加载布局
+2、设置Activity的android:configChanges=”orientation|keyboardHidden”：
+只会执行onConfigurationChanged
 
 保存数据和恢复数据方法：onSaveInstanceState和onRestoreInstanceState方法
-
-固定横竖屏：Android:screenOrientation=landscape
-
+固定横竖屏：Android:screenOrientation=landscape/orientation
 切换时不摧毁：Android:configChanges=orientation|keyboardHidden|screenSize
-
 
 ```
 **后台时监听横竖屏**

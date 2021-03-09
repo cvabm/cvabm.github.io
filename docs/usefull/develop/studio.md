@@ -1,6 +1,11 @@
 # android studio
 [[toc]]
 
+#### 运行main方法
+```
+高版本需修改.idea - gradle.xml
+GradleProjectSettings 内添加<option name="delegatedBuild" value="false" />
+```
 ## android studio设置代理
  
 打开Android Studio，通过File =》 Setting =》Appearance & Behavior =》System Setting =》 Http Proxy打开Http Proxy配置页面    
@@ -633,10 +638,6 @@ Try 3 : Build -> Clean project -> rebuild -> restart Android studio
 ### run的时候显示edit configuration对话框
 ```
 选右侧gradle --  点sync with gradle files图标
-```
-### Annotation processors must be explicitly declared now
-```
-Annotation processors must be explicitly declared now
 ```
 ### Declaring custom 'clean' task when using the standard Gradle lifecycle plugins is not allowed
 ![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/6578654.png)

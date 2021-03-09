@@ -155,21 +155,19 @@ dir列出所有文件和文件夹
 ## CURL常用命令  
 <http://www.cnblogs.com/gbyukg/p/3326825.html>  
 
-## 常用adb命令
+## adb命令
 ```
 app启动时间  
 adb shell am start -W [packageName]/[packageName.launchActivity]  
 
 adb -s cf264b8f shell wm size  //比如这时想指定 cf264b8f 这个设备来运行 adb 命令获取屏幕分辨率：
 adb shell pm clear <packagename>  //清除应用数据与缓存
-
+adb shell force-stop <packagename> 关闭app
 过滤日志  
-
 windows:
 adb logcat | find "meessage"  中文有乱码
 linux:
 adb logcat | grep "xxxx"
-
 保存log到txt文件:
 adb logcat > logcat/log.txt
 
@@ -182,7 +180,10 @@ adb shell monkey -p com.corerate.cep -v --throttle 300 --pct-touch 30 --pct-moti
 adb shell monkey -p com.corerate.cep --throttle 500 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --ignore-native-crashes --monitor-native-crashes -s 800 -v -v -v 200000>d:\111.txt
 
 
-查看设备：adb device登录设备的shell：adb shell启动和关闭ADB服务：adb kill-server重启设备：adb reboot
+查看设备：adb device
+登录设备的shell：adb shell
+启动和关闭ADB服务：adb kill-server
+重启设备：adb reboot
 adb install -r
 
 查看所有应用包名  adb shell pm list packages多设备选择   adb –s <设备号> 

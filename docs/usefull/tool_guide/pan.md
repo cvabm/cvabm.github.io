@@ -7,6 +7,6 @@ firfox<https://send.firefox.com/>
 <https://bitsend.jp/?setLang=zh-tw>  
 <http://fast-uploader.com/>  
 ## 百度云  
-speedkola<http://www.ioumz.com/>  
+speedkola<http://fulivip.com/>  
 新极品<http://www.xinjipin.com/>  
 搜密码<https://www.aisouziyuan.com/>  
