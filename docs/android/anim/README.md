@@ -205,3 +205,29 @@ public Bitmap getBlurBitmap(Bitmap bmp) {
     return bitmap;
 }
 ```
+RenderScript处理方式（效率高一点）：    
+https://github.com/mmin18/RealtimeBlurView  
+
+## 切换app图标
+```
+   <activity-alias
+        android:name=".SplashAliasActivity"  //可以不存在
+        android:enabled="false"
+        android:icon="@mipmap/icon_logo"
+        android:targetActivity=".MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity-alias>
+
+
+
+// 禁用原图标
+        ComponentName old = new ComponentName(getApplicationContext(), MainActivity.class);
+        getApplicationContext().getPackageManager().setComponentEnabledSetting(old, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+// 启用新图标
+        ComponentName newCom = new ComponentName(getApplicationContext(), "com.soft.learndemo.SplashAliasActivity");
+        getApplicationContext().getPackageManager().setComponentEnabledSetting(newCom, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+
+```

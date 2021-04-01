@@ -28,6 +28,12 @@ NDK下载<https://developer.android.google.cn/ndk/downloads/>
 beyond compare 4你的30天评估期到期怎么解决
 找到beyond Compare 4文件夹下面的BCUnrar.dll，将其删掉或者重命名，再重新打开接着使用
 ```
+### postman 
+```
+问题1、请求https没反应?
+settting  - 关闭 SSL certificate verification
+```
+
 ## 数据库工具
 查看<https://sqlitebrowser.org/>
 

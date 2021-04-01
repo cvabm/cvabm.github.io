@@ -46,10 +46,14 @@ ssr下载：https://github.com/qingshuisiyuan/electron-ssr-backup/releases/tag/v
 ssr文本解析成明文json：  
 <https://html50.github.io/ssr2json/>  
 
-免费节点<https://lncn.org/>  
-免费公共vpn中继：<https://www.vpngate.net/cn/>  
-免费和付费推荐 <www.owocat.xyz>
+[免费节点1](https://free-ss.best/)
+[免费节点2](<https://lncn.org/>)  
+[免费公共vpn中继](<https://www.vpngate.net/cn/>)
+[免费和付费推荐](<www.owocat.xyz>)
 
+
+[账号小铺1](https://www.naifei.shop)
+[账号小铺2](https://lwd666.com/index.php)
 
 搬瓦工<https://bwh1.net/index.php>  
 公共摄像头<https://www.earthcam.com/usa/newyork/timessquare/?cam=tsrobo3>  

@@ -19,10 +19,12 @@
 解压后：bin\ jadx-gui-bat ，打开即可  
  
 
+## 字节码编辑工具
+https://github.com/Col-E/Recaf
 
 
 
-## 修改jar包代码
+## 修改jar包代码、字节码
 第一种方式（直接替换class文件）
 ```
 譬如修改libwebrtc.jar内的HardwareVideoEncoderFactory.class

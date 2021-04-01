@@ -56,6 +56,8 @@ up主
 <https://musclewiki.org/>  
 
 
+[telegram资源搜索](http://www.sssoou.com/)
+
 ## vpn
 <https://www.baacloud37.com/>  
 <www.fanqiangzhe.com>  

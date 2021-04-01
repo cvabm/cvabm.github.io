@@ -2,6 +2,53 @@
 [[toc]]
 ## SharedPreferences
 <https://juejin.im/post/5adc444df265da0b886d00bc>  
+
+## mmkv
+```
+
+dependencies {
+    implementation 'com.tencent:mmkv-static:1.1.1'
+    // "1.1.1" 可以被任何可用的版本替代
+}
+
+
+ MMKV.initialize(this);
+
+MMKV kv = MMKV.defaultMMKV();
+//所有类型的数据操作类似，👇以布尔值做统一示范
+kv.encode("bool", true);
+boolean bValue = kv.decodeBool("bool");
+kv.removeValueForKey("bool");
+kv.removeValuesForKeys(new String[]{"int", "long"});
+boolean hasBool = kv.containsKey("bool");
+
+
+从sharedPreference迁移到mmkv
+//SharedPreferences preferences = getSharedPreferences("TEST", MODE_PRIVATE);
+//将👆SharedPreferences替换为👇MMKV
+MMKV preferences = MMKV.mmkvWithID("TEST");
+// 👇再将之前SharedPreferences的旧数据迁移至MMKV，并清空SharedPreferences
+SharedPreferences old_man = getSharedPreferences("TEST", MODE_PRIVATE);
+preferences.importFromSharedPreferences(old_man);
+old_man.edit().clear().commit();
+// MMKV实现了SharedPreferences和Editor接口，所以之前的数据存储不需要做任何变化👇
+SharedPreferences.Editor editor = preferences.edit();
+editor.putBoolean("bool", true);
+editor.putInt("int", Integer.MIN_VALUE);
+editor.putLong("long", Long.MAX_VALUE);
+editor.putFloat("float", -3.14f);
+editor.putString("string", "hello, imported");
+// 无需调用 commit()，apply()方法存储数据，在put时，数据已经进行了存储，当然调用了也不妨事，MMKV中的这两个方法都是空实现
+//editor.commit();
+
+
+```
+
+## datastore
+
+[![6kKrCj.jpg](https://s3.ax1x.com/2021/03/02/6kKrCj.jpg)](https://imgtu.com/i/6kKrCj)
+
+
 ## 数据库sqlite
 
 <https://github.com/LitePalFramework/LitePal>  

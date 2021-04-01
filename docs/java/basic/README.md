@@ -100,9 +100,10 @@ Log.d(TAG, "morPont.getName:" + morePoint.getName());
 <https://www.tutorialdocs.com/article/java-inter-thread-communication.html>   
 ## 观察者模式  
 <https://www.cnblogs.com/mengdd/archive/2013/02/07/2908929.html>  
-## Java
-习惯用法总结<https://zhuanlan.zhihu.com/p/28147309>  
-常见问题总结<http://bbs.itheima.com/thread-130760-1-1.html>  
+## 习惯用法总结
+<https://zhuanlan.zhihu.com/p/28147309>  
+## 常见问题总结
+<http://bbs.itheima.com/thread-130760-1-1.html>  
 ## 各类数据结构的特点  
 <https://blog.csdn.net/xiaolang85/article/details/10214981>  
 ## 关于二叉树的几种遍历方法 
