@@ -82,6 +82,9 @@ ssr文本解析成明文json：
 
 ## window电脑关机时间  
 <https://jingyan.baidu.com/article/7082dc1c3dc343e40a89bde5.html>
+## vmware
+安装unbuntu卡死问题：  
+新建时去掉打印机硬件
 ## VMware 14 安装黑苹果 macOS10.13 详细图文教程 
 <https://vircloud.net/operations/vm-ins-macos.html>
 ## 清除google个人画像

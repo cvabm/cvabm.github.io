@@ -46,9 +46,7 @@ eclipse<https://www.cnblogs.com/leoking01/p/6605833.html>
 <https://source.android.google.cn/setup/develop/repo>
 ## 常用linux命令
 cd / 返回根目录
-命令大全<https://man.linuxde.net/>  
-中文readme<https://github.com/mzlogin/awesome-adb#%E5%91%BD%E4%BB%A4%E8%AF%AD%E6%B3%95>
-<https://github.com/mzlogin/awesome-adb>  
+命令大全<https://man.linuxde.net/>
 ## svn常用命令
 <https://blog.csdn.net/yangzhongxuan/article/details/7018168>  
 
@@ -742,7 +740,11 @@ rpm -e –>删除 rpm -Uvh —>升级安装
 -nodeps –>强行安装 -test –>测试安装 
 ```
 
+## xshell上传下载
+rz -y  
+sz file  
 
+yum install lrzsz  
 
 
 

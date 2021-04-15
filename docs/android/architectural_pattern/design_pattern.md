@@ -1,4 +1,4 @@
-# 设计模式
+# 23种设计模式
 [[toc]]
 ## 观察者模式observer
 <https://www.cnblogs.com/mengdd/archive/2013/02/07/2908929.html>  
@@ -53,7 +53,125 @@ c、饿汉式和饱汉式的区别：
 ④单例设计模式的应用：
 当需要保证某个类在内存中有且仅有一个实例对象时，就用单例设计模式。比如java的Runtime类、Class类都是采用的单例设计模式
 ## 工厂模式
-## 抽象工厂模式
-## 装饰模式
-## 代理模式
+```
+Integer n = Integer.valueOf(100);
+List.of()
+上述都是使用了静态工厂方式
 
+public final class Integer {
+    public static Integer valueOf(int i) {
+        if (i >= IntegerCache.low && i <= IntegerCache.high)
+            return IntegerCache.cache[i + (-IntegerCache.low)];
+        return new Integer(i);
+    }
+    ...
+}
+
+
+
+
+```
+## 适配器模式
+
+```
+Callable<Long> callable = new Task(123450000L);
+Thread thread = new Thread(new RunnableAdapter(callable));
+thread.start();
+
+RunnableAdapter()相当于一个适配器
+这个RunnableAdapter类就是Adapter，它接收一个Callable，输出一个Runnable
+
+public class RunnableAdapter implements Runnable {
+    // 引用待转换接口:
+    private Callable<?> callable;
+
+    public RunnableAdapter(Callable<?> callable) {
+        this.callable = callable;
+    }
+
+    // 实现指定接口:
+    public void run() {
+        // 将指定接口调用委托给转换接口调用:
+        try {
+            callable.call();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+
+```
+## 抽象工厂模式
+<https://www.runoob.com/design-pattern/abstract-factory-pattern.html>
+
+
+## 装饰模式
+
+
+
+抽象装饰类的作用
+<https://blog.csdn.net/gaopu12345/article/details/79534846>
+## 代理模式
+```
+在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，
+有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），
+直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。
+
+public class RealImage implements Image {
+ 
+   private String fileName;
+ 
+   public RealImage(String fileName){
+      this.fileName = fileName;
+      loadFromDisk(fileName);
+   }
+ 
+   @Override
+   public void display() {
+      System.out.println("Displaying " + fileName);
+   }
+ 
+   private void loadFromDisk(String fileName){
+      System.out.println("Loading " + fileName);
+   }
+}
+
+public class ProxyImage implements Image{
+ 
+   private RealImage realImage;
+   private String fileName;
+ 
+   public ProxyImage(String fileName){
+      this.fileName = fileName;
+   }
+ 
+   @Override
+   public void display() {
+      if(realImage == null){
+         realImage = new RealImage(fileName);
+      }
+      realImage.display();
+   }
+}
+
+public class ProxyPatternDemo {
+   
+   public static void main(String[] args) {
+      Image image = new ProxyImage("test_10mb.jpg");
+ 
+      // 图像将从磁盘加载
+      image.display(); 
+      System.out.println("");
+      // 图像不需要从磁盘加载
+      image.display();  
+   }
+}
+
+执行程序，输出结果：
+
+Loading test_10mb.jpg
+Displaying test_10mb.jpg
+
+Displaying test_10mb.jpg
+
+```

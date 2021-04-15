@@ -1890,3 +1890,74 @@ request.setCharacterEncoding("utf-8");
 response.setContentType("text/html;charset=utf-8");
 某个页面中文乱码：通过记事本打开这个文件，另存为utf-8即可
 ```
+## 防止快速连续点击
+```
+class ClickUtils {
+    public static void fastClickChecked(View v, View.OnClickListener listener) {
+        listener.onClick(v);
+        v.setClickable(false);
+        v.postDelayed(() -> v.setClickable(true), 500);
+    }
+}
+
+
+ClickUtils.fastClickChecked(view, view1 -> {
+    System.out.println("");
+});
+```
+## android分段打印日志
+```
+JAVA:
+
+package amplesky.com.telcontroller.utils;
+
+import android.util.Log;
+
+public class LogUtil {
+    /**
+     * 截断输出日志
+     * @param msg
+     */
+    public static void v(String tag, String msg) {
+        if (tag == null || tag.length() == 0
+                || msg == null || msg.length() == 0)
+            return;
+
+        int segmentSize = 3 * 1024;
+        long length = msg.length();
+        if (length <= segmentSize ) {// 长度小于等于限制直接打印
+             Log.v(tag, msg);
+        }else {
+            while (msg.length() > segmentSize ) {// 循环分段打印日志
+                String logContent = msg.substring(0, segmentSize );
+                msg = msg.replace(logContent, "");
+                Log.v(tag, logContent);
+            }
+            Log.v(tag, msg);// 打印剩余日志
+        }
+    }
+}
+```
+```
+JS
+var MAX_LENGTH = 10;
+/**
+     * 分段打印较长的文本
+     * @param tag 标志
+     * @param content 内容
+     */
+function debugLarge(tag, content) {
+    if (content.length > MAX_LENGTH) {
+        var part = content.substring(0, MAX_LENGTH);
+        console.log(tag, part)
+         part = content.substring(MAX_LENGTH, content.length);
+        if ((content.length - MAX_LENGTH) > MAX_LENGTH) {
+            debugLarge(tag, part);
+        } else {
+            console.log(tag, part)
+        }
+    } else {
+        console.log(tag,content)
+    }
+}
+```
