@@ -3,7 +3,6 @@ module.exports = {
   title: '首页',
   description: '笔记',
   plugins: ['@vuepress/back-to-top'],
-  theme:'antdocs',
   markdown: {
     lineNumbers: false,
     anchor: { 

@@ -38,6 +38,9 @@ $ sudo apt-get install openjdk-7-jre openjdk-7-jdk
 eclipse<https://www.cnblogs.com/leoking01/p/6605833.html>
 ## Linux虚拟机共享主机的SSR实现翻墙
 <https://www.zybuluo.com/CrazyHenry/note/1097693>
+## linux运行appImage
+右键属性勾选可执行 - 再双击打开
+## gen
 ## unbuntu
 各版本下载<http://mirrors.163.com/ubuntu-releases/>
 ## 相关软件
