@@ -97,7 +97,10 @@ Fidder
 charles  
 <https://www.charlesproxy.com/>  
 下载后，把破解文件charles.jar拷贝到安装目录/lib中 ，替换即可  
-条件：手机和电脑处于同一ip地址下  
+条件：手机和电脑处于同一ip地址下 
+
+手机设置wifi代理：ip和端口为电脑cmd下的ipv4地址
+
 使用  
 ![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/befc592a-adc7-4585-8381-0ee82e3af2d0.png)
 ![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/27a89a79-d38c-4f5d-9c0c-56225c76b5d2.png)

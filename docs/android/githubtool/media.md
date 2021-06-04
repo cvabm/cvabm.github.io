@@ -8,7 +8,10 @@
 [GitHub - wangshanhai/VoiceRecorder: 录制语音和播放语音，仿微信语音模块](https://github.com/wangshanhai/VoiceRecorder)  
 ## RTSP  
 <https://github.com/tsingsee/EasyPlayer-RTSP-Android>    
+```
+大熊兔（VOD）：rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov （分辨率240*160），注意，这个URL用RTSP TCP模式测试。
 
+```
    
 ## linphone相关  
 <https://www.jianshu.com/p/0dbb86c29fdb>  
