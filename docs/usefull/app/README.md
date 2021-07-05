@@ -21,8 +21,6 @@ Portal电脑端不必安装软件<https://www.iplaysoft.com/portal.html>
 <https://github.com/leavesC/WifiP2P>  
 ## app内测分发
 蒲公英<https://www.pgyer.com/>  
-fir.im<https://fir.im/>
-
 ## 免费api接口
 小白接口  
 <http://open.yesapi.cn/>  
@@ -38,7 +36,6 @@ fir.im<https://fir.im/>
 
 ## app相关
 360加固宝<https://jiagu.360.cn/>  
-高德开放平台<https://lbs.amap.com/>  
 bugly<https://bugly.qq.com>  
 
 ## 设计相关

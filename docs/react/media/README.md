@@ -511,9 +511,69 @@ return true;
 相关文档  
 <https://android.googlesource.com/platform/frameworks/av/+/master/media/libstagefright/data/media_codecs_google_c2_video.xml>  
 
+## 获取手机最大解码数量
+```
 
-
-
+public static void printMediaCodecInfo() {
+ 
+	int CodecCount = 0;
+	try {
+		CodecCount = MediaCodecList.getCodecCount();
+	}catch (Exception e) {
+		Log.e(TAG, "##### Failed to get codec count!");
+		e.printStackTrace();
+		return;
+	}
+ 
+	for (int i = 0; i < CodecCount; ++i) {
+		MediaCodecInfo info = null;
+		try {
+			info = MediaCodecList.getCodecInfoAt(i);
+		} catch (IllegalArgumentException e) {
+			Log.e(TAG, "Cannot retrieve decoder codec info", e);
+		}
+		if (info == null) {
+			continue;
+		}
+ 
+		String codecInfo = "MediaCodec, name="+info.getName()+", [";
+ 
+		for (String mimeType : info.getSupportedTypes()) {
+			codecInfo += mimeType + ",";
+			MediaCodecInfo.CodecCapabilities capabilities;
+			try {
+				capabilities = info.getCapabilitiesForType(mimeType);
+			} catch (IllegalArgumentException e) {
+				Log.e(TAG, "Cannot retrieve decoder capabilities", e);
+				continue;
+			}
+ 
+			codecInfo += " max inst:"+capabilities.getMaxSupportedInstances()+",";
+ 
+			String strColorFormatList = "";
+			for (int colorFormat : capabilities.colorFormats) {
+				strColorFormatList += " 0x" + Integer.toHexString(colorFormat);
+			}
+			codecInfo += strColorFormatList + "] [";
+		}
+ 
+		Log.w(TAG, codecInfo);
+	}
+ 
+	boolean bSupportHwVP8 = MediaCodecVideoEncoder.isVp8HwSupported();
+	boolean bSupportHwVP9 = MediaCodecVideoEncoder.isVp9HwSupported();
+	boolean bSupportHwH264 = MediaCodecVideoEncoder.isH264HwSupported();
+ 
+	String webrtcCodecInfo = "WebRTC codec support: HwVP8=" + bSupportHwVP8 + ", HwVP9=" + bSupportHwVP9
+			+ ", Hw264=" + bSupportHwH264;
+ 
+	if(bSupportHwH264) {
+		webrtcCodecInfo += ", Hw264HighProfile=" + MediaCodecVideoEncoder.isH264HighProfileHwSupported();
+	}
+ 
+	Log.w(TAG, webrtcCodecInfo);
+}
+```
 ### 华为对h264的支持
 ```
 webrtc内部h264只支持两种 OMX.qcom. 和 OMX.Exynos.需改以下配置即可
@@ -546,3 +606,6 @@ chrome://sync/
 
 about - getUpdates  
 
+
+## 关于H.264 profile-level-id
+<https://blog.csdn.net/epubcn/article/details/102802108>

@@ -1,5 +1,9 @@
-# android studio
+# studio
 [[toc]]
+## 搜索中文
+```
+搜索idea里的中文：匹配中文字符的正则表达式： [\u4e00-\u9fa5]
+```
 
 #### 运行main方法
 ```

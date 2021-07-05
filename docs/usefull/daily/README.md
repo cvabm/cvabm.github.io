@@ -6,15 +6,13 @@ it之家<https://www.ithome.com/>
 阮一峰<http://www.ruanyifeng.com/blog/>  
 好记性不如键盘<http://blog.parryqiu.com/>  
 开放微信群<https://wewe.t9t.io/groups>  
-脚本之家<https://www.jb51.net/list/list_233_1.htm>  
 
 ##  其他导航
 <https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts>  
 <https://nodejs.org/download/release/>  
-博客订阅<https://ohmyrss.com/#!>     
 
 ## 资源分享
-不死鸟<https://hao.su/>
+不死鸟<https://iao.su/>
 ## 技术博客
 收藏集
 <https://www.jianshu.com/p/dad51f6c9c4d?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation>  
@@ -34,7 +32,7 @@ irfanview<https://www.irfanview.com/>
 ## 替代google软件聚合   
 <https://nomoregoogle.com/>  
 ## 翻墙工具  
-个人在用<https://portal.cylink0123.icu>
+clash<https://github.com/Dreamacro/clash/releases>  
 
 ssr下载：https://github.com/qingshuisiyuan/electron-ssr-backup/releases/tag/v0.2.6  
 
@@ -83,6 +81,11 @@ ssr文本解析成明文json：
 ## window电脑关机时间  
 <https://jingyan.baidu.com/article/7082dc1c3dc343e40a89bde5.html>
 ## vmware
+```
+FF31K-AHZD1-H8ETZ-8WWEZ-WUUVA
+CV7T2-6WY5Q-48EWP-ZXY7X-QGUWD
+```
+
 安装unbuntu卡死问题：  
 新建时去掉打印机硬件
 ## VMware 14 安装黑苹果 macOS10.13 详细图文教程 

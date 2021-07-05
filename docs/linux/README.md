@@ -156,7 +156,15 @@ dir列出所有文件和文件夹
 ## CURL常用命令  
 <http://www.cnblogs.com/gbyukg/p/3326825.html>  
 
+
+## 无线调试
+```
+Android 手机需要是 Android 11 以上系统；开发者模式里有无线调试选项
+电脑上的 Android SDK 工具需要 ≥ 30.0.0 版本，确认方式是：adb --version
+
+```
 ## adb命令
+
 ```
 app启动时间  
 adb shell am start -W [packageName]/[packageName.launchActivity]  

@@ -202,8 +202,9 @@ mkdir -p $GOPATH/src/golang.org/x
 cd $GOPATH/src/golang.org/x
 git clone https://github.com/golang/sys.git
 
-
-
-
-
+```
+## frp改名
+```
+全局替换
+命令改为gomobile bind -target=android.github.com/fatedier/sp/cmd/spc
 ```
