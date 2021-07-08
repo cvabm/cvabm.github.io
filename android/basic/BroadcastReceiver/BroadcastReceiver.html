@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BroadcastReceiver | 首页</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="笔记">
+    
+    <link rel="preload" href="/assets/css/0.styles.48431805.css" as="style"><link rel="preload" href="/assets/js/app.b2975803.js" as="script"><link rel="preload" href="/assets/js/3.380f1a25.js" as="script"><link rel="preload" href="/assets/js/19.b1f10193.js" as="script"><link rel="prefetch" href="/assets/js/10.aa80d565.js"><link rel="prefetch" href="/assets/js/100.184fdbe7.js"><link rel="prefetch" href="/assets/js/101.70d32e12.js"><link rel="prefetch" href="/assets/js/102.068cae59.js"><link rel="prefetch" href="/assets/js/103.02e11702.js"><link rel="prefetch" href="/assets/js/104.7a906116.js"><link rel="prefetch" href="/assets/js/105.d66761a2.js"><link rel="prefetch" href="/assets/js/106.de09fc86.js"><link rel="prefetch" href="/assets/js/107.4962abc0.js"><link rel="prefetch" href="/assets/js/108.5727faa0.js"><link rel="prefetch" href="/assets/js/109.e41500bc.js"><link rel="prefetch" href="/assets/js/11.64dd06d5.js"><link rel="prefetch" href="/assets/js/110.0bd20c22.js"><link rel="prefetch" href="/assets/js/111.f742c403.js"><link rel="prefetch" href="/assets/js/112.a2a95832.js"><link rel="prefetch" href="/assets/js/113.aeb3a14f.js"><link rel="prefetch" href="/assets/js/114.e0a0be61.js"><link rel="prefetch" href="/assets/js/115.5f8b2ae5.js"><link rel="prefetch" href="/assets/js/116.615bf183.js"><link rel="prefetch" href="/assets/js/117.e8a6d10a.js"><link rel="prefetch" href="/assets/js/12.03d0c35f.js"><link rel="prefetch" href="/assets/js/13.5daccc6c.js"><link rel="prefetch" href="/assets/js/14.bd214f83.js"><link rel="prefetch" href="/assets/js/15.b618ca26.js"><link rel="prefetch" href="/assets/js/16.0a01512f.js"><link rel="prefetch" href="/assets/js/17.979c623d.js"><link rel="prefetch" href="/assets/js/18.cd9392bf.js"><link rel="prefetch" href="/assets/js/20.c242accc.js"><link rel="prefetch" href="/assets/js/21.deffe88b.js"><link rel="prefetch" href="/assets/js/22.e989f969.js"><link rel="prefetch" href="/assets/js/23.f14c3601.js"><link rel="prefetch" href="/assets/js/24.e3b3b502.js"><link rel="prefetch" href="/assets/js/25.e4c9dc96.js"><link rel="prefetch" href="/assets/js/26.575b3f2e.js"><link rel="prefetch" href="/assets/js/27.a5b62086.js"><link rel="prefetch" href="/assets/js/28.e0ea0a10.js"><link rel="prefetch" href="/assets/js/29.d2a50a2a.js"><link rel="prefetch" href="/assets/js/30.cb78ade1.js"><link rel="prefetch" href="/assets/js/31.d364cd51.js"><link rel="prefetch" href="/assets/js/32.7d688810.js"><link rel="prefetch" href="/assets/js/33.71e25c1f.js"><link rel="prefetch" href="/assets/js/34.043488ee.js"><link rel="prefetch" href="/assets/js/35.40ad647d.js"><link rel="prefetch" href="/assets/js/36.fe334bba.js"><link rel="prefetch" href="/assets/js/37.03bb78bc.js"><link rel="prefetch" href="/assets/js/38.2fd92642.js"><link rel="prefetch" href="/assets/js/39.3d840212.js"><link rel="prefetch" href="/assets/js/4.7e4bbbe5.js"><link rel="prefetch" href="/assets/js/40.45cdfd69.js"><link rel="prefetch" href="/assets/js/41.f2b6d179.js"><link rel="prefetch" href="/assets/js/42.377cfd5b.js"><link rel="prefetch" href="/assets/js/43.5fb6f82a.js"><link rel="prefetch" href="/assets/js/44.63109856.js"><link rel="prefetch" href="/assets/js/45.11cdfc16.js"><link rel="prefetch" href="/assets/js/46.94531c51.js"><link rel="prefetch" href="/assets/js/47.6b729504.js"><link rel="prefetch" href="/assets/js/48.e2584eb2.js"><link rel="prefetch" href="/assets/js/49.58f5fb8b.js"><link rel="prefetch" href="/assets/js/5.67143a47.js"><link rel="prefetch" href="/assets/js/50.215c45c1.js"><link rel="prefetch" href="/assets/js/51.ed86d78e.js"><link rel="prefetch" href="/assets/js/52.8378c6fe.js"><link rel="prefetch" href="/assets/js/53.e4f00210.js"><link rel="prefetch" href="/assets/js/54.8318c3e2.js"><link rel="prefetch" href="/assets/js/55.238a4dfb.js"><link rel="prefetch" href="/assets/js/56.c803c9f0.js"><link rel="prefetch" href="/assets/js/57.8670c0bc.js"><link rel="prefetch" href="/assets/js/58.25062459.js"><link rel="prefetch" href="/assets/js/59.b9f9e461.js"><link rel="prefetch" href="/assets/js/6.d95e8a78.js"><link rel="prefetch" href="/assets/js/60.ac5a6948.js"><link rel="prefetch" href="/assets/js/61.001792a6.js"><link rel="prefetch" href="/assets/js/62.e7a9d608.js"><link rel="prefetch" href="/assets/js/63.80cc1a9e.js"><link rel="prefetch" href="/assets/js/64.dc121493.js"><link rel="prefetch" href="/assets/js/65.41375f68.js"><link rel="prefetch" href="/assets/js/66.544809a4.js"><link rel="prefetch" href="/assets/js/67.bd8fc011.js"><link rel="prefetch" href="/assets/js/68.81fa63bd.js"><link rel="prefetch" href="/assets/js/69.8814b82a.js"><link rel="prefetch" href="/assets/js/7.d1060bfe.js"><link rel="prefetch" href="/assets/js/70.39be701c.js"><link rel="prefetch" href="/assets/js/71.8165d01e.js"><link rel="prefetch" href="/assets/js/72.30daee9d.js"><link rel="prefetch" href="/assets/js/73.19f428ef.js"><link rel="prefetch" href="/assets/js/74.f89321a9.js"><link rel="prefetch" href="/assets/js/75.253aea6b.js"><link rel="prefetch" href="/assets/js/76.fb90046a.js"><link rel="prefetch" href="/assets/js/77.cc0fced4.js"><link rel="prefetch" href="/assets/js/78.8d5cac8a.js"><link rel="prefetch" href="/assets/js/79.adfe17fb.js"><link rel="prefetch" href="/assets/js/8.d7c162a0.js"><link rel="prefetch" href="/assets/js/80.ec99206d.js"><link rel="prefetch" href="/assets/js/81.58518c5b.js"><link rel="prefetch" href="/assets/js/82.88d3c77b.js"><link rel="prefetch" href="/assets/js/83.d8c9fdfc.js"><link rel="prefetch" href="/assets/js/84.fde19959.js"><link rel="prefetch" href="/assets/js/85.cc17f9a9.js"><link rel="prefetch" href="/assets/js/86.c6964bfc.js"><link rel="prefetch" href="/assets/js/87.a3dec4f4.js"><link rel="prefetch" href="/assets/js/88.06679d0d.js"><link rel="prefetch" href="/assets/js/89.0072ec92.js"><link rel="prefetch" href="/assets/js/9.1faafc26.js"><link rel="prefetch" href="/assets/js/90.7b61138e.js"><link rel="prefetch" href="/assets/js/91.983299a4.js"><link rel="prefetch" href="/assets/js/92.0b5e3d24.js"><link rel="prefetch" href="/assets/js/93.6bea006c.js"><link rel="prefetch" href="/assets/js/94.98660b98.js"><link rel="prefetch" href="/assets/js/95.0364a51f.js"><link rel="prefetch" href="/assets/js/96.b7735ecf.js"><link rel="prefetch" href="/assets/js/97.cb66a1db.js"><link rel="prefetch" href="/assets/js/98.300c4f22.js"><link rel="prefetch" href="/assets/js/99.5e4e31c9.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.1c519b39.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.48431805.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">首页</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/usefull/tool_guide/" class="nav-link">日常工具</a></li><li class="dropdown-item"><!----> <a href="/usefull/develop/" class="nav-link">开发工具</a></li><li class="dropdown-item"><!----> <a href="/usefull/app/" class="nav-link">手机app</a></li><li class="dropdown-item"><!----> <a href="/usefull/learn/" class="nav-link">API文档教程</a></li><li class="dropdown-item"><!----> <a href="/usefull/interview/" class="nav-link">面试相关</a></li><li class="dropdown-item"><!----> <a href="/usefull/datadownload/" class="nav-link">资源下载</a></li><li class="dropdown-item"><!----> <a href="/usefull/daily/" class="nav-link">日常向</a></li><li class="dropdown-item"><!----> <a href="/usefull/play/" class="nav-link">娱乐向</a></li><li class="dropdown-item"><!----> <a href="/usefull/web.html" class="nav-link">web前端</a></li><li class="dropdown-item"><!----> <a href="/usefull/mac.html" class="nav-link">mac</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/basic/" class="nav-link">基础</a></li><li class="dropdown-item"><!----> <a href="/java/online/" class="nav-link">在线运行</a></li><li class="dropdown-item"><!----> <a href="/java/bgserver/" class="nav-link">后端服务器</a></li><li class="dropdown-item"><!----> <a href="/java/java_pattern/" class="nav-link">框架</a></li><li class="dropdown-item"><!----> <a href="/java/java_summary/" class="nav-link">知识总结</a></li><li class="dropdown-item"><!----> <a href="/java/c.html" class="nav-link">c++</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Android" class="dropdown-title"><span class="title">Android</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/basic/" class="nav-link router-link-active">基础</a></li><li class="dropdown-item"><!----> <a href="/android/anim/" class="nav-link">控件和动画</a></li><li class="dropdown-item"><!----> <a href="/android/githubtool/" class="nav-link">框架</a></li><li class="dropdown-item"><!----> <a href="/android/utils/" class="nav-link">工具类</a></li><li class="dropdown-item"><!----> <a href="/android/payservice/" class="nav-link">第三方服务</a></li><li class="dropdown-item"><!----> <a href="/android/media/" class="nav-link">音视频媒体</a></li><li class="dropdown-item"><!----> <a href="/android/datasave/" class="nav-link">数据存储</a></li><li class="dropdown-item"><!----> <a href="/android/thread/" class="nav-link">多线程</a></li><li class="dropdown-item"><!----> <a href="/android/architectural_pattern/" class="nav-link">设计模式</a></li><li class="dropdown-item"><!----> <a href="/android/ndk/" class="nav-link">JNI-NDK</a></li><li class="dropdown-item"><!----> <a href="/android/question.html" class="nav-link">常见问题</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="RN/JS" class="dropdown-title"><span class="title">RN/JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/basic/" class="nav-link">基础</a></li><li class="dropdown-item"><!----> <a href="/react/view/" class="nav-link">界面</a></li><li class="dropdown-item"><!----> <a href="/react/net/" class="nav-link">网络</a></li><li class="dropdown-item"><!----> <a href="/react/function/" class="nav-link">功能性</a></li><li class="dropdown-item"><!----> <a href="/react/error.html" class="nav-link">常见问题</a></li><li class="dropdown-item"><!----> <a href="/react/media/" class="nav-link">音视频媒体</a></li><li class="dropdown-item"><!----> <a href="/android/h5.html" class="nav-link">JS</a></li></ul></div></div><div class="nav-item"><a href="/linux/" class="nav-link">Linux</a></div><div class="nav-item"><a href="/kotlin/" class="nav-link">Kotlin</a></div><div class="nav-item"><a href="/weixin/" class="nav-link">微信小程序</a></div> <a href="https://github.com/cvabm/cvabm.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    My GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/usefull/tool_guide/" class="nav-link">日常工具</a></li><li class="dropdown-item"><!----> <a href="/usefull/develop/" class="nav-link">开发工具</a></li><li class="dropdown-item"><!----> <a href="/usefull/app/" class="nav-link">手机app</a></li><li class="dropdown-item"><!----> <a href="/usefull/learn/" class="nav-link">API文档教程</a></li><li class="dropdown-item"><!----> <a href="/usefull/interview/" class="nav-link">面试相关</a></li><li class="dropdown-item"><!----> <a href="/usefull/datadownload/" class="nav-link">资源下载</a></li><li class="dropdown-item"><!----> <a href="/usefull/daily/" class="nav-link">日常向</a></li><li class="dropdown-item"><!----> <a href="/usefull/play/" class="nav-link">娱乐向</a></li><li class="dropdown-item"><!----> <a href="/usefull/web.html" class="nav-link">web前端</a></li><li class="dropdown-item"><!----> <a href="/usefull/mac.html" class="nav-link">mac</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/basic/" class="nav-link">基础</a></li><li class="dropdown-item"><!----> <a href="/java/online/" class="nav-link">在线运行</a></li><li class="dropdown-item"><!----> <a href="/java/bgserver/" class="nav-link">后端服务器</a></li><li class="dropdown-item"><!----> <a href="/java/java_pattern/" class="nav-link">框架</a></li><li class="dropdown-item"><!----> <a href="/java/java_summary/" class="nav-link">知识总结</a></li><li class="dropdown-item"><!----> <a href="/java/c.html" class="nav-link">c++</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Android" class="dropdown-title"><span class="title">Android</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/android/basic/" class="nav-link router-link-active">基础</a></li><li class="dropdown-item"><!----> <a href="/android/anim/" class="nav-link">控件和动画</a></li><li class="dropdown-item"><!----> <a href="/android/githubtool/" class="nav-link">框架</a></li><li class="dropdown-item"><!----> <a href="/android/utils/" class="nav-link">工具类</a></li><li class="dropdown-item"><!----> <a href="/android/payservice/" class="nav-link">第三方服务</a></li><li class="dropdown-item"><!----> <a href="/android/media/" class="nav-link">音视频媒体</a></li><li class="dropdown-item"><!----> <a href="/android/datasave/" class="nav-link">数据存储</a></li><li class="dropdown-item"><!----> <a href="/android/thread/" class="nav-link">多线程</a></li><li class="dropdown-item"><!----> <a href="/android/architectural_pattern/" class="nav-link">设计模式</a></li><li class="dropdown-item"><!----> <a href="/android/ndk/" class="nav-link">JNI-NDK</a></li><li class="dropdown-item"><!----> <a href="/android/question.html" class="nav-link">常见问题</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="RN/JS" class="dropdown-title"><span class="title">RN/JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/react/basic/" class="nav-link">基础</a></li><li class="dropdown-item"><!----> <a href="/react/view/" class="nav-link">界面</a></li><li class="dropdown-item"><!----> <a href="/react/net/" class="nav-link">网络</a></li><li class="dropdown-item"><!----> <a href="/react/function/" class="nav-link">功能性</a></li><li class="dropdown-item"><!----> <a href="/react/error.html" class="nav-link">常见问题</a></li><li class="dropdown-item"><!----> <a href="/react/media/" class="nav-link">音视频媒体</a></li><li class="dropdown-item"><!----> <a href="/android/h5.html" class="nav-link">JS</a></li></ul></div></div><div class="nav-item"><a href="/linux/" class="nav-link">Linux</a></div><div class="nav-item"><a href="/kotlin/" class="nav-link">Kotlin</a></div><div class="nav-item"><a href="/weixin/" class="nav-link">微信小程序</a></div> <a href="https://github.com/cvabm/cvabm.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    My GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/android/basic/" aria-current="page" class="sidebar-link">基础</a></li><li><a href="/android/basic/activity/activity.html" class="sidebar-link">activity</a></li><li><a href="/android/basic/activity/fragment.html" class="sidebar-link">fragment</a></li><li><a href="/android/basic/activity/handler.html" class="sidebar-link">handler</a></li><li><a href="/android/basic/service/service.html" class="sidebar-link">service</a></li><li><a href="/android/basic/BroadcastReceiver/BroadcastReceiver.html" aria-current="page" class="active sidebar-link">BroadcastReceiver</a></li><li><a href="/android/basic/build/build.html" class="sidebar-link">编译和打包</a></li><li><a href="/android/basic/build/encrpy.html" class="sidebar-link">https/jwt/rsa</a></li><li><a href="/android/basic/build/fit.html" class="sidebar-link">适配</a></li><li><a href="/android/basic/build/function.html" class="sidebar-link">功能点</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="broadcastreceiver">BroadcastReceiver <a href="#broadcastreceiver" class="header-anchor">#</a></h1> <p></p><div class="table-of-contents"><ul><li><a href="#设置系统时间">设置系统时间</a></li><li><a href="#监听时间action-time-tick">监听时间ACTIONTIMETICK</a></li><li><a href="#监听home键和长按home键">监听home键和长按home键</a><ul><li><a href="#监听home键点击">监听home键点击</a></li><li><a href="#监听双击">监听双击</a></li></ul></li><li><a href="#简单本地广播dmeo">简单本地广播dmeo</a></li><li><a href="#android常用系统广播">Android常用系统广播</a></li></ul></div><p></p> <h2 id="设置系统时间">设置系统时间 <a href="#设置系统时间" class="header-anchor">#</a></h2> <div class="language- extra-class"><pre class="language-text"><code>try {
+Intent time = new Intent(&quot;ismart.intent.action_set_curtime_millis&quot;);//设置系统时间
+time.putExtra(&quot;millis&quot;, Long.valueOf(ltime));
+sendBroadcast(time);
+} catch (Exception e) {
+e.printStackTrace();
+}
+</code></pre></div><h2 id="监听时间action-time-tick">监听时间ACTION_TIME_TICK <a href="#监听时间action-time-tick" class="header-anchor">#</a></h2> <div class="language- extra-class"><pre class="language-text"><code>1：只能动态注册
+2：每一分钟执行一次
+
+IntentFilter filter = new IntentFilter();
+filter.addAction(Intent.ACTION_TIME_TICK);
+registerReceiver(new MYBroadcast(),filter);
+private class MYBroadcast extends BroadcastReceiver{
+
+@Override
+public void onReceive(Context context, Intent intent) {
+if (intent.getAction().equals(Intent.ACTION_TIME_TICK)) {
+Log.i(&quot;ljg&quot;, &quot;onReceive: &quot;);
+}
+}
+}
+
+</code></pre></div><h2 id="监听home键和长按home键">监听home键和长按home键 <a href="#监听home键和长按home键" class="header-anchor">#</a></h2> <p><img src="https://raw.githubusercontent.com/cvabm/FigureBed/master/img/234234235.png" alt=""> <img src="https://raw.githubusercontent.com/cvabm/FigureBed/master/img/436456757567.png" alt=""></p> <h3 id="监听home键点击">监听home键点击 <a href="#监听home键点击" class="header-anchor">#</a></h3> <div class="language- extra-class"><pre class="language-text"><code>
+@Override
+
+ public boolean onKeyDown(int keyCode, KeyEvent event)
+
+{ // TODO Auto-generated method stub
+
+  if(KeyEvent.KEYCODE_HOME==keyCode)
+
+    android.os.Process.killProcess(android.os.Process.myPid());
+
+     return super.onKeyDown(keyCode, event);
+
+  }
+
+@Override
+
+ public void onAttachedToWindow()
+
+ { // TODO Auto-generated method stub
+
+    this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD);
+
+    super.onAttachedToWindow();
+
+ }
+
+加权限禁止Home键
+
+&lt;uses-permission android:name=&quot;android.permission.DISABLE_KEYGUARD&quot;&gt;&lt;/uses-permission&gt;
+
+</code></pre></div><h3 id="监听双击">监听双击 <a href="#监听双击" class="header-anchor">#</a></h3> <div class="language- extra-class"><pre class="language-text"><code>1.点击监听之双击.
+//处理双击居中
+iv_drag_view.setOnClickListener(new OnClickListener() {
+
+@Override
+public void onClick(View v) {
+//当第一个时间大于0,表示已经点击了一次了
+if (fristTime&gt;0) {
+long secondTime = System.currentTimeMillis();
+if (secondTime-fristTime&lt;500) {
+iv_drag_view.layout((screenWidth-iv_drag_view.getWidth())/2, iv_drag_view.getTop(), (screenWidth+iv_drag_view.getWidth())/2, iv_drag_view.getBottom());
+Editor editor = sp.edit();
+editor.putInt(&quot;lastx&quot;, iv_drag_view.getLeft());
+editor.putInt(&quot;lasty&quot;, iv_drag_view.getTop());
+editor.commit();
+}
+fristTime=0;//只要二次点击完了,就让第一次的时间为0
+}
+fristTime = System.currentTimeMillis();
+//如果点完第一次后超时了,就自动清除第一次点击时间
+new Thread(){
+public void run() {
+SystemClock.sleep(500);
+fristTime=0;
+};
+}.start();
+}
+});
+
+</code></pre></div><h2 id="简单本地广播dmeo">简单本地广播dmeo <a href="#简单本地广播dmeo" class="header-anchor">#</a></h2> <div class="language- extra-class"><pre class="language-text"><code>
+
+public class MainActivity extends AppCompatActivity {
+    LocalBroadcastManager manager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Receiver receiver = new Receiver();
+        manager =LocalBroadcastManager.getInstance(this);
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(&quot;demo.fastvi.com.mytest.LOCAL_BROADCAST&quot;);
+        manager.registerReceiver(receiver, intentFilter);
+    }
+
+    public void click(View view) {
+        Intent intent = new Intent(&quot;demo.fastvi.com.mytest.LOCAL_BROADCAST&quot;);
+        manager.sendBroadcast(intent);
+    }
+}
+
+  public class Receiver extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Toast.makeText(context, &quot;收到reciver&quot;, Toast.LENGTH_SHORT).show();
+    }
+}
+
+
+
+配置文件：
+&lt;receiver android:name=&quot;.Receiver&quot;&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name=&quot;demo.fastvi.com.mytest.Receiver&quot;/&gt;
+    &lt;/intent-filter&gt;
+&lt;/receiver&gt;
+
+
+
+
+</code></pre></div><h2 id="android常用系统广播">Android常用系统广播 <a href="#android常用系统广播" class="header-anchor">#</a></h2> <div class="language- extra-class"><pre class="language-text"><code>//关闭或打开飞行模式时的广播
+Intent.ACTION_AIRPLANE_M;
+ 
+//充电状态，或者电池的电量发生变化;//电池的充电状态、电荷级别改变，不能通过组建声;
+Intent.ACTION_BATTERY_CH;
+ 
+//表示电池电量低
+Intent.ACTION_BATTERY_LO;
+ 
+//表示电池电量充足
+Intent.ACTION_BATTERY_OK;
+ 
+//关闭或打开飞行模式时的广播
+Intent.ACTION_AIRPLANE_MODE_CHANGED;
+ 
+//充电状态，或者电池的电量发生变化//电池的充电状态、电荷级别改变，不能通过组建声明接收这个广播，只有通过Context.registerReceiver()注册
+Intent.ACTION_BATTERY_CHANGED;
+ 
+//表示电池电量低
+Intent.ACTION_BATTERY_LOW;
+ 
+//表示电池电量充足，即从电池电量低变化到饱满时会发出广播
+Intent.ACTION_BATTERY_OKAY;
+ 
+//在系统启动完成后，这个动作被广播一次（只有一次）。
+Intent.ACTION_BOOT_COMPLETED;
+ 
+//按下照相时的拍照按键(硬件按键)时发出的广播
+Intent.ACTION_CAMERA_BUTTON;
+ 
+//当屏幕超时进行锁屏时,当用户按下电源按钮,长按或短按(不管有没跳出话框)，进行锁屏时,android系统都会广播此Action消息
+Intent.ACTION_CLOSE_SYSTEM_DIALOGS;
+ 
+//设备当前设置被改变时发出的广播(包括的改变:界面语言，设备方向，等，请参考Configuration.java)
+Intent.ACTION_CONFIGURATION_CHANGED;
+ 
+//设备日期发生改变时会发出此广播
+Intent.ACTION_DATE_CHANGED;
+ 
+//设备内存不足时发出的广播,此广播只能由系统使用，其它APP不可用
+Intent.ACTION_DEVICE_STORAGE_LOW;
+ 
+//设备内存从不足到充足时发出的广播,此广播只能由系统使用，其它APP不可用
+Intent.ACTION_DEVICE_STORAGE_OK;
+ 
+//发出此广播的地方frameworks\base\services\java\com\android\server\DockObserver.java
+Intent.ACTION_DOCK_EVENT;
+ 
+//移动APP完成之后，发出的广播(移动是指:APP2SD)
+Intent.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE;
+ 
+//正在移动APP时，发出的广播(移动是指:APP2SD)
+Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE;
+ 
+//Gtalk已建立连接时发出的广播
+Intent.ACTION_GTALK_SERVICE_CONNECTED;
+ 
+//Gtalk已断开连接时发出的广播
+Intent.ACTION_GTALK_SERVICE_DISCONNECTED;
+ 
+//在耳机口上插入耳机时发出的广播
+Intent.ACTION_HEADSET_PLUG;
+ 
+//改变输入法时发出的广播
+Intent.ACTION_INPUT_METHOD_CHANGED;
+ 
+//设备当前区域设置已更改时发出的广播
+Intent.ACTION_LOCALE_CHANGED;
+ 
+//表示用户和包管理所承认的低内存状态通知应该开始。
+Intent.ACTION_MANAGE_PACKAGE_STORAGE;
+ 
+//未正确移除SD卡(正确移除SD卡的方法:设置--SD卡和设备内存--卸载SD卡)，但已把SD卡取出来时发出的广播 ,扩展介质（扩展卡）已经从 SD 卡插槽拔出，但是挂载点 (mount point) 还没解除 (unmount)
+Intent.ACTION_MEDIA_BAD_REMOVAL;
+ 
+//按下&quot;Media Button&quot; 按键时发出的广播,假如有&quot;Media Button&quot; 按键的话(硬件按键)
+Intent.ACTION_MEDIA_BUTTON;
+ 
+//插入外部储存装置，比如SD卡时，系统会检验SD卡，此时发出的广播?
+Intent.ACTION_MEDIA_CHECKING;
+ 
+//已拔掉外部大容量储存设备发出的广播（比如SD卡，或移动硬盘）,不管有没有正确卸载都会发出此广播, 用户想要移除扩展介质（拔掉扩展卡）。
+Intent.ACTION_MEDIA_EJECT;
+ 
+//插入SD卡并且已正确安装（识别）时发出的广播, 扩展介质被插入，而且已经被挂载。
+Intent.ACTION_MEDIA_MOUNTED;
+ 
+//拓展介质存在，但使用不兼容FS（或为空）的路径安装点检查介质包含在Intent.mData领域。
+Intent.ACTION_MEDIA_NOFS;
+ 
+//外部储存设备已被移除，不管有没正确卸载,都会发出此广播， 扩展介质被移除。
+Intent.ACTION_MEDIA_REMOVED;
+ 
+//广播：已经扫描完介质的一个目录
+Intent.ACTION_MEDIA_SCANNER_FINISHED;
+ 
+//请求媒体扫描仪扫描文件并将其添加到媒体数据库。
+Intent.ACTION_MEDIA_SCANNER_SCAN_FILE;
+ 
+//广播：开始扫描介质的一个目录
+Intent.ACTION_MEDIA_SCANNER_STARTED;
+ 
+// 广播：扩展介质的挂载被解除 (unmount)，因为它已经作为 USB 大容量存储被共享。
+Intent.ACTION_MEDIA_SHARED;
+ 
+Intent.ACTION_MEDIA_UNMOUNTABLE;//
+ 
+// 广播：扩展介质存在，但是还没有被挂载 (mount)
+Intent.ACTION_MEDIA_UNMOUNTED
+ 
+Intent.ACTION_NEW_OUTGOING_CALL;
+ 
+//成功的安装APK之后//广播：设备上新安装了一个应用程序包。//一个新应用包已经安装在设备上，数据包括包名（最新安装的包程序不能接收到这个广播）
+Intent.ACTION_PACKAGE_ADDED;
+ 
+//一个已存在的应用程序包已经改变，包括包名
+Intent.ACTION_PACKAGE_CHANGED;
+ 
+//清除一个应用程序的数据时发出的广播(在设置－－应用管理－－选中某个应用，之后点清除数据时?)//用户已经清除一个包的数据，包括包名（清除包程序不能接收到这个广播）
+Intent.ACTION_PACKAGE_DATA_CLEARED;
+ 
+//触发一个下载并且完成安装时发出的广播，比如在电子市场里下载应用？
+Intent.ACTION_PACKAGE_INSTALL;
+ 
+//成功的删除某个APK之后发出的广播, 一个已存在的应用程序包已经从设备上移除，包括包名（正在被安装的包程序不能接收到这个广播）
+Intent.ACTION_PACKAGE_REMOVED;
+ 
+//替换一个现有的安装包时发出的广播（不管现在安装的APP比之前的新还是旧，都会发出此广播？）
+Intent.ACTION_PACKAGE_REPLACED;
+ 
+//用户重新开始一个包，包的所有进程将被杀死，所有与其联系的运行时间状态应该被移除，包括包名（重新开始包程序不能接收到这个广播）
+Intent.ACTION_PACKAGE_RESTARTED;
+ 
+//插上外部电源时发出的广播
+Intent.ACTION_POWER_CONNECTED;
+ 
+//已断开外部电源连接时发出的广播
+Intent.ACTION_POWER_DISCONNECTED;
+ 
+Intent.ACTION_PROVIDER_CHANGED;//
+ 
+//重启设备时的广播
+Intent.ACTION_REBOOT;
+ 
+//屏幕被关闭之后的广播
+Intent.ACTION_SCREEN_OFF;
+ 
+//屏幕被打开之后的广播
+Intent.ACTION_SCREEN_ON;
+ 
+//关闭系统时发出的广播
+Intent.ACTION_SHUTDOWN;
+ 
+//时区发生改变时发出的广播
+Intent.ACTION_TIMEZONE_CHANGED;
+ 
+//时间被设置时发出的广播
+Intent.ACTION_TIME_CHANGED;
+ 
+//广播：当前时间已经变化（正常的时间流逝）， 当前时间改变，每分钟都发送，不能通过组件声明来接收
+，只有通过Context.registerReceiver()方法来注册
+Intent.ACTION_TIME_TICK;
+ 
+//一个用户ID已经从系统中移除发出的广播
+Intent.ACTION_UID_REMOVED;
+ 
+//设备已进入USB大容量储存状态时发出的广播？
+Intent.ACTION_UMS_CONNECTED;
+ 
+//设备已从USB大容量储存状态转为正常状态时发出的广播？
+Intent.ACTION_UMS_DISCONNECTED;
+ 
+Intent.ACTION_USER_PRESENT;//
+ 
+//设备墙纸已改变时发出的广播
+Intent.ACTION_WALLPAPER_CHANGED;
+ 
+
+开机广播注意点：
+Intent.ACTION_BOOT_COMPLETED表示boot启动完毕后，系统会发送一个广播过来，理论上确实可以接收到，大部分手机估计也都是可以的，但是就是有那么些手机rom被改得不可思议，非要加上个android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY才可以在开机的时候让系统执行Intent.ACTION_BOOT_COMPLETED广播的发送，根据LOG可以看出，以OPPO1107为例，系统是先发送了ACTION_AUDIO_BECOMING_NOISY后发送了ACTION_BOOT_COMPLETED
+也就是说广播的注册需要这样多加一句：
+
+
+
+&lt;receiver android:name=&quot;where.com.whereareyou.BootBroadcastReceiver&quot;&gt;
+&lt;intent-filter&gt;
+&lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt; //启动完成的广播
+&lt;action android:name=&quot;android.media.AUDIO_BECOMING_NOISY&quot; /&gt;
+&lt;/intent-filter&gt;
+&lt;/receiver&gt;
+
+ 开机权限：&lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot; /&gt;
+ 
+
+
+
+1.网络状态改变
+&lt;action android:name=&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
+//添加网络状态Action
+intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+2.拦截电话号码,广播
+0.权限 &lt;uses-permission android:name=&quot;android.permission.PROCESS_OUTGOING_CALLS&quot;/&gt;
+1.
+&lt;intent-filter&gt;
+&lt;action android:name=&quot;android.intent.action.NEW_OUTGOING_CALL&quot; /&gt;
+&lt;/intent-filter&gt;
+2.获取电话号码
+// 获取拨出电话号码
+Bundle b = intent.getExtras();
+String num = b.getString(Intent.EXTRA_PHONE_NUMBER);
+Log.i(&quot;NUM&quot;, &quot;____&quot; + num);
+
+3.监听电话状态
+&lt;receiver android:name=&quot;com.phone.day22_systembroadcastcallphone.SystemCallPhoneReceiver&quot; &gt;
+&lt;intent-filter&gt;
+&lt;action android:name=&quot;android.intent.action.PHONE_STATE&quot; /&gt;
+&lt;/intent-filter&gt;
+&lt;/receiver&gt;
+&lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot;/&gt;
+1.获取信息
+// 获取电话状态管理者
+TelephonyManager manager = (TelephonyManager) context
+.getSystemService(Context.TELEPHONY_SERVICE);
+
+// 获取电话状态
+int state = manager.getCallState();
+
+Bundle b = intent.getExtras();
+//获取手机号码
+String num = b.getString(TelephonyManager.EXTRA_INCOMING_NUMBER);
+switch (state) {
+case TelephonyManager.CALL_STATE_RINGING:
+// 响铃
+
+Log.d(&quot;TAG&quot;, &quot;___ 响铃&quot; + num);
+break;
+case TelephonyManager.CALL_STATE_IDLE:
+// 挂断
+Log.d(&quot;TAG&quot;, &quot;___ 挂断&quot;);
+break;
+case TelephonyManager.CALL_STATE_OFFHOOK:
+// 接听
+Log.d(&quot;TAG&quot;, &quot;___ 接听&quot;);
+break;
+
+default:
+break;
+}
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/25/2020, 6:58:36 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/android/basic/service/service.html" class="prev">service</a></span> <span class="next"><a href="/android/basic/build/build.html">编译和打包</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.b2975803.js" defer></script><script src="/assets/js/3.380f1a25.js" defer></script><script src="/assets/js/19.b1f10193.js" defer></script>
+  </body>
+</html>
