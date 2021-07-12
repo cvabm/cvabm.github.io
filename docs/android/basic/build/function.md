@@ -228,14 +228,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-/**
-*
-* @ClassName: LaunchPageActivity
-* @Description: 启动页面
-* @author 卢忠强 luzhongqiang@corerate.com
-* @date 2015年12月24日 下午1:35:48
-*
-*/
 public class LaunchPageActivity extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -349,12 +341,6 @@ import com.corerate.cep.activity.ConvenientEnergyMainActivity;
 import com.corerate.cep.adapter.GuidePageAdapter;
 import com.corerate.cep.container.HomeEnergyApplication;
 
-/**
- * @author 卢忠强  luzhongqiang@corerate.com
- * @ClassName: GuidePageActivity
- * @Description: 系统第一次打开引导页面
- * @date 2015年12月23日 上午11:39:35
- */
 public class GuidePageActivity extends Activity {
     private ViewPager viewPager;
     private List<View> pageViews;

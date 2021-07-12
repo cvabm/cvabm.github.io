@@ -9,7 +9,6 @@ it之家<https://www.ithome.com/>
 
 ##  其他导航
 <https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts>  
-<https://nodejs.org/download/release/>  
 
 ## 资源分享
 不死鸟<https://iao.su/>

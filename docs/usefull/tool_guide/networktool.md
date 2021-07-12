@@ -4,7 +4,7 @@
 ## ping网址
 <https://ping.sx/>
 ## http接口测试工具
-<http://www.atool9.com/httptest.php>  
+<https://www.thunderclient.io/>
 <https://postwoman.io/>  
 ## useragent
 <http://www.useragentstring.com/>  

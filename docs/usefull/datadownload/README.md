@@ -46,9 +46,6 @@ Oracle密码：Oracle123
 
 ## SourceTree   
 <https://www.sourcetreeapp.com/>  
-
-## node.js  
-<http://nodejs.cn/download/>   
 ## node.js深入讲解
 <https://yjhjstz.gitbooks.io/deep-into-node/>  
 
