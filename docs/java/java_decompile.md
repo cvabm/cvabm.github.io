@@ -1,27 +1,33 @@
 [[toc]]
+
 #
+
 [mogua](https://mogua.co/)  
 <http://www.javadecompilers.com/>  
-<https://www.decompiler.com/>  
-## 反编译apk并重新打包
-<https://github.com/iBotPeaches/Apktool>  
-```
-1、反编译
-java -jar xxx/apktool-2.7.0.jar d xxx/test.apk -o xxx/test
-2、回编译
-java -jar xxx/apktool-2.7.0.jar b xxx/test -o xxx/test2.apk
-3、重新签名
-```
+<https://www.decompiler.com/>
+
+## 反编译 apk 并重新打包
+
+<https://github.com/iBotPeaches/Apktool>
+
+- `apktool d test.apk` 反编译
+- `apktool b test -o new.apk` 回编译
+- `dx-signer.jar` 签名
+
 ## 签名工具
-<https://github.com/dingxiangtech/dx-signer>  
+
+<https://github.com/dingxiangtech/dx-signer>
 
 android 逆向工具集合  
 <https://github.com/Juude/droidReverse>
+
 ## 其他
+
 <https://github.com/google/android-classyshark>  
 <https://github.com/skylot/jadx>  
-<https://sourceforge.net/projects/jadx/files/?source=navbar>    
+<https://sourceforge.net/projects/jadx/files/?source=navbar>  
 解压后：bin\ jadx-gui-bat ，打开即可
+
 ## 字节码编辑工具
 
 https://github.com/Col-E/Recaf
@@ -95,10 +101,13 @@ public class Test {
 
 还未用过、待续
 
-## 反编译.so文件
-使用IDA_Pro工具  
-<https://www.cnblogs.com/whycxb/p/9143896.html>  
-## .so文件查看函数
+## 反编译.so 文件
+
+使用 IDA_Pro 工具  
+<https://www.cnblogs.com/whycxb/p/9143896.html>
+
+## .so 文件查看函数
+
 ```
 linux
 nm -D xxx.so

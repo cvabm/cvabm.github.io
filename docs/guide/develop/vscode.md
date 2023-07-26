@@ -1,15 +1,19 @@
-[vscode在线版](https://vscode.dev/)  
+[vscode 在线版](https://vscode.dev/)
+
 ## vscode 快捷键
+
 `ctrl + shift + o` 定位方法  
 `option + command + T` 关闭其他页  
 `alt + shift + f` 格式化  
 `ctrl+shift+i` 插入当前时间  
-插件 Insert Date String   
+插件 Insert Date String
+
 ## 插件
+
 stock watch  
 rangav.vscode-thunder-client  
 zhuangtongfa.material-theme  
-bierner.markdown-preview-github-styles  
+bierner.markdown-preview-github-styles
 
 ## vscode 下载慢的问题
 
@@ -21,11 +25,15 @@ vscode.cdn.azure.cn <--------就是左边这个
 ```
 
 ## webstorm
+
 <https://www.ahhhhfs.com/30219/>  
 破解  
 [激活码 激活教程](https://github.com/wenyanjun/free-code)
-## clion乱码
-<https://blog.csdn.net/Cbk_XLL/article/details/78752534>  
+
+## clion 乱码
+
+- 设置界面设置各种编码均为UTF-8。 
+- 双击Shift，在弹出的搜索栏中，输入“Registry”，点击“Registry…”进入软件注册表界面，去掉“run.processes.with.pty”中默认的对勾
 
 ### contents have differences only in line separators
 

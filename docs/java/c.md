@@ -1,13 +1,5 @@
 ## 一些教程
 
-<http://m.biancheng.net/cplus/>  ## 一些教程
-<https://seisman.github.io/how-to-write-makefile/index.html>
-<https://seisman.github.io/how-to-write-makefile/index.html>
-
-## C 语言参数通用缩写表
-
-<https://blog.csdn.net/zer1123/article/details/54881910>
-
 makefile
 
 ## makefile 中一条语句这样： .c.o： gcc -c -o $\*.o $<
@@ -23,7 +15,9 @@ b.o : b.c
 c.o : c.c
 这是makefile依赖的一种简写方法。makefile的依赖关系有很多种写法。这是其中一种。
 ```
+
 ## 十进制-二进制
+
 ```
 要把一个十进制数转换为二进制数，可以使用以下步骤：
 将十进制数除以 2，得到商和余数。
@@ -33,12 +27,16 @@ c.o : c.c
 19 ÷ 2 = 9 余 19 ÷ 2 = 4 余 14 ÷ 2 = 2 余 02 ÷ 2 = 1 余 01 ÷ 2 = 0 余 1
 所以 19 的二进制数为 10011。
 ```
+
 ## 常用工具
+
 CodeBlocks - 下载带 mingw 的安装文件，100 多 M 大小  
 vscode -  
-clion -   
+clion -  
 cfree -  
-devc++ -  
-## cmake
-<https://aiden-dong.gitee.io/2019/07/20/CMake教程之CMake从入门到应用/>  
+devc++ -
 
+## c 使用
+
+- `puts "hello"` 不带格式打印
+- `printf("Name: %s\n", name);` %s 输入字符串、%d 整数、%f浮点数、%c字符
