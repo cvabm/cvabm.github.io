@@ -1,18 +1,29 @@
 [[toc]]
 
-#
+# 反编译
 
 [mogua](https://mogua.co/)  
 <http://www.javadecompilers.com/>  
 <https://www.decompiler.com/>
 
-## 反编译 apk 并重新打包
+## 调试 smali
 
-<https://github.com/iBotPeaches/Apktool>
+1、[Apktool](https://github.com/iBotPeaches/Apktool)  
+2、Android studio 安装[smaliidea 插件](https://bitbucket.org/JesusFreke/smalidea/downloads/)  
+File -> Settings -> Plugins - Install plugin from disk  
+3、Android studio 搜索插件安裝 java2smali  
+(生成的 smali 代码可直接拷贝使用）  
+ `build - Compile to smali` 没生成可多点几次  
+4、开始操作：
 
-- `apktool d test.apk` 反编译
-- `apktool b test -o new.apk` 回编译
+- `java -jar apktool d test.apk` 反编译
+- 进入 test 文件夹，编辑 AndroidManifest.xml，在 Application 标签里面加上 android:debuggable="true"
+- `java -jar apktool b test -o new.apk` 回编译
 - `dx-signer.jar` 签名
+- android studio 打开 test 文件夹
+- Run -> Edit Configurations - Remote
+- 手机打开此 app，Studio 点击 Attach debugger to process，即可看到此 app 进程
+- 加断点即可 debug
 
 ## 签名工具
 

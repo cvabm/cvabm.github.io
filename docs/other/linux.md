@@ -25,124 +25,70 @@ $ sudo apt-get install openjdk-7-jre openjdk-7-jdk
 
 ## vim 常用命令
 
+- 基本
+  - `vim test.txt`
+  - `:wq` 保存并退出
+  - `:q!` 不保存强制退出
+- 插入
+  - `i`文字前插入
+  - `a`文字后插入
+  - `o` 在文本底下插入一行
+  - `O` 在当前行之上新开一行
+- 删除
+  - `x` 删除光标所在字符
+  - `X` 删除光标前字符
+  - `dd` 删除文字所在整一行
+  - `ndd` 删除 n 行
+  - `dw` 删除单词
+  - `Ctrl+u` 删除输入方式下所输入的文本
+- 复制黏贴
+  - `v` 移动选择文本
+  - `y` 复制
+  - `p` 黏贴
+  - `yy`复制当前一行
+  - `nyy` 复制 n 行,类推
+- 撤回
+  - `u`
+  - `U`
+- - `:e ++enc=utf8`
+  - `:e ++enc=gbk`
+- 移动/翻页
+  - `0` 行首
+  - `$` 行尾
+  - `:nu` 跳到第 nu 行
+  - `Ctrl+u` 上半页
+  - `Ctrl+d` 下半页
+  - `Ctrl+f` 下一页
+  - `Ctrl+b` 上一页
+  - `[[` 返回文本开始
+  - `]]` 到达文本末尾
+  - `w` 光标右移一个字至字首
+  - `b` 光标左移一个字至字首
+  - `e` 光标右移一个字至字尾
+- 查找
+  - `/关键字` 回车
+  - `n` 下一个
+  - `N` 上一个
+  - `:find dir/a.txt`文本内搜索其他文件
+- 行号
+  - `:set nu` 行号
+- 修改属性
+  - `chmod +777 文件名`
+- 文件切换
+  - `ctrl ^`
+  - `:ls` 列出已打开文件
+  - `:e 文件名`
+- 分屏
+  - `:sp` 上下分屏
+  - `:vsp` 左右
+  - `:q` 关闭某一屏
+  - `Ctrl w` 按两次或按一次+hjkl 切屏
+- 禁止生成临时文件
 ```
-http://c.biancheng.net/view/519.html
-
-vi 文件名
-i文字前插入
-a文字后插入
-
-dd删除文字所在整一行
-x删除光标所在字符
-X删除光标前字符
-
-u撤回操作
-U撤回一系列操作
-
-dw删除整个单词
-
-复制黏贴
-v 移动选择文本 按y 移动到其他位置按p黏贴
-yy复制文本所在整一行
-
-插入
-o在文本底下插入一行
-
-:e ++enc=utf8
-:e ++enc=gbk
-
-Ctrl+u 上半页
-Ctrl+d 下半页
-Ctrl+f 下一页
-Ctrl+b 上一页
-
-[[ 返回文本开始
-]] 到达文本末尾
-
-/关键字 - 回车，再按n到达位置，按N定位上一个位置
-
-
-vi ：    ----------------  编辑
-/文件名  --------- -----查找
-:set nu 行号     --------跳转到某一行
-:wq ---------------保存并退出
-:q! ------------不保存强制退出
-
- :set nu ------行号
-:nu ------跳入行号
-
-chattr ------修改属性
-cp --------复制
-chmod +777 文件名 ---------------------去除权限打开文件
-```
-
-```
-移动光标
-h 	光标左移一个字符
-l 	光标右移一个字符
-space	光标右移一个字符
-Backspace	光标左移一个字符
-k或Ctrl+p	光标上移一行
-j或Ctrl+n 	光标下移一行
-Enter 	光标下移一行
-w或W 	光标右移一个字至字首
-b或B 	光标左移一个字至字首
-e或E 	光标右移一个字至字尾
-) 	光标移至句尾
-( 	光标移至句首
-}	光标移至段落开头
-{	光标移至段落结尾
-nG	光标移至第n行首
-n+	光标下移n行
-n-	光标上移n行
-n$	光标移至第n行尾
-H 	光标移至屏幕顶行
-M 	光标移至屏幕中间行
-L 	光标移至屏幕最后行
-0	（注意是数字零）光标移至当前行首
-$	光标移至当前行尾
-
-
-删除文本
-ndd	删除当前行及其后n-1行
-x或X	x删除光标后的，而X删除光标前
-Ctrl+u	删除输入方式下所输入的文本
-
-ndw或ndW	删除光标处开始及其后的n-1个字
-do	删至行首
-d$	删至行尾
-
-
-打开文件
-vi +n file	打开文件，并将光标置于第n行首
-vi +/pattern file	打开文件，并将光标置于第一个与pattern匹配的串处
-vi -r filename 	在上次正用vi编辑时发生系统崩溃，恢复filename
-vi filename....file	打开多个文件，依次进行编辑
-
-
-复制移动
-n1,n2 co n3	将n1行到n2行之间的内容拷贝到第n3行下
-n1,n2 m n3	将n1行到n2行之间的内容移至到第n3行下
-n1,n2 d 	将n1行到n2行之间的内容删除
-
-
-屏幕翻滚
-Ctrl+u	向文件首翻半屏
-Ctrl+d	向文件尾翻半屏
-Ctrl+f	向文件尾翻一屏
-Ctrl＋b；	向文件首翻一屏
-nz	将第n行滚至屏幕顶部
-
-
-插入文本
-o	在当前行之下新开一行
-O	在当前行之上新开一行
-r	替换当前字符
-R	替换当前字符及其后的字符，直至按ESC键
-s	从当前光标位置开始，以输入的文本替代指定数目的字符
-S	删除指定数目的行，并以所输入文本代替之
-ncw或nCW	修改指定数目的字
-nCC	修改指定数目的行
+set nobackup       " no backup files
+set noswapfile     " no swap files
+set nowritebackup  " only in case you don't want a backup file while editing
+set noundofile     " no undo files
 ```
 
 ## vim 配色
@@ -163,15 +109,18 @@ nCC	修改指定数目的行
 - **windows cmd 改编码**
 
 ```
-将当前控制台编码设置为UTF-8，则输入
-CHCP 65001
-通过CHCP设置编码是治标不治本的
-想永久的更改cmd编码值需要修改注册表
+
+将当前控制台编码设置为 UTF-8，则输入
+chcp 65001 
+chcp 936
+通过 CHCP 设置编码是治标不治本的
+想永久的更改 cmd 编码值需要修改注册表
 方法一：
-在运行中通过regedit进入注册表
-找到HKEY_CURRENT_USER\Console\%SystemRoot%_system32_cmd.exe
-新建一个 DWORD（32位值）,命名为CodePage，值设为65001
-已有CodePage的话，修改它，改为十进制，65001
+在运行中通过 regedit 进入注册表
+找到 HKEY_CURRENT_USER\Console\%SystemRoot%\_system32_cmd.exe
+新建一个 DWORD（32 位值）,命名为 CodePage，值设为 65001
+已有 CodePage 的话，修改它，改为十进制，65001
+
 ```
 
 ## windows 查看文件被占用进程
@@ -183,14 +132,15 @@ CHCP 65001
 ## 无线调试
 
 ```
+
 Android 手机需要是 Android 11 以上系统；开发者模式里有无线调试选项
 电脑上的 Android SDK 工具需要 ≥ 30.0.0 版本，确认方式是：adb --version
 
-1、打开无线调试- 使用配对码配对 - adb pair ip:port ，输入code码
-2、adb connect ip:port(固定的ip和端口)
+1、打开无线调试- 使用配对码配对 - adb pair ip:port ，输入 code 码
+2、adb connect ip:port(固定的 ip 和端口)
 
+## 当前 activity
 
-## 当前activity
 ```
 
 adb shell dumpsys window | grep mCurrentFocus
@@ -201,9 +151,9 @@ adb shell dumpsys window | grep mCurrentFocus
 
 ## adb 工具 webadb
 
-<https://yume-chan.github.io/ya-webadb/>  
-浏览器 adb 连接手机，必须关闭 studio 等其他 adb 程序  
-<https://www.vysor.io/>  
+<https://yume-chan.github.io/ya-webadb/>
+浏览器 adb 连接手机，必须关闭 studio 等其他 adb 程序
+<https://www.vysor.io/>
 下载 windows 版本即可跟 android studio 共存
 
 ## adb 命令
@@ -263,8 +213,8 @@ input
 - back：`adb shell input keyevent 3`
 - 字符：`adb shell input text ‘hello,world’`
 
-- `adb reverse tcp:8081 tcp:8081`  
-  Android 允许我们通过 ADB，把 Android 上的某个端口映射到电脑（adb forward），或者把电脑的某个端口映射到 Android 系统（adb reverse）。  
+- `adb reverse tcp:8081 tcp:8081`
+  Android 允许我们通过 ADB，把 Android 上的某个端口映射到电脑（adb forward），或者把电脑的某个端口映射到 Android 系统（adb reverse）。
   假设电脑上开启的服务，监听的端口为 8000。Android 手机通过 USB 连接电脑后，执行 adb reverse tcp:8000 tcp:8000，然后在手机中访问 127.0.0.1:8000，就可以访问到电脑上启动的服务了。
 
 - `adb shell am start -W [app包名]/[activtity路径.launchActivity]`app 启动时间
@@ -305,8 +255,10 @@ apk 管理
 
 - `ip addr`查看 ip 地址
 - `ip -s link`显示不同网络接口的统计数据
+- 文件操作
 
-其他
+  - `cp` 拷贝
+    其他
 
 - `chmod 777`最高权限
 - `chmod 999`有一定安全性，推荐
@@ -318,12 +270,12 @@ apk 管理
 
 - **常见问题**
 
-  - ubuntu 安装依赖：0.8.1-1ubuntu4.4 正要被安装  
+  - ubuntu 安装依赖：0.8.1-1ubuntu4.4 正要被安装
     解决办法：
     进入“系统->系统管理->更新管理器->设置”，在弹出的“软件源”对话框中选“更新”标签页，选中“Ubuntu 更新”下面的四个复选框，关闭后
     四个权限都打开
     在终端先执行“sudo apt-get update”就 ok 了
-  - Could not get lock /var/lib/apt/lists/lock  
+  - Could not get lock /var/lib/apt/lists/lock
     执行 sudo rm /var/lib/apt/lists/lock
 
 - **常用命令**
@@ -350,8 +302,8 @@ apk 管理
 
 ## linux 拷贝文件
 
-- `scp -r /home/shaoxiaohu/test1 zhidao@192.168.0.1:/home/test2`  
-  本机->远程服务器  
+- `scp -r /home/shaoxiaohu/test1 zhidao@192.168.0.1:/home/test2`
+  本机->远程服务器
   test1 为源目录，test2 为目标目录，zhidao@192.168.0.1为远程服务器的用户名和 ip 地址。
 
 - `scp -r zhidao@192.168.0.1:/home/test2 /home/shaoxiaohu/test1`
@@ -366,14 +318,15 @@ apk 管理
 
 ```
 
- 1、开机按 F2 进入 bios 设置界面，然后切换到“boot”栏，移动光标选择“Boot priority order”按回车确定。
- 2、想要使用快捷键 U 盘启动的用户，完成步骤三操作后，开机按 F12 再选择 U 盘启动即可。
+1、开机按 F2 进入 bios 设置界面，然后切换到“boot”栏，移动光标选择“Boot priority order”按回车确定。
+2、想要使用快捷键 U 盘启动的用户，完成步骤三操作后，开机按 F12 再选择 U 盘启动即可。
 
 ```
 
 ### win10 删除多余的系统引导
 
 ```
+
 1、按 Win+R 键打开运行，输入 cmd 回车进入命令提示符。
 2、在命令提示符下输入 msconfig,然后回车。
 3、此时跳出系统配置的窗口，点击引导选项卡。

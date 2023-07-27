@@ -23,7 +23,9 @@ Path 加入内容“c:\windows\system32”
 <https://www.ventoy.net/cn/index.html>
 
 ## 重装系统
-<https://msdn.sjjzm.com/win10/22h2.html>  
+
+<https://msdn.sjjzm.com/win10/22h2.html>
+
 ```
 Win10专业版密钥
 NPWQF-HH482-946YJ-X3MDR-8B49M
@@ -55,15 +57,7 @@ ed2k://|file|cn_windows_10_multiple_editions_version_1703_updated_march_2017_x64
 2.然后解压到当前文件夹，解压之后出现setup点击安装
 ```
 
-## 卸载工具
-
-<https://geekuninstaller.com/>
-
-## 搜索
-
-everything  
-<https://www.voidtools.com/zh-cn/>
-
-## 清理工具
-
-spacesniffer
+- `everything`
+  - 定位文件：文件名关键字 path:路径关键字
+- `spacesniffer` 磁盘空间可视化
+- `geekuninstaller` 软件卸载
