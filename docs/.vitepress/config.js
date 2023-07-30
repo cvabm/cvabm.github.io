@@ -12,7 +12,7 @@ export default {
         headers: {
             level: [0, 0]
         },
-        linkify: false
+        linkify: false 
     },
 
     themeConfig: {
