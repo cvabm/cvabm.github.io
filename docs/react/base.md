@@ -249,7 +249,7 @@ app.listen(80,function(){
 ```scss
 node server.js
 ```
-4、浏览器或PostMan访问地址，例如：[localhost]("http://localhost/api/getList")  
+4、浏览器或PostMan访问地址，例如：[localhost]("http://127.0.0.1/api/getList")  
 
 ```js
 npm install ws
