@@ -87,7 +87,7 @@ list = list.filter(item = >{
 
 ```js
 const randomString = () => Math.random().toString(36).slice(2);
-randomString(); // gi1qtdego0b
+randomString(); // gi1qtdego0b  
 ```
 
 # js 注意事项
