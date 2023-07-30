@@ -11,7 +11,8 @@ export default {
     markdown: {
         headers: {
             level: [0, 0]
-        }
+        },
+        linkify: false
     },
 
     themeConfig: {
