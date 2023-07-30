@@ -84,8 +84,13 @@ list = list.filter(item = >{
 ### js 获取 url 参数
 
 <https://www.jianshu.com/p/708c915fb905>
+
 ```js
 随机数
-const randomString = () => Math.random().toString(36).slice(2)
-randomString() // gi1qtdego0b
+const randomString = () => Math.random().toString(36).slice(2);
+randomString(); // gi1qtdego0b
 ```
+
+# js 注意事项
+
+- `写分号问题` 如果下一行是以[]或者()开头，那么上一行结尾或者下一行开头需要写;

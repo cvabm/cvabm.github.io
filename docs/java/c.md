@@ -40,3 +40,5 @@ devc++ -
 
 - `puts "hello"` 不带格式打印
 - `printf("Name: %s\n", name);` %s 输入字符串、%d 整数、%f浮点数、%c字符
+- `std::cout << "hello" <<std::endl;`
+- `&str`str内存地址
