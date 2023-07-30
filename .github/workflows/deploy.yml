@@ -1,63 +1,37 @@
-# Sample workflow for building and deploying a VitePress site to GitHub Pages
-#
-name: Deploy VitePress site to Pages
+name: Deploy Vitepress
 
 on:
-  # Runs on pushes targeting the `main` branch. Change this to `master` if you're
-  # using the `master` branch as the default branch.
   push:
-    branches: [vitepress]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: pages
-  cancel-in-progress: false
+    branches:
+      - vitepress
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Not needed if lastUpdated is not enabled
-      # - uses: pnpm/action-setup@v2 # Uncomment this if you're using pnpm
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: npm # or pnpm / yarn
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Install dependencies
-        run: yarn install # or pnpm install / yarn install
-      - name: Build with VitePress
-        run: npm run docs:build # or pnpm docs:build / yarn docs:build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: docs/.vitepress/dist
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: vitepress # 指定要检出的分支为 vitepress 分支
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # 可根据需要选择合适的 Node.js 版本
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Vitepress
+        run: npm run build
+
+      - name: Deploy to Master
+        run: |
+          git checkout master # 切换到 master 分支
+          git pull origin master --ff-only # 更新本地 master 分支
+          rm -rf ./* # 删除 master 分支下的旧文件
+          cp -r docs/.vitepress/dist/* . # 复制编译生成的内容到 master 分支
+          git add .
+          git commit -m "Update Vitepress docs"
+          git push origin master # 推送更新到 master 分支
