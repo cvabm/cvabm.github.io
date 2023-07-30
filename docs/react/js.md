@@ -85,7 +85,7 @@ list = list.filter(item = >{
 
 <https://www.jianshu.com/p/708c915fb905>
 
-```js随机数
+```js
 const randomString = () => Math.random().toString(36).slice(2);
 randomString(); // gi1qtdego0b
 ```
