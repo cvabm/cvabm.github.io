@@ -1,4 +1,4 @@
-name: Deploy Vitepress
+name: Deploy
 
 on:
   push:
@@ -6,32 +6,22 @@ on:
       - vitepress
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
         with:
-          ref: vitepress # 指定要检出的分支为 vitepress 分支
+          node-version: 16
+      - run: npm i pnpm -g
+      - run: pnpm install --frozen-lockfile
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Build
+        run: pnpm docs:build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          node-version: '14' # 可根据需要选择合适的 Node.js 版本
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Vitepress
-        run: npm run build
-
-      - name: Deploy to Master
-        run: |
-          git checkout master # 切换到 master 分支
-          git pull origin master --ff-only # 更新本地 master 分支
-          rm -rf ./* # 删除 master 分支下的旧文件
-          cp -r docs/.vitepress/dist/* . # 复制编译生成的内容到 master 分支
-          git add .
-          git commit -m "Update Vitepress docs"
-          git push origin master # 推送更新到 master 分支
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist
+          publish_branch: master
