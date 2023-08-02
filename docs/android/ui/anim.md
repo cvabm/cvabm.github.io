@@ -3,9 +3,7 @@
 ## Android Transition Framework详解---超炫的动画框架  
 <https://www.jianshu.com/p/e497123652b5>  
 ## 进出场动画  
-![avatar](https://github.com/cvabm/FigureBed/raw/master/img/Image.png)
-<!-- https://github.com/cvabm/FigureBed/blob/master/img/Image.png?raw=true -->
-
+![avatar](../../img/20230802160257.png)
 ```
 bt.startAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_in_left));
 拷贝系统目录xml动画到项目的anim文件夹中即可调用。

@@ -195,7 +195,7 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
 
 ## 登录框
 
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/login.png)
+![](../../img/20230802154556.png)
 
 ```java
 <?xml version="1.0" encoding="UTF-8"?>

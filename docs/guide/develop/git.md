@@ -380,49 +380,35 @@ continue-on-error: true
 
 ## github 配置 ssh
 
-#### 第一步：检查本地主机是否已经存在 ssh key
+- 第一步：检查本地主机是否已经存在 ssh key
 
 ```bash
 cd ~/.ssh
 ls
 //看是否存在 id_rsa 和 id_rsa.pub文件，如果存在，说明已经有SSH Key
-
 ```
 
-如下图所示，则表明已经存在
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210630110100210.png)
-如果存在，直接跳到第三步
-
-#### 第二步：生成 ssh key
-
-如果不存在 ssh key，使用如下命令生成
+- 第二步：生成 ssh key
 
 ```bash
+如果不存在 ssh key，使用如下命令生成
 ssh-keygen -t rsa -C "xxx@xxx.com"
 //执行后一直回车即可
 
 ```
-
-生成完以后再用第二步命令，查看 ssh key
-
-#### 第三步：获取 ssh key 公钥内容（id_rsa.pub）
+- 第三步：获取 ssh key 公钥内容（id_rsa.pub）
 
 ```bash
 cd ~/.ssh
 cat id_rsa.pub
-
+复制该内容
 ```
-
-如下图所示，复制该内容
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210630110507976.png)
-
-#### 第四步：Github 账号上添加公钥
-
+- 第四步：Github 账号上添加公钥
+```
 进入 Settings 设置
-
 添加 ssh key，把刚才复制的内容粘贴上去保存即可
-
-#### 第五步：验证是否设置成功
+```
+- 第五步：验证是否设置成功
 
 ```bash
 ssh -T git@github.com

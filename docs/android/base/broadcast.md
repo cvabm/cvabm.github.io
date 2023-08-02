@@ -35,8 +35,53 @@ private class MYBroadcast extends BroadcastReceiver {
 
 ## 监听 home 键和长按 home 键
 
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/234234235.png)
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/436456757567.png)
+```java
+public class HomeKeyEventBroadcastReceiver extends BroadcastReceiver {
+    static final String SYSTEM_REASON = "reason";
+    static final String SYSTEM_HOME_KEY = "homekey";
+    static final String SYSTEM_RECENT_APPS = "recentapps";
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        String action = intent.getAction();
+        if (action != null && action.equals(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)) {
+            String reason = intent.getStringExtra(SYSTEM_REASON);
+            if (reason != null) {
+                if (reason.equals(SYSTEM_HOME_KEY)) {
+                    Log.d("TAG", "收到Home键点击");
+                } else if (reason.equals(SYSTEM_RECENT_APPS)) {
+                    Log.d("TAG", "收到长按Home键或任务键点击");
+                }
+            }
+        }
+    }
+}
+
+public class MainActivity extends AppCompatActivity {
+    private HomeKeyEventBroadcastReceiver receiver;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // 创建广播接收器实例
+        receiver = new HomeKeyEventBroadcastReceiver();
+
+        // 注册广播接收器，监听系统关闭系统对话框的广播事件
+        registerReceiver(receiver, new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // 在 Activity 销毁时，注销广播接收器
+        unregisterReceiver(receiver);
+    }
+}
+
+```
 
 ### 监听 home 键点击
 

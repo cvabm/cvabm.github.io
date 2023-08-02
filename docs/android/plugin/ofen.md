@@ -87,9 +87,8 @@ NetKeeper
 proxy-proxy setting - http
 
 使用  
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/befc592a-adc7-4585-8381-0ee82e3af2d0.png)
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/27a89a79-d38c-4f5d-9c0c-56225c76b5d2.png)
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/4645674564564.png)
+![](../../img/20230802155949.png)
+![](../../img/20230802160006.png)
 
 ### 插件化：
 

@@ -96,22 +96,7 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 ```
 
 ## Intent
-```
-可以传递两种数据：
---1.一般的基本数据类型 Intent .putextra() intent.getStringextra();
---2. 数据的 uri, intent.setData() intent.getData();
 
-Android 中 Intent 传递类对象提供了两种方式一种是 通过实现 Serializable 接口传递对象，一种是通过实现 Parcelable 接口传递对象。
-要求被传递的对象必须实现上述 2 种接口中的一种才能通过 Intent 直接传递。
-
-Intent 中传递这 2 种对象的方法：
-Bundle.putSerializable(Key,Object); //实现 Serializable 接口的对象
-Bundle.putParcelable(Key, Object); //实现 Parcelable 接口的对象
-
-以下以最常用的 Serializable 方式为例 ：
-假设由登录界面（Login）跳转到主界面（MainActivity）传递的对象为登录的用户信息 User 类
-首先创建一个序列化类：User
-```
 ```java
 import java.io.Serializable;
 public class User implements Serializable {　
@@ -345,18 +330,18 @@ ACTION_SHUTDOWN                设备正在关机
 - standared（默认）创建 activity 的实例，就会在任务栈中创建这个实例，退出时，任务栈也会销毁这个 activity 实例
 
 - singletop：栈顶模式：当需要的 activity 的实力存在在任务栈的栈顶，如果处于栈顶就无需创建，否则会重新创建  
-例如：
-若我有两个 Activity 名为 B1,B2,两个 Activity 内容功能完全相同，都有两个按钮可以跳到 B1 或者 B2，唯一不同的是 B1 为 standard，B2 为 singleTop。  
-若我意图打开的顺序为 B1->B2->B2，则实际打开的顺序为 B1->B2（后一次意图打开 B2，实际只调用了前一个的 onNewIntent 方法）  
-若我意图打开的顺序为 B1->B2->B1->B2，则实际打开的顺序与意图的一致，为 B1->B2->B1->B2。
+  例如：
+  若我有两个 Activity 名为 B1,B2,两个 Activity 内容功能完全相同，都有两个按钮可以跳到 B1 或者 B2，唯一不同的是 B1 为 standard，B2 为 singleTop。  
+  若我意图打开的顺序为 B1->B2->B2，则实际打开的顺序为 B1->B2（后一次意图打开 B2，实际只调用了前一个的 onNewIntent 方法）  
+  若我意图打开的顺序为 B1->B2->B1->B2，则实际打开的顺序与意图的一致，为 B1->B2->B1->B2。
 
 - singletask：单一任务栈：当需要的 activity 的实例存在在任务栈中，会把该 activity 实例以上的 activity 全部移除掉，  
-调用 newInstance 方法重用这个 activity，使该实例处于栈顶，否则就重新创建（整个任务站只允许存在一个 activity）
+  调用 newInstance 方法重用这个 activity，使该实例处于栈顶，否则就重新创建（整个任务站只允许存在一个 activity）
 
 - singleInstance：当需要的 activity 实例存在在任务栈中，只要激活的是该类型的 activity 都会调用 newInstance 方法来重用这个 activity  
-此模式一般用于加载较慢比较耗性能的 activity 这样不用重新创建
-singleinstance 详解：{分配单独一个任务站}  
-getTaskId()； 获取当前 activity 栈 id
+  此模式一般用于加载较慢比较耗性能的 activity 这样不用重新创建
+  singleinstance 详解：{分配单独一个任务站}  
+  getTaskId()； 获取当前 activity 栈 id
 
 使用 singleinstance 时，会新建一个 taskid ，按 back 键时，放在一个单独的返回栈里
 
@@ -549,18 +534,18 @@ $adb pull data/anr/traces.txt .
 ## 内存优化
 
 - （1）bitmap 设置图片大小（优化内存溢出）
-BitmapFactory.Option option = new BitmapFactory.Option();
-option.inSampleSize = 2; //将视图宽、高都变为原来的 1/2
+  BitmapFactory.Option option = new BitmapFactory.Option();
+  option.inSampleSize = 2; //将视图宽、高都变为原来的 1/2
 - （2）bitmap 对象销毁，可以借助 recycle（）方法让 GC 回收 bitmap 对象。
 - （3）尽量避免 static 成员变量引用资源消耗过多的实例，如：context
 - （4）使用 Application 的 context
 - （5）及时关闭资源，如在查询数据库时需要及时关闭 cursor
 - （6）对经常使用的图片使用软引用保存
 - （7）线程也是造成内存泄露的一个重要原因，在于线程的生命周期不可控制，解决方法： 1.将线程内部类改为静态内部类 2.用弱引用来保存 context 引用
-（8）使用.9 图片
-尽量多使用内部类 提高程序效率
-合理的使用缓存
-合理设置变量的作用范围 application 对象
+  （8）使用.9 图片
+  尽量多使用内部类 提高程序效率
+  合理的使用缓存
+  合理设置变量的作用范围 application 对象
 
 ## 生命周期
 

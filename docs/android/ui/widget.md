@@ -46,6 +46,8 @@ toolbar.setTitleTextColor(this.getResources().getColor(R.color.colorAccent));
 
 ### EditText
 
+- `android:focusableInTouchMode="true"`不自动获取焦点
+
 ### 变下划线颜色
 
 ```java
@@ -391,7 +393,9 @@ public class Util {
     }
 }
 ```
-### android启动白屏
+
+### android 启动白屏
+
 ```java
    <style name="AppTheme.Splash" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@drawable/splash</item>
@@ -405,9 +409,11 @@ win.setBackgroundDrawable(null);
 super.onCreate(savedInstanceState);
 
 ```
+
 ## 要判断控件是否绘制完成，可以使用以下两种方法：
 
-1. 使用ViewTreeObserver：
+1. 使用 ViewTreeObserver：
+
 ```java
 ViewTreeObserver viewTreeObserver = yourView.getViewTreeObserver();
 viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -425,7 +431,8 @@ viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutLi
 });
 ```
 
-2. 使用View的post方法：
+2. 使用 View 的 post 方法：
+
 ```java
 yourView.post(new Runnable() {
     @Override

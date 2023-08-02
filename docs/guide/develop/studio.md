@@ -405,27 +405,19 @@ String s = (
 
 ```
 adb idea  // 控制app重启 清缓存等
-
 android butterknife zelezny  绑定view注解
 Android Drawable Importer  添加了一个在不同分辨率导入画板或缩放指定图像到定义分辨率的选项
-
 android material design icon generator    一个设置 material design icon的插件工具
-
 android parcelable code generator 自动实现parcelable序列化
 方法：
-               新建好一个实体类后写好属性：
-              按下Alt+Insert，选择Palcelable，选择需要的属性，按下OK，搞定~~很简单有木有
-
-app links assistant  https://www.jianshu.com/p/d26d62a992f8
-
-cmd support
-
+新建好一个实体类后写好属性：
+按下Alt+Insert，选择Palcelable，选择需要的属性，按下OK，搞定~~很简单有木有
 copyright
 
 cvs integration
 ectranslation  studio中直接翻译
 
-selectchapek for android  https://blog.csdn.net/weifei554287925/article/details/41727541
+selectchapek for android
 
 ```
 

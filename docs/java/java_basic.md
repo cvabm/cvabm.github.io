@@ -1,5 +1,8 @@
 [[toc]]
 
+- `深拷贝` java 使用 clone 或者序列化 反序列化 执行会生成一个新对象
+- `浅拷贝`两个指针 指向同一个地址
+
 ## 泛型
 
 **作用**  
@@ -441,8 +444,11 @@ System.out.println( a *1.0f/ b );
         System.out.println(atomicInteger.addAndGet(1));
 输出：124
 ```
-### 发布npm
+
+### 发布 npm
+
 1、注册：
+
 ```
 打开网站：https://www.npmjs.com/，点击页面右上角sign up打开注册页面：
 注意： Full Name、Password和Public Email 注册以后可以修改，Username注册后不可修改。
@@ -461,6 +467,7 @@ npm login
 ```
 
 2、新建测试项目：
+
 ```
 npm install -g react-native-create-library
 
@@ -473,23 +480,26 @@ npm publish
 ```
 
 3、其他项目使用：
+
 ```
-npm install 
+npm install
 
 import * as RNMytestlib123  from 'react-native-mytestlib123';
 
 RNMytestlib123.testMy()
 
 ```
-### 发布jitpack
-## 步骤1: 新建Lib工程
 
-在AndroidStudio中新建Android Library工程,结构如下
+### 发布 jitpack
+
+## 步骤 1: 新建 Lib 工程
+
+在 AndroidStudio 中新建 Android Library 工程,结构如下
 ![](http://upload-images.jianshu.io/upload_images/4048192-755470ecd25ab04a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 解释:
 
-1.在项目的build.gradle的buildscript添加jitpack编译插件
+1.在项目的 build.gradle 的 buildscript 添加 jitpack 编译插件
 
 ```
  buildscript {
@@ -504,7 +514,7 @@ RNMytestlib123.testMy()
 }
 ```
 
-2.在library的build.gradle中添加jitpack配置信息
+2.在 library 的 build.gradle 中添加 jitpack 配置信息
 
 ```
 //启用Jitpack 插件
@@ -516,18 +526,18 @@ group='com.github.helen-x'
 
 ```
 
-## 步骤2: Github上发布代码
+## 步骤 2: Github 上发布代码
 
-### 1.上面代码发布到Github
+### 1.上面代码发布到 Github
 
 ### 2.发布代码(Release/TAG)
 
-找到对应项目,进入release页面
+找到对应项目,进入 release 页面
 
 ![](http://upload-images.jianshu.io/upload_images/4048192-97d738c667e41eaa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-进入release以后,进行代码发布.
-发布的时候可以用Releases也可以用Tags.
+进入 release 以后,进行代码发布.
+发布的时候可以用 Releases 也可以用 Tags.
 
 ![](http://upload-images.jianshu.io/upload_images/4048192-1896d6c6c531bfed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -535,22 +545,20 @@ group='com.github.helen-x'
 
 ![](http://upload-images.jianshu.io/upload_images/4048192-38f812569de24fd6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 步骤3: Jitpack发布
+## 步骤 3: Jitpack 发布
 
 进入[Jitpack link](https://jitpack.io/?spm=a2c6h.12873639.article-detail.5.1c0e6fe6SmYs4M).
 
-> 1.填写仓库名称
-> 2.搜索
-> 3.使用"Get", 发布就成功啦~~
+> 1.填写仓库名称 2.搜索 3.使用"Get", 发布就成功啦~~
 
 ![](http://upload-images.jianshu.io/upload_images/4048192-4e9734e3520ba9f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 发布成功后,会列出仓库的地址信息, 别人利用这个坐标就可以用我们的开源库啦.
-比如,我的demo发布后的地址是: `com.github.helen-x:JitpackReleaseDemo:0.1`
+比如,我的 demo 发布后的地址是: `com.github.helen-x:JitpackReleaseDemo:0.1`
 
-## 步骤4: 使用我们的开源库
+## 步骤 4: 使用我们的开源库
 
-1.在build.gradle中加入Jitpack仓库
+1.在 build.gradle 中加入 Jitpack 仓库
 
 ```
 allprojects {
@@ -568,61 +576,61 @@ allprojects {
             compile 'com.github.helen-x:JitpackReleaseDemo:0.1'
     }
 ```
+
 拓展
-可以在仓库的readme.md中加入
+可以在仓库的 readme.md 中加入
 [![](https://jitpack.io/v/helen-x/JitpackReleaseDemo.svg)](https://jitpack.io/#helen-x/JitpackReleaseDemo)
 
-就会自动会有一个Jitpack的bar,效果如下,瞬间显得很高端有木有~
+就会自动会有一个 Jitpack 的 bar,效果如下,瞬间显得很高端有木有~
 
-## 查看JAR包的JDK版本
+## 查看 JAR 包的 JDK 版本
 
-#### 方法1: 使用UltraEdit查看java class文件
+#### 方法 1: 使用 UltraEdit 查看 java class 文件
 
-java开发过程中经常会有这样的疑问：对于某个依赖jar，它支持的jdk版本是多少？这种问题通过搜索引擎通常很难找到准确答案，下面给出一种方便准确的方法来查看某个依赖jar对应的jdk版本号：
+java 开发过程中经常会有这样的疑问：对于某个依赖 jar，它支持的 jdk 版本是多少？这种问题通过搜索引擎通常很难找到准确答案，下面给出一种方便准确的方法来查看某个依赖 jar 对应的 jdk 版本号：
 
-**step 1.  解压缩依赖jar**
+**step 1.  解压缩依赖 jar**
 
-依赖jar被解压缩得到许多class文件；
+依赖 jar 被解压缩得到许多 class 文件；
 
-**step 2.  下载安装UltraEdit软件**
+**step 2.  下载安装 UltraEdit 软件**
 
-**step 3.  使用UltraEdit打开解压缩的任意一个class文件**
+**step 3.  使用 UltraEdit 打开解压缩的任意一个 class 文件**
 
 示例如下：
 
 ![](https://upload-images.jianshu.io/upload_images/13578911-7d3a69039c3ad58b.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
 
-只看第一行数据，前面8个字节CA FE BA BE 是固定的，之后4个字节00 00 是次版本号，次版本号后面的4个字节**00 32  是jdk的版本号**，如我这里使用的是jdk1.6
+只看第一行数据，前面 8 个字节 CA FE BA BE 是固定的，之后 4 个字节 00 00 是次版本号，次版本号后面的 4 个字节**00 32  是 jdk 的版本号**，如我这里使用的是 jdk1.6
 
-jdk版本号对应关系如下：
+jdk 版本号对应关系如下：
 
 ![](https://upload-images.jianshu.io/upload_images/13578911-eae05d912b91f378.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
 
- 图1-1.   jdk版本号对应关系
+图 1-1.   jdk 版本号对应关系
 
 ---
 
-#### 方法2: javap反编译命令查看jdk版本
+#### 方法 2: javap 反编译命令查看 jdk 版本
 
-以依赖jar oraclle driver （ojdbc6为例）：
+以依赖 jar oraclle driver （ojdbc6 为例）：
 
 root#  **javap -verbose OracleClob.class**
 
 Classfile /root/Downloads/ojdbc6/oracle/jdbc/OracleClob.class
 
-  Last modified Jul 3, 2014; size 401 bytes
+Last modified Jul 3, 2014; size 401 bytes
 
-  MD5 checksum dfe69528ea779ae04c68ca59248a8ab1
+MD5 checksum dfe69528ea779ae04c68ca59248a8ab1
 
-  Compiled from "OracleClob.java"
+Compiled from "OracleClob.java"
 
 public interface oracle.jdbc.OracleClob extends java.sql.Clob
 
-  minor version: 0
+minor version: 0
 
-  **major version: 50**
+**major version: 50**
 
 ......
 
-通过查看图1-1，50对应的jdk版本为jdk1.6。
-
+通过查看图 1-1，50 对应的 jdk 版本为 jdk1.6。

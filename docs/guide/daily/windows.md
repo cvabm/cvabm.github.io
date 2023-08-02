@@ -4,9 +4,7 @@
 
 ## 如何解决 Win10 操作系统无法访问局域网共享文件夹的问题
 
-![wpUOcF.png](https://s1.ax1x.com/2020/09/02/wpUOcF.png)
-
-![wpai9K.png](https://s1.ax1x.com/2020/09/02/wpai9K.png)
+- 程序和功能 - 启用或关闭 windows 功能 - SMB 1.0、CIFS 文件共享支持
 
 ## 源文件名长度大于文件系统支持的长度
 

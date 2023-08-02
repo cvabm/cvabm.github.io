@@ -41,10 +41,6 @@ OkHttp 进行 WebSocket 连接教程
 
 <https://gitee.com/TommyLemon/APIJSON/>
 
-### ssh 教程
-
-<https://wangdoc.com/ssh/index.html>
-
 ### 关闭 SSH 等）后运行的程序或者服务自动停止的问题
 
 nohup + 命令

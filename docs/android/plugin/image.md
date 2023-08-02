@@ -46,8 +46,18 @@ Glide.with()使用
             还可以是：load(Uri uri)，load(File file)，load(Integer resourceId)，load(URL url)，load(byte[] model)，load(T model)，loadFromMediaStore(Uri uri)。
 ```
 
-加载小视频  
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/4665843459.png)
+加载本地视频
+
+```java
+   String videoPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/wideo.mp4";
+        File videoFile = new File(videoPath);
+
+        ImageView ivGlide = findViewById(R.id.ivGlide7);
+        Glide.with(this)
+                .load(Uri.fromFile(videoFile))
+                .placeholder(R.mipmap.ic_launcher)
+                .into(ivGlide);
+```
 
 ```
 （5）获取缓存大小：
@@ -69,10 +79,41 @@ Glide.with()使用
 
 指定资源的优先加载顺序  
 ![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/345346456.png)
-先显示缩略图，再显示原图  
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/43468764.png)
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/65598735934.png)
+先显示缩略图，再显示原图
 
+```java
+//用原图的1/10作为缩略图
+Glide.with(this)
+        .load("http://ents.png")
+        .thumbnail(0.1f)
+        .into(ivGlide);
+// 加载其他图像当做缩略图
+DrawableRequestBuilder<Integer> thumbnailRequest = Glide
+        .with(this)
+        .load(R.drawable.news);
+Glide.with(this)
+        .load("http://s.png")
+        .thumbnail(thumbnailRequest)
+        .into(ivGlide);
+
+// 形裁（Crop Circle）处理
+Glide.with(this)
+        .load("http://fragments.png")
+        .transform(new CenterCrop(), new CircleCrop())
+        .into(ivGlide);
+// 圆角处理
+Glide.with(this)
+        .load("http://fragments.png")
+        .transform(new RoundedCornersTransformation(30, 0,
+                RoundedCornersTransformation.CornerType.ALL))
+        .into(ivGlide);
+// 灰度处理
+Glide.with(this)
+        .load("http://fragments.png")
+        .transform(new GrayscaleTransformation())
+        .into(ivGlide);
+
+```
 ```
 api方法说明：
 
@@ -122,7 +163,6 @@ api方法说明：
     （22）asGif().
         把资源作为GifDrawable对待。如果资源不是gif动画将会失败，会回调.error()。
 ```
-
 
 ### 缓存
 
@@ -183,6 +223,6 @@ Glide.get(this).clearMemory();
                 .into(imageView);
 ```
 
-
 ## fresco
-##  android-gif-drawable
+
+## android-gif-drawable

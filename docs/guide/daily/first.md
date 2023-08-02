@@ -141,9 +141,7 @@ TrafficMonitor<https://github.com/zhongyang219/TrafficMonitor>
 ```
 
 ## 固定文件夹里文档的视图模式
-
-![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/32567i.png)
-
+工具->文件夹选项->查看->文件夹视图->单应用到所有文件 (L)
 ## 菲菲更名宝贝
 
 <http://www.ffhome.com/works/1406.html>

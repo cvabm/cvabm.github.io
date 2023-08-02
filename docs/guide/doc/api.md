@@ -1,15 +1,6 @@
 # 资料 API 等检索
 
 [[toc]]
-## process.env设置
-windows - cmd - set RN_WEBRTC_SKIP_DOWNLOAD=1  
-
-## node.js 深入讲解
-
-清除缓存  
-npm cache verify
-
-<https://yjhjstz.gitbooks.io/deep-into-node/>
 
 ### code search 代码搜索
 
@@ -51,7 +42,8 @@ Android<https://github.com/Blankj/AndroidStandardDevelop>
 ## Python
 
 简明<https://bop.mol.uno/>  
-<https://github.com/jackfrued/Python-Core-50-Courses>  
+<https://github.com/jackfrued/Python-Core-50-Courses>
+
 ## 架设博客平台教程
 
 hexo  
@@ -145,5 +137,6 @@ https://docsearch.algolia.com/docs/legacy/config-file/
 <http://androidxref.com/>
 
 ## 命令速查
-[wangchujiang](<https://wangchujiang.com/reference/index.html>)  
-[quickref](https://quickref.me/)  
+
+[wangchujiang](https://wangchujiang.com/reference/index.html)  
+[quickref](https://quickref.me/)

@@ -295,13 +295,12 @@ apk 管理
 - `tar -xvf 123.tar`解开包
 
 ## xshell 上传下载
-
+- `ssh user@ip port` user可为root
 - `rz -y`
 - `sz file`
 - `yum install lrzsz`
 
 ## linux 拷贝文件
-
 - `scp -r /home/shaoxiaohu/test1 zhidao@192.168.0.1:/home/test2`
   本机->远程服务器
   test1 为源目录，test2 为目标目录，zhidao@192.168.0.1为远程服务器的用户名和 ip 地址。

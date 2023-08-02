@@ -60,12 +60,15 @@ settting  - 关闭 SSL certificate verification
 ftp,ftps,sftp<https://filezilla-project.org/>
 winscp  
 DaRemote：手机端
+
 ## editplus
 
 注册码在线生成<https://www.jb51.net/tools/editplus/>
 
 ## emeditor
-打开超大sql文件
+
+打开超大 sql 文件
+
 ## notepad++
 
 ```
@@ -75,9 +78,16 @@ C:\Users\Administrator\AppData\Roaming\Notepad++\session.xml
 
 里面记录了缓存文件的位置，打开后如果没有看到文件地址，那是因为你没有内容被Notepad++缓存，打开Notepad++，新建文档，随便输入点东西，就可以看到地址了。
 ```
-把字符串替换成回车换行  
-比如把 \n 换成换行,替换时选中“使用正则表达式
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20201112143455769.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21hb19odWlfZmVp,size_16,color_FFFFFF,t_70#pic_center)
+
+- 将文本所有\n 换行
+
+```
+查找目标：\\n
+替换为:\r
+选择循环查找
+模式改为正则表达式
+
+```
 
 ## genymotion
 
@@ -102,12 +112,15 @@ android studio 识别不到 genymotion device
 
 ### bluestack 蓝叠模拟器
 
+- 共享文件夹
+
 ```
-共享文件夹
 1.打开模拟器右上角倒三角-》设置-》引擎设置：点击 ”获取Root权限”, 然后点击确定关闭设置窗口
 2.打开模拟器首页-》系统应用-》多媒体管理器，点击” Import Form Windows” 从电脑选择需要导入的文件并导入。
 3.打开模拟器首页-》系统应用-》R.E.管理器-》sdcard/DCIM/SharedFolder
 ```
+
+- 连接
 
 ```
 adb connect 127.0.0.1:5555
@@ -115,42 +128,32 @@ adb reverse tcp:8081 tcp:8081
 
 由于蓝叠模拟器可以多开，及可同时运行很多多开的模拟器。使用adb可以一对一进行连接，多开用的是不同的adb端口。
 步骤：
-
 1.打开蓝叠模拟器adb调试（就版本不一定有这勾选项目，没有就跳过）
-
 　　模拟器右上有一个倒三角▼-->设置-->引擎设置-->勾选“允许ADB连接”
-
 　　可能需要重启模拟器
-
-
 2.找到打开的端口
-
 　　1）打开注册表
-
 　　　　win+R 打开运行
-
 　　　　输入regedit后回车
-
 　　2）定位到如下位置
-
 计算机\HKEY_LOCAL_MACHINE\SOFTWARE\BlueStacks_china_gmgr\Guests\Android_1\Network\0
 
 如图下图
-
 ```
 
-![image.png](https://img10.360buyimg.com/ddimg/jfs/t1/217287/16/1705/85843/6174e611E76b8eb84/b5d2a9196450106c.png)
+![image.png](../../img/20230802162249.png)
 
 ## 思维导图
 
 xmind<https://www.lanzous.com/i7wyxof>
 
-## ps在线工具
-[PS1](https://toolwa.com/ps/)
-[PS2](<https://ps.gaoding.com/#/>)  
+## ps 在线工具
 
+[PS1](https://toolwa.com/ps/)
+[PS2](https://ps.gaoding.com/#/)
 
 ## photoshop 破解版
+
 <http://adobe.v404.cn/adobe/>  
 <https://hao.su/3101/>
 
