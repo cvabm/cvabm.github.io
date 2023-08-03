@@ -90,6 +90,9 @@ set noswapfile     " no swap files
 set nowritebackup  " only in case you don't want a backup file while editing
 set noundofile     " no undo files
 ```
+- 其他
+  - `syntax on` 语法高亮
+  
 
 ## vim 配色
 
@@ -285,6 +288,8 @@ apk 管理
 - `cd /` 返回根目录
 - `shutdonw -h now & half & poweroff` 关机
 - `cat` 由第一行开始显示 cat |more 分页
+- `less` 可翻页看文档
+- `head -n` 文档前n行
 - `nl` 在内容前加行号
 - `whereis`,`locate` 快速定位查找
 - `find 查找 find / -name “**_._**”`详细查找
