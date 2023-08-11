@@ -67,7 +67,7 @@ DaRemote：手机端
 
 ## emeditor
 
-打开超大 sql 文件
+打开超大文件
 
 ## notepad++
 

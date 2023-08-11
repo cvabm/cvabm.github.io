@@ -6,11 +6,15 @@
 搜索idea里的中文：匹配中文字符的正则表达式： [\u4e00-\u9fa5]
 ```
 
-### 运行 main 方法
+## 运行 main 方法
 
 ```
 高版本需修改.idea - gradle.xml
 GradleProjectSettings 内添加<option name="delegatedBuild" value="false" />
+
+1. new scratch file - java （ctrl+alt+shift+insert ）
+2. 右键 - Run Scratch.main()
+
 ```
 
 ## android studio 设置代理
@@ -426,7 +430,7 @@ selectchapek for android
 ![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/567865435678.gif)
 ![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/457543.png)
 
-<https://github.com/jiang111/awesome-androidstudio-plugins####lifecycle-sorter>
+<https://github.com/jiang111/awesome-androidstudio-plugins###lifecycle-sorter>
 
 ## 加载.so
 
@@ -454,18 +458,19 @@ make project 会自动生成ｊａｒ
 
 ```
 
-### studio 快捷键(mac)
+## studio 快捷键(mac)
 
 <https://developer.android.com/studio/intro/keyboard-shortcuts>
 
 ```
 提取变量 - option + command + v
 ```
-
 ## 刪除空行
 
 ctrl +f ：^\s\*\n  
 Alt + x 执行 regex
+## 去掉注释
+- 右键- remove source code comments
 
 ## 直接运行签名 apk
 
@@ -550,6 +555,9 @@ repositories {
 ## 将主 module 变为 library
 
 <https://www.jianshu.com/p/2221986bde9f>
+
+## 查看所有todo
+view - tool windows -todo
 
 ## 常见问题
 
@@ -843,12 +851,15 @@ android {
 ```
 
 ### Android Studio 不能获取远程依赖包的解决方法
-1、有没有设置了 offline work     
-2、jcenter已关闭，用其他代替  
+
+1、有没有设置了 offline work  
+2、jcenter 已关闭，用其他代替
+
 ```
-  mavenCentral()  
-  maven { url "https://jitpack.io" }  
+  mavenCentral()
+  maven { url "https://jitpack.io" }
 ```
+
 ![](https://raw.githubusercontent.com/cvabm/FigureBed/master/img/6773567.png)
 
 ### Android Studio: Plugin with id 'android-library' not found
@@ -896,19 +907,19 @@ tools > Android > Sync Project with Gradle Files
 将自定义属性 http://schemas.android.com/apk/res/com.xxx.xxx 修改为：http://schemas.android.com/apk/res-auto 即可
 ```
 
-## Android Studio 3.5+ 去掉默认的 androidx 选项
+### Android Studio 3.5+ 去掉默认的 androidx 选项
 
 Tools ---> SDK Manager --> 删除 Android Q，再新建项目时取消 use androidx.artifacts 即可
 
 ## as 同步配置到 github 仓库
 
-## Settings Repository
+### Settings Repository
 
 这是一个 Android Studio 默认自带的插件，它的功能就是实现不同设备同步 Studio 的配置。
 
 ![](https://upload-images.jianshu.io/upload_images/1797490-7023ba7fd0c5110f.png?imageMogr2/auto-orient/strip|imageView2/2/w/1143/format/webp)
 
-## 使用
+### 使用
 
 [github](<https://www.jianshu.com/p/(https://github.com/develar/settings-repository)>)
 

@@ -1,4 +1,4 @@
-1、新建attrs.xml
+1、新建res/values/attrs.xml
 ```java
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
@@ -34,3 +34,42 @@ public class Person extends TextView {
         personattr:name="@string/myname" />
 </RelativeLayout>
 ```
+## 自定义view
+- drawPoint
+- drawLine
+- drawRect
+- drawBitmap
+- drawCircle
+- drawOval
+- drawArc
+- drawColor
+- drawText
+- drawPicture  录制canvas操作再显示出来
+- drawPath
+- matrix 用于对位图进行缩放、旋转、平移等变换操作
+
+
+ - 画个心形
+ ```java
+ float left = 100;  // 左侧弧线和下方线段的起始点 x 坐标
+float top = 100;  // 弧线和下方线段的起始点 y 坐标
+float radius = 100;  // 弧线的半径
+
+// 创建一个 Path 对象
+Path path = new Path();
+
+// 定义心形的路径
+RectF leftArc = new RectF(left, top, left + radius, top + radius);
+RectF rightArc = new RectF(left + radius, top, left + 2 * radius, top + radius);
+
+path.addArc(leftArc, -225, 225); // 左侧弧线
+path.arcTo(rightArc, -180, 225, false); // 右侧弧线
+path.lineTo(left + radius, top + 2 * radius); // 下方线段
+path.close(); // 封闭路径
+
+// 绘制路径
+canvas.drawPath(path, paint);
+ ```
+# 渲染
+- canvas 底层是skia 简单的2D图形绘制
+- openGL 高性能复杂2d或3d绘制

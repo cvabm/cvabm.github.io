@@ -78,5 +78,9 @@ Win10/LTSC/2021/x64
 ```
 flipper
 阿里云盘
+010 Editor
+hxd
+https://hexed.it/
 
 ```
+
