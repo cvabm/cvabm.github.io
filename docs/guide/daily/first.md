@@ -24,6 +24,7 @@
 > ssr  
 > <https://github.com/qingshuisiyuan/electron-ssr-backup/releases/tag/v0.2.6>  
 > v2ray  
+- 会自启动
 > <https://www.v2ray.com/>  
 > 地址转换  
 > <https://bianyuan.xyz/>

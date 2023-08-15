@@ -23,3 +23,10 @@ adb shell pm disable-user 应用包名
 
 如果需要启用某个 app  
 adb shell pm enable 应用包名
+
+## 小米刷机
+
+1、设置 - 开发者选项 - 设备解锁状态 - 绑定账号和设备  
+2、[解锁工具](http://www.miui.com/unlock/download.html)  
+3、[ROM 下载](https://xiaomirom.com/rom/redmi-k50-rubens-china-fastboot-recovery-rom/)  
+4、[miflash 下载](https://xiaomirom.com/download-xiaomi-flash-tool-miflash/)
