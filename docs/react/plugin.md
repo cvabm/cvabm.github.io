@@ -1,4 +1,144 @@
-必备：
+
+## 发布 npm
+
+1、注册：
+
+```
+打开网站：https://www.npmjs.com/，点击页面右上角sign up打开注册页面：
+注意： Full Name、Password和Public Email 注册以后可以修改，Username注册后不可修改。
+注册后需要去邮箱中确认一下。
+
+npm config get registry # 查看当前镜像源
+设置本地npm镜像为官方
+npm set registry https://registry.npmjs.org/
+
+命令行登录npm账号
+npm login
+依次输入username、password、Email
+提示Enter one-time password from your authenticator app:
+输入npm上2fa增加的很长的那串验证秘钥
+
+```
+
+2、新建测试项目：
+
+```
+npm install -g react-native-create-library
+
+react-native-create-library mytestlib123 --platforms android,ios
+
+npm publish
+提示：This operation requires a one-time password：
+输入验证器里的6位数密码
+
+```
+
+3、其他项目使用：
+
+```
+npm install
+
+import * as RNMytestlib123  from 'react-native-mytestlib123';
+
+RNMytestlib123.testMy()
+
+```
+
+## 发布 jitpack
+
+## 步骤 1: 新建 Lib 工程
+
+在 AndroidStudio 中新建 Android Library 工程,结构如下
+![](http://upload-images.jianshu.io/upload_images/4048192-755470ecd25ab04a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+#### 解释:
+
+1.在项目的 build.gradle 的 buildscript 添加 jitpack 编译插件
+
+```
+ buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.3'
+        //添加jitpack依赖
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+```
+
+2.在 library 的 build.gradle 中添加 jitpack 配置信息
+
+```
+//启用Jitpack 插件
+apply plugin: 'com.github.dcendents.android-maven'
+
+//设置Jitpack发布的Group
+//我的github账号是helen-x, 对应我的group就是com.github.helen-x
+group='com.github.helen-x'
+
+```
+
+## 步骤 2: Github 上发布代码
+
+### 1.上面代码发布到 Github
+
+### 2.发布代码(Release/TAG)
+
+找到对应项目,进入 release 页面
+
+![](http://upload-images.jianshu.io/upload_images/4048192-97d738c667e41eaa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+进入 release 以后,进行代码发布.
+发布的时候可以用 Releases 也可以用 Tags.
+
+![](http://upload-images.jianshu.io/upload_images/4048192-1896d6c6c531bfed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+填写发布信息后,就可以发布了
+
+![](http://upload-images.jianshu.io/upload_images/4048192-38f812569de24fd6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 步骤 3: Jitpack 发布
+
+进入[Jitpack link](https://jitpack.io/?spm=a2c6h.12873639.article-detail.5.1c0e6fe6SmYs4M).
+
+> 1.填写仓库名称 2.搜索 3.使用"Get", 发布就成功啦~~
+
+![](http://upload-images.jianshu.io/upload_images/4048192-4e9734e3520ba9f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+发布成功后,会列出仓库的地址信息, 别人利用这个坐标就可以用我们的开源库啦.
+比如,我的 demo 发布后的地址是: `com.github.helen-x:JitpackReleaseDemo:0.1`
+
+## 步骤 4: 使用我们的开源库
+
+1.在 build.gradle 中加入 Jitpack 仓库
+
+```
+allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+```
+
+2.使用我们开源库
+
+```
+    dependencies {
+            compile 'com.github.helen-x:JitpackReleaseDemo:0.1'
+    }
+```
+
+拓展
+可以在仓库的 readme.md 中加入
+[![](https://jitpack.io/v/helen-x/JitpackReleaseDemo.svg)](https://jitpack.io/#helen-x/JitpackReleaseDemo)
+
+就会自动会有一个 Jitpack 的 bar,效果如下,瞬间显得很高端有木有~
+
+
+## 常用依赖：
 react-native-webrtc
 react-native-incall-manager
 react-native-permissions 
