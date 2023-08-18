@@ -633,3 +633,5 @@ git push -f git@github.com:cvabm/cvabm.github.io.git master
 git checkout -b 新分支名
 git push --set-upstream origin 分支名
 ```
+### 连接失败报错443问题
+dns改为114.114.114.114
