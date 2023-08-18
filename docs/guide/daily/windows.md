@@ -1,6 +1,7 @@
 # windows 常用操作
 
 [[toc]]
+- 截屏 使用快捷键 `win+shift+s`
 
 ## 如何解决 Win10 操作系统无法访问局域网共享文件夹的问题
 
@@ -53,6 +54,7 @@ Win10/LTSC/2021/x64
 因为系统是纯净版（无网卡驱动和其他驱动），装系统前请下载驱动精灵万能网卡版到 D 盘和 U 盘：  
 <http://www.drivergenius.com/wangka/>
 
+
 #### 软件大全：
 
 必装
@@ -76,6 +78,7 @@ Win10/LTSC/2021/x64
 其他可装
 
 ```
+rapidee：设置环境变量
 flipper
 阿里云盘
 010 Editor

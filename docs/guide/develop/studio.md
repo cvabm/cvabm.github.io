@@ -939,3 +939,6 @@ Tools ---> SDK Manager --> 删除 Android Q，再新建项目时取消 use andro
 ![](https://upload-images.jianshu.io/upload_images/1797490-64fa58344f2b2f32.png?imageMogr2/auto-orient/strip|imageView2/2/w/803/format/webp)
 
 > 从上传的文件中我们可以看到同步的一些内容。
+### studio 的 logcat 一闪而过问题
+
+把 Show only selected application 下拉框，选择 No filters 就可以看到了

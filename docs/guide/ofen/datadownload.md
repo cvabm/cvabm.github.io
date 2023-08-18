@@ -1,10 +1,8 @@
 # 资源下载
 
 [[toc]]
-阿里开源镜像（ubuntu、centos 等)  
-<https://developer.aliyun.com/mirror>  
-淘宝 npm 下载  
-<https://npm.taobao.org/>
+- [阿里开源镜像](<https://developer.aliyun.com/mirror>)  
+- [淘宝 npm 下载](<https://npm.taobao.org/>)
 
 ## 常用账号密码分享
 

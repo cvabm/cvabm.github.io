@@ -195,3 +195,35 @@ shift + tab
 占位图（自定义尺寸）  
 <https://placeimg.com/>  
 <https://source.unsplash.com/>
+
+## VMware
+- 安装unbuntu卡死问题: 新建时去掉打印机硬件
+- 解决VMware虚拟机报错“无法连接MKS：套接字连接尝试次数太多，正在放弃”: 
+  - 打开"我的电脑"->"管理"->"服务和应用程序"->"服务"
+  - 右键启动以下服务:
+    - VMware Authorization Service
+    - VMware DHCP Service
+    - VMware NAT Service
+    - VMware USB Arbitration Service
+    - VMware Workstation Server
+- 开机时出错: 另一个程序已锁定文件的一部分，进程无法访问:
+  - 进入虚拟机文件夹，删除以“.lck”为后缀的文件和文件夹
+### Wireshark
+Wireshark 是一个功能强大的网络抓包工具，在分析网络通信时非常有用。
+- [Wireshark 官方网站](https://www.wireshark.org/)
+- [Wireshark 过滤器显示关键字](https://www.crifan.com/wireshark_filter_display_keyword_for_weixin_http_request/)
+- [抓包手机设置教程](https://www.jianshu.com/p/4a554f55fe9c)
+
+### TCP/UDP 调试工具
+- [sokit](https://github.com/ideawu/ssdb/wiki/sokit)
+
+### 抓包工具
+手机端抓包工具：
+- [HttpCanary](https://www.getapkfree.com/apps/httpcanary-capture-analysis.html)
+- [NetKeeper](https://www.netkeeperchina.com/)
+- [chuck](https://github.com/jgilfelt/chuck)
+
+### Charles
+Charles 是一款功能强大的跨平台抓包工具，可用于分析和修改网络请求。
+- [Charles 官方网站](https://www.charlesproxy.com/)
+- [Charles 破解方法](https://www.cnblogs.com/findyou/p/3491014.html)
