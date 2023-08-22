@@ -195,7 +195,6 @@ function sidebarGuide() {
                 { text: 'studio', link: '/guide/develop/studio' },
                 { text: 'vscode', link: '/guide/develop/vscode' },
                 { text: 'developtool', link: '/guide/develop/developtool' },
-                { text: 'jsdoc', link: '/guide/develop/jsdoc' },
             ]
         },
         {
@@ -266,13 +265,10 @@ function sidebarOther() {
             collapsible: true,
             items: [
                 { text: 'docker', link: '/other/docker' },
-                { text: 'kotlin', link: '/other/kotlin' },
                 { text: 'linux', link: '/other/linux' },
-                { text: 'rust', link: '/other/rust' },
                 { text: 'server', link: '/other/server' },
                 { text: 'typecho', link: '/other/typecho' },
                 { text: 'weixin', link: '/other/weixin' },
-                { text: 'shell', link: '/other/shell' }
             ]
         },
 
@@ -285,32 +281,15 @@ function sidebarReact() {
             collapsible: true,
             items: [
                 { text: '基础', link: '/react/base' },
-                { text: '网络', link: '/react/net' },
-                { text: '功能性', link: '/react/function' },
                 { text: '常见问题', link: '/react/ask' },
-                { text: 'JS', link: '/react/js' },
                 { text: '常用三方库', link: '/react/plugin' },
-                { text: 'hermes', link: '/react/hermes' },
-            ]
-        },
-        {
-            text: '界面',
-            collapsible: true,
-            items: [
-                { text: 'flatlist', link: '/react/view/flatlist' },
-                { text: 'navigation', link: '/react/view/navigation' },
-                { text: 'view', link: '/react/view/view' }
             ]
         },
         {
             text: '音视频',
             collapsible: true,
             items: [
-                { text: 'janus', link: '/react/media/janus' },
-                { text: 'media_base', link: '/react/media/media_base' },
                 { text: 'webrtc', link: '/react/media/webrtc' },
-                { text: 'format', link: '/react/media/format' },
-                { text: 'net', link: '/react/media/net' }
             ]
         },
     ]

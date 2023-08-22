@@ -144,3 +144,18 @@ public class MainActivity extends Activity {
 ## 在线ps
 
 <https://www.uupoop.com/>】
+
+## svg 相关
+
+[img to svg](https://www.visioncortex.org/vtracer/)  
+[rn 使用 svg](https://blog.csdn.net/zdluoa/article/details/79951005)  
+svg 转换  
+<https://react-svgr.com/playground/>  
+svg2android  
+<http://inloop.github.io/svg2android/>  
+SVG 转 PNG/JPG 工具 - 图标工场  
+<https://icon.wuruihong.com/tools/svg2png>
+
+### ico 转换
+
+<https://www.wyzda.com/helper/favicon_text.html>

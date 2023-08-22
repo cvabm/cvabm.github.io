@@ -5,6 +5,9 @@
 ## 其他
 
 代码在线运行<http://www.dooccn.com/java/>
+沙盒<https://codesandbox.io/>  
+<https://yjhjstz.gitbooks.io/deep-into-node/>
+
 
 ## 开发工具/相关资源下载
 
@@ -209,10 +212,10 @@ shift + tab
 - 开机时出错: 另一个程序已锁定文件的一部分，进程无法访问:
   - 进入虚拟机文件夹，删除以“.lck”为后缀的文件和文件夹
 ### Wireshark
-Wireshark 是一个功能强大的网络抓包工具，在分析网络通信时非常有用。
-- [Wireshark 官方网站](https://www.wireshark.org/)
-- [Wireshark 过滤器显示关键字](https://www.crifan.com/wireshark_filter_display_keyword_for_weixin_http_request/)
 - [抓包手机设置教程](https://www.jianshu.com/p/4a554f55fe9c)
+
+ - `http.request.uri contains "weixin"` post和get包含weixin关键字
+ - `http.host contains weixin`
 
 ### TCP/UDP 调试工具
 - [sokit](https://github.com/ideawu/ssdb/wiki/sokit)

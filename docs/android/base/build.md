@@ -57,6 +57,15 @@ android {
 }
 ```
 
+## gradle设置代理
+```
+在gradle.properties文件添加
+systemProp.http.proxyHost=127.0.0.1
+systemProp.http.proxyPort=1080
+systemProp.https.proxyHost=127.0.0.1
+systemProp.https.proxyPort=1080
+```
+
 ## gradle 命令
 
 ```

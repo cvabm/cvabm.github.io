@@ -1,18 +1,5 @@
 [[toc]]
 
-## 运行慢
-
-```java
-判断命令行是否代理
-curl https://www.google.com
-
-在gradle.properties文件添加
-systemProp.http.proxyHost=127.0.0.1
-systemProp.http.proxyPort=1080
-systemProp.https.proxyHost=127.0.0.1
-systemProp.https.proxyPort=1080
-```
-
 ## null is not an object (evaluating '\_RNGestureHandlerModule.default.Direction')
 
 起因：使用 RN 跨平台开发时使用 react-navigation 组件，需要链接原生库  
