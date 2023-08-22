@@ -12,7 +12,7 @@ export default {
         headers: {
             level: [0, 0]
         },
-        linkify: false 
+        linkify: false
     },
 
     themeConfig: {
@@ -39,7 +39,7 @@ export default {
         },
 
         algolia: {
-            appId:'1ACA58L96W',
+            appId: '1ACA58L96W',
             apiKey: '96a09aa53b332e95474e4924bdbba67a',
             indexName: 'cvabm'
         },
@@ -96,36 +96,7 @@ function sidebarAndroid() {
                 { text: '线程', link: '/android/base/thread' }
             ]
         },
-        {
-            text: '上架应用商店',
-            collapsible: true,
-            items: [
-                { text: '小米', link: '/android/app_store/xiaomi' }
-            ]
-        },
-        {
-            text: '设计模式',
-            collapsible: true,
-            items: [
-                { text: '插桩', link: '/android/design/aop' },
-                { text: '设计模式', link: '/android/design/design_pattern' },
-                { text: 'mvp架构', link: '/android/design/mvp' }
-            ]
-        },
-        {
-            text: '音视频',
-            collapsible: true,
-            items: [
-                { text: 'ffmpeg', link: '/android/media/ffmpeg' },
-                { text: '音视频', link: '/android/media/media' }
-            ]
-        }, {
-            text: '开源项目',
-            collapsible: true,
-            items: [
-                { text: 'rustdesk', link: '/android/open_project/rustdesk' }
-            ]
-        }, {
+         {
             text: '轮子',
             collapsible: true,
             items: [
@@ -138,19 +109,8 @@ function sidebarAndroid() {
                 { text: '常用', link: '/android/plugin/ofen' },
                 { text: 'UI界面', link: '/android/plugin/ui' }
             ]
-        }, {
-            text: '推送',
-            collapsible: true,
-            items: [
-                { text: '华为推送', link: '/android/push/huawei' }
-            ]
-        }, {
-            text: '存储',
-            collapsible: true,
-            items: [
-                { text: 'minio', link: '/android/storage/minio' }
-            ]
-        }, {
+        },
+         {
             text: 'UI界面',
             collapsible: true,
             items: [
@@ -183,7 +143,6 @@ function sidebarGuide() {
             collapsible: true,
             items: [
                 { text: '日常', link: '/guide/daily/first' },
-                { text: 'windows', link: '/guide/daily/windows' },
             ]
         },
         {
@@ -191,7 +150,6 @@ function sidebarGuide() {
             collapsible: true,
             items: [
                 { text: 'git', link: '/guide/develop/git' },
-                { text: 'markdown', link: '/guide/develop/markdown' },
                 { text: 'studio', link: '/guide/develop/studio' },
                 { text: 'vscode', link: '/guide/develop/vscode' },
                 { text: 'developtool', link: '/guide/develop/developtool' },
@@ -210,9 +168,7 @@ function sidebarGuide() {
             collapsible: true,
             items: [
                 { text: 'aaa', link: '/guide/ofen/aaa' },
-                { text: 'app相关', link: '/guide/ofen/app' },
                 { text: 'CHROME插件', link: '/guide/ofen/chrometool' },
-                { text: '常用下载资源', link: '/guide/ofen/datadownload' },
                 { text: '文件处理', link: '/guide/ofen/filetool' },
                 { text: '图形图像', link: '/guide/ofen/imagetool' },
                 { text: '面试', link: '/guide/ofen/interview' },

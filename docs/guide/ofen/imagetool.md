@@ -3,7 +3,7 @@
 ## 免费生成 app 不同分辨率图标
 
 <http://bingoicon.com/>
-
+- 图片无损放大 [Bigjpg](https://bigjpg.com/)
 ## 免费素材
 png 转 svg<https://www.aconvert.com/cn/image/png-to-svg>  
 Android SVG to VectorDrawable  
