@@ -248,7 +248,7 @@ git clone address --depth=1
 
 #### 编译 apk 并发布 Release
 
-```js
+```
 name: Build and Release
 
 on:
@@ -324,7 +324,7 @@ jobs:
 
 #### react native 编译 apk
 
-```js
+```
 jobs:
   apk:
     name: Build mobile bundle (Android)

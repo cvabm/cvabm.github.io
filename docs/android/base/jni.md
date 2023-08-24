@@ -4,7 +4,7 @@
 
 ### android-如何在 jni 中 C/C++层打印 log 到 logcat
 
-```java
+```
 1.在Android.mk文件中加入:LOCAL_LDLIBS := -llog
 2.在要使用LOG的cpp文件中加入：
 #include <android/log.h>
@@ -14,7 +14,7 @@ char * name = "mronion";
 __android_log_print(ANDROID_LOG_INFO, "lclclc", "my name is %s\n", name); //log i类型
 ```
 
-```java
+```
 改进
 
 直接使用__android_log_print太麻烦了，我们可以定义一些log的方法，上述第二步改为:

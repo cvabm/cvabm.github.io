@@ -168,19 +168,6 @@ function sidebarGuide() {
             collapsible: true,
             items: [
                 { text: 'aaa', link: '/guide/ofen/aaa' },
-                { text: 'CHROME插件', link: '/guide/ofen/chrometool' },
-                { text: '文件处理', link: '/guide/ofen/filetool' },
-                { text: '图形图像', link: '/guide/ofen/imagetool' },
-                { text: '面试', link: '/guide/ofen/interview' },
-                { text: 'mac', link: '/guide/ofen/mac' },
-
-
-                { text: '媒体工具', link: '/guide/ofen/mediatool' },
-                { text: '网络工具', link: '/guide/ofen/networktool' },
-                { text: '网盘空间', link: '/guide/ofen/pan' },
-                { text: '娱乐', link: '/guide/ofen/play' },
-                { text: '网页工具', link: '/guide/ofen/websitetool' },
-                { text: 'WIN工具', link: '/guide/ofen/windowstool' }
             ]
         },
     ]

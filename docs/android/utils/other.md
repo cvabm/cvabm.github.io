@@ -4,7 +4,7 @@
 
 ## 定时器
 
-```java
+```
 每隔三秒执行一次Timer timer = new Timer();timer.schedule(new TimerTask() {@Overridepublic void run() {Log.d("tag", "run: ");}}, 0, 3000);获取验证码倒计时public static void countDown(final TextView textView, long waitTime, long interval, final String hint) {textView.setEnabled(false);CountDownTimer timer = new CountDownTimer(waitTime, interval) {public void onTick(long millisUntilFinished) {textView.setText("剩下 " + millisUntilFinished / 1000L + " S");}public void onFinish() {textView.setEnabled(true);textView.setText(hint);}};timer.start();}
 在Android开发中，定时器一般有以下3种实现方法：
 
@@ -195,7 +195,7 @@ android:process=":remote" />
 
 ## android 分段打印日志
 
-```java
+```
 package amplesky.com.telcontroller.utils;
 
 import android.util.Log;
@@ -226,7 +226,7 @@ public class LogUtil {
 }
 ```
 
-```js
+```
 var MAX_LENGTH = 10;
 /**
  * 分段打印较长的文本

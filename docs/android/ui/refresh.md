@@ -1,5 +1,5 @@
 # 高刷
-```java
+```
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
     WindowManager wm = (WindowManager) getApplication().getSystemService(Context.WINDOW_SERVICE);
     Display display = wm.getDefaultDisplay();

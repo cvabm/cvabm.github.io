@@ -4,7 +4,7 @@
 
 ## Android7.0 版本更新
 
-```java
+```
 1：显示更新对话框
 MyAutoUpdate dialog = new MyAutoUpdate(ConvenientEnergyMainActivity.this);
 dialog.showUpdateDialog(downloadUrl, content, updateStatus);
@@ -187,7 +187,7 @@ res中新建：xml/file_paths文件
 
 <http://www.jcodecraeer.com/a/opensource/2015/0827/3373.html>
 
-```java
+```
 
 
 package com.corerate.cep;
@@ -442,12 +442,12 @@ guide_page_img
 <https://blog.csdn.net/u014418171/article/details/98874962/>
 
 ###  RN后台保活
-```js
+```
 AppRegistry.registerHeadlessTask('BackgroundKeepAlive', () => async () => {
     new wsClient().heartBeat();
 });
 ```
-```java
+```
 package com.amplesky.client.service;
 import android.content.Intent;
 import android.os.Bundle;
@@ -684,7 +684,7 @@ public class KeepAliveService extends Service {
 }
 
 ```
-```java
+```
   <service android:name=".service.KeepAliveService" />
 
      ServiceUtils.startService(KeepAliveService.class);

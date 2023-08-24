@@ -4,7 +4,7 @@
 
 ### 简单使用
 
-```java
+```
 ArrayAdapter<String> adapter;
 adapter = new ArrayAdapter<String>(
 MainActivity.this,
@@ -18,7 +18,7 @@ list.setAdapter(adapter);
 
 ### 选中 item 高亮状态
 
-```java
+```
 在布局文件中设定：
 android:listSelector="@android:color/holo_red_light"
 在代码中实现
@@ -28,7 +28,7 @@ msettinglist的点击事件中：
 mSettingList.getChildAt(3).setBackgroundColor(Color.GRAY);
 ```
 
-```java
+```
 往上滑动的话,这个颜色竟然会有一点漏出来,并没有跟随着view一起滚动上去,解决办法：
 不给listview设置listSelector 不给listview item的根布局设置背景 以及 item中的textview也不设置颜色selector,而是在adapter的getview
 
@@ -150,7 +150,7 @@ public class ListViewAdapter extends BaseAdapter {
 
 ## 设置分割线
 
-```java
+```
 
 1.在布局文件中ListView元素中通过属性设置
 
@@ -217,7 +217,7 @@ listView.setOnScrollListener(new PauseOnScrollListener(imageLoader, pauseOnScrol
 
 ## 动态加载数据
 
-```java
+```
 ListView的动态加载
 private ListView lv_select_contact;
 private List<ContactInfo>  infos;

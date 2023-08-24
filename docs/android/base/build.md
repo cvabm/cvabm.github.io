@@ -2,7 +2,7 @@
 
 ## 混淆
 
-```java
+```
 buildTypes {
     release {
         minifyEnabled true
@@ -35,7 +35,7 @@ buildTypes {
 
 ## 加快编译速度
 
-```java
+```
 写到build.gradle文件中。
 android {
     ...
@@ -80,7 +80,7 @@ systemProp.https.proxyPort=1080
 
 ## 动态加载 so，jar 包
 
-```java
+```
 import java.lang.reflect.Method;
 
 public class DexLoader {
@@ -118,7 +118,7 @@ DexLoader.loadDex(dexPath, dexOutputDir, optimizedDir, parentClassLoader);
 
 ```
 
-```java
+```
 import java.net.URL;
 import java.net.URLClassLoader;
 
@@ -156,7 +156,7 @@ Jar包位置：build--libs
 
 ### 打 aar 包
 
-```java
+```
 位置：build -- outputs -- aar
 引用：
 project的gradle：
@@ -193,7 +193,7 @@ compile(name: 'common-debug', ext: 'aar')
 
 ##　封装 sdk
 
-```java
+```
 1、将 apply plugin: 'com.android.application'修改成apply plugin: 'com.android.library'
 2、去掉applicationId "com.mg.axe.helloworld"
 3、删除自定义的Application和在AndroidManifest.xml的配置
@@ -213,7 +213,7 @@ repositories{
 
 - 查看apk是否签名 `keytool -list -printcert -jarfile C:\project\release.apk`
 ## android 多渠道、多版本打包
-```java
+```
 不同包名、不同签名、不同版本号、替换 string、icon 等  
 1、app/build.gradle 文件的修改，增加：productFlavors
 1.1、defaultConfig 注释掉原本的 applicationId，不然会和多渠道内的包名有冲突
@@ -366,7 +366,7 @@ MYAPP_RELEASE_KEY_ALIAS=my-alias
 
 - 修改 app/build.gradle
 
-```js
+```
     signingConfigs {
         config {
             storeFile file(MYAPP_RELEASE_STORE_FILE)

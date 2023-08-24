@@ -4,7 +4,7 @@
 
 ## 监听手指上下左右滑动
 
-```java
+```
 //手指按下的点为(x1, y1)手指离开屏幕的点为(x2, y2)
 float x1 = 0;
 float x2 = 0;
@@ -40,7 +40,7 @@ return super.onTouchEvent(event);
 
 ## 调用显示触摸位置功能
 
-```java
+```
 android.provider.Settings.System.putInt(getContentResolver(), "show_touches", 1);
 
 <uses-permission android:name="android.permission.WRITE_SETTINGS"/>

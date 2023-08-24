@@ -22,7 +22,7 @@ android9.0：
 1：非加密的流量请求都会被系统禁止掉
 ## 如何解决Android10 屏幕录制报错
 需增加一个包含Notification的前台服务：
-```java
+```
   <service
             android:name=".service.KeepAliveService"
             android:foregroundServiceType="mediaProjection" />

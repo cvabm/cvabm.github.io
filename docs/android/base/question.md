@@ -3,7 +3,7 @@
 
 ## AndroidManifest 合并出错 tools:replace="android:allowBackup"
 解决方法：  
-```java
+```
 在application节点添加
 
 <application tools:replace="android:allowBackup"

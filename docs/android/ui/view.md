@@ -1,5 +1,5 @@
 1、新建res/values/attrs.xml
-```java
+```
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
     <declare-styleable name="PersonAttr">
@@ -8,7 +8,7 @@
 </resources>
 ```
 2、新建Person类
-```java
+```
 
 @SuppressLint("AppCompatCustomView")
 public class Person extends TextView {
@@ -22,7 +22,7 @@ public class Person extends TextView {
 }
 ```
 3、布局中使用
-```js
+```
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:personattr="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -50,7 +50,7 @@ public class Person extends TextView {
 
 
  - 画个心形
- ```java
+ ```
  float left = 100;  // 左侧弧线和下方线段的起始点 x 坐标
 float top = 100;  // 弧线和下方线段的起始点 y 坐标
 float radius = 100;  // 弧线的半径

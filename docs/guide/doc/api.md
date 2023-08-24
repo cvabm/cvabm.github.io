@@ -77,7 +77,7 @@ API_KEY=YOUR_API_KEY
 
 - 新建文件**config.json**
 
-```json
+```on
 {
   "index_name": "cvabm",
   "start_urls": ["https://cvabm.github.io/"],

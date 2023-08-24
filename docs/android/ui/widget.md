@@ -4,7 +4,7 @@
 
 ### AppCompatActivity
 
-```java
+```
 2：和toolbar的结合：
 布局中加入：
 <android.support.v7.widget.Toolbar
@@ -50,7 +50,7 @@ toolbar.setTitleTextColor(this.getResources().getColor(R.color.colorAccent));
 
 ### 变下划线颜色
 
-```java
+```
 <resources>
 <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 <item name="colorAccent">@color/colorPrimary</item>
@@ -65,7 +65,7 @@ toolbar.setTitleTextColor(this.getResources().getColor(R.color.colorAccent));
 
 ### 取输入焦点
 
-```java
+```
 <EditText
     android:id="@+id/editTextName"
     android:layout_width="match_parent"
@@ -77,7 +77,7 @@ toolbar.setTitleTextColor(this.getResources().getColor(R.color.colorAccent));
 
 ## gridview
 
-```java
+```
 1：新建数据源
 2：新建适配器（SimpleAdatper
 3：Gridveiw加载适配器
@@ -136,7 +136,7 @@ pw.setAsDropDown(View view);//设置PopupWindow弹出的位置。
 
 ## ratingbar
 
-```java
+```
 <RatingBar
     android:id="@+id/star_num"
     style="@style/foodRatingBar"
@@ -190,7 +190,7 @@ bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
 
 ## RelativeLayout 中实现控件平分屏幕
 
-```java
+```
 <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="wrap_content">
@@ -228,7 +228,7 @@ scrollBy --- 连续滚动
 
 ## snackebar
 
-```java
+```
 前提条件：
 
 
@@ -281,7 +281,7 @@ Snackbar.make(container, "This is a Snackbar", Snackbar.LENGTH_SHORT)
 
 ## spinner
 
-```java
+```
 简单使用
 
         ArrayList arrayList = new ArrayList();
@@ -377,7 +377,7 @@ a可打印出 ：你hello好world吗
 <https://blog.csdn.net/u014752325/article/details/51691070#>  
 多次点击只显示一次
 
-```java
+```
 public class Util {
     private static Toast toast;
     public static void showToast(Context context,
@@ -396,7 +396,7 @@ public class Util {
 
 ### android 启动白屏
 
-```java
+```
    <style name="AppTheme.Splash" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@drawable/splash</item>
     </style>
@@ -414,7 +414,7 @@ super.onCreate(savedInstanceState);
 
 1. 使用 ViewTreeObserver：
 
-```java
+```
 ViewTreeObserver viewTreeObserver = yourView.getViewTreeObserver();
 viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
     @Override
@@ -433,7 +433,7 @@ viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutLi
 
 2. 使用 View 的 post 方法：
 
-```java
+```
 yourView.post(new Runnable() {
     @Override
     public void run() {

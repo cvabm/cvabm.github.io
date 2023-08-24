@@ -4,7 +4,7 @@
 
 ### app 自启动
 
-```java
+```
 <uses-permission android:name="android.intent.action.BOOT_COMPLETED">
 </uses-permission><uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
 
@@ -27,7 +27,7 @@
 </receiver>
 ```
 
-```java
+```
 package com.tmai.common.chongqingfaceapp.broadcast;
 
 import android.content.BroadcastReceiver;
@@ -72,12 +72,12 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 
 ## 静默安装自启动
 
-```java
+```
     <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
 ```
 
-```java
+```
 package com.tmai.general.business.login;
 
 import android.app.AlertDialog;
@@ -306,7 +306,7 @@ public class DownloadApp {
 
 ## 调用系统浏览器下载避免权限无法安装的问题
 
-```java
+```
 Intent intent = new Intent();
 intent.setAction("android.intent.action.VIEW");
 Uri content_url = Uri.parse(downloadUrl);
@@ -315,7 +315,7 @@ startActivity(intent);
 
 ```
 
-```java
+```
 protected void installApk(File file) {
 Intent intent = new Intent();
 intent.setAction("android.intent.action.VIEW");
@@ -357,7 +357,7 @@ Log.i("tag", "2--" + getClass().getSimpleName());
 
 ## 透明
 
-```java
+```
 <style name="TransparentActivity" parent="Theme.AppCompat.Light.DarkActionBar">
 <item name="android:windowBackground">@android:color/transparent</item>
 <item name="android:colorBackgroundCacheHint">@null</item>
@@ -369,7 +369,7 @@ Log.i("tag", "2--" + getClass().getSimpleName());
 
 ## 关闭指定的 activity
 
-```java
+```
 1： 在每个acitivy添加此代码。
 
 private void registReC() {
@@ -398,7 +398,7 @@ sendBroadcast(new Intent("finish2"));  即可
 
 发送：
 
-```java
+```
       ReceiptPreviewTrans receiptPreviewTrans = new ReceiptPreviewTrans();
         Bitmap bitmap = receiptPreviewTrans.preview(transData);
         Intent intent = new Intent(context, PrintPreviewActivity.class);
@@ -412,7 +412,7 @@ sendBroadcast(new Intent("finish2"));  即可
 
 接收：
 
-```java
+```
 
 private byte [] bis;
 

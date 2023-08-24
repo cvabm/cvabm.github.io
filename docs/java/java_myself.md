@@ -1,6 +1,6 @@
 [[toc]]
 ### 解析key值不固定的json
-```java
+```
 	JsonObject data = new Gson().fromJson(body, JsonObject.class);
 	Set<Map.Entry<String, JsonElement>> entries = data.entrySet();
 	// 动态获取key值

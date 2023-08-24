@@ -2,7 +2,7 @@
 
 ## 简单本地广播 dmeo
 
-```java
+```
 public class MainActivity extends AppCompatActivity {
     LocalBroadcastManager manager;
 
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 </receiver>
 ```
 ## 开机广播
-```java
+```
 有些机型需加上AUDIO_BECOMING_NOISY
 
 <receiver android:name="where.com.whereareyou.BootBroadcastReceiver">

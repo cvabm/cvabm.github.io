@@ -31,7 +31,7 @@
 
 ### 获取摄像头所支持的所有分辨率
 
-```java
+```
 public class MainActivity extends AppCompatActivity {
 
     @Override

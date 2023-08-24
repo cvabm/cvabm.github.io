@@ -7,7 +7,7 @@
 
 ## Could not get unknown property ‘mergeResourcesProvider’
 
-```java
+```
 解决办法：
 更新gradle版本和gradle build tool版本
 gradle最低为 4.10.1+ ，插件最低为 3.3.0 - 3.3.2
@@ -49,7 +49,7 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 https://github.com/facebook/react-native/issues/35210
 
 ### rn 分割线不显示或粗细不均匀
-```js
+```
 borderBottomColor: '#e0e0e0',
 borderBottomWidth: 1,
 ```

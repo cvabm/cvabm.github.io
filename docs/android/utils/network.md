@@ -4,7 +4,7 @@
 
 ## 忽略 https 证书问题(okhttp)
 
-```java
+```
 
 package in.minewave.room.frp;
 
@@ -80,7 +80,7 @@ public class HttpsUtils {
 
 ## 读取 pem 和 bks 证书
 
-```java
+```
 package com.corerate.cep.model.http.impl;
 
 import com.corerate.cep.R;
@@ -207,7 +207,7 @@ public class CustomerSocketFactory extends SSLSocketFactory {
 
 ## 读取 pem 和 bks
 
-```java
+```
 
 获取httpclient
 

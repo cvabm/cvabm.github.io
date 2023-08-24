@@ -29,7 +29,7 @@ https://www.jianshu.com/p/1f3cfa6f3965
 https://lbs.amap.com/api/webservice/guide/api/convert
 2、离线方法:
 
-```js
+```
    let wgsToGcj = this.WgsToGcj(longitude, latitude);
             longitude = wgsToGcj.Lon;
             latitude = wgsToGcj.Lat;
@@ -81,7 +81,7 @@ https://lbs.amap.com/api/webservice/guide/api/convert
 
 ```
 
-```js
+```
 地球坐标系——WGS84：常见于 GPS 设备，Google 地图等国际标准的坐标体系。
 火星坐标系——GCJ-02：中国国内使用的被强制加密后的坐标体系，高德坐标就属于该种坐标体系。
 百度坐标系——BD-09：百度地图所使用的坐标体系，是在火星坐标系的基础上又进行了一次加密处理。
@@ -96,7 +96,7 @@ AMap.convertFrom(gps, 'gps', function (status, result) {
 });
 ```
 ## 越界
-```js
+```
 /**
  * 判断点是否在多边形区域内
  * @param {Array<LatLng>} path 多边形顶点列表
@@ -141,7 +141,7 @@ export function isContainsPoint(path, point) {
 获取城市中心坐标  
 
 
-```java
+```
 options = GoogleMapUtil.getGooleMapTileOverlayOptions()
 aMap.addTileOverlay(options);
 

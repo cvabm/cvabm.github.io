@@ -389,7 +389,7 @@ Read Stats From 改为 Legacy non-standard(callback-based) getstats api
 ssrc_2181152470_recv (ssrc)  
 googCodecName 即可看到 vp8 还是 h264
 
-```js
+```
 音频统计数据
 aecDivergentFilterFraction：TBD（后续会补全）
 
@@ -449,7 +449,7 @@ googFrameRateSent：发送端实际发送的帧率，根据当前网络会进行
 硬解码器：通常以OMX.[hardware_vendor]开头
 ```
 
-```java
+```
 
 高通软编解码
 OMX.google.aac.decoder
@@ -520,7 +520,7 @@ OMX.hisi.video.decoder.vp8  -1088
 
 判断是否为软解
 
-```java
+```
 frameworks/av/media/libstagefright/MediaCodecList.cpp
 
  bool MediaCodecList::isSoftwareCodec(const AString &componentName) {
@@ -537,7 +537,7 @@ frameworks/av/media/libstagefright/MediaCodecList.cpp
 
 ## 获取手机最大解码数量
 
-```java
+```
 
 public static void printMediaCodecInfo() {
 
@@ -602,7 +602,7 @@ public static void printMediaCodecInfo() {
 
 ### 华为对 h264 的支持
 
-```java
+```
 webrtc内部h264只支持两种 OMX.qcom. 和 OMX.Exynos.需改以下配置即可
 HardwareVideoEncoderFactory.java
 
@@ -658,7 +658,7 @@ packetization-mode:
 
 ### h264 的支持
 
-```java
+```
 ./src/webrtc/sdk/android/api/org/webrtc/MediaCodecVideoEncoder.java
 ./src/webrtc/sdk/android/api/org/webrtc/MediaCodecVideoDecoder.java
 
@@ -680,7 +680,7 @@ private static final String[] supportedH264HwCodecPrefixes = {
 
 ### webbrtc 切换编解码
 
-```java
+```
 1、拷贝libwebrtc.jar并引用
 2、as打开jar包里需要修改的文件MediaCodecVideoDecoderFactory.class，复制内容并新建文件到相同路径下;如：
 java/org/webrtc/MediaCodecVideoDecoderFactory.java
@@ -709,7 +709,7 @@ java/org/webrtc/MediaCodecVideoDecoderFactory.java
 
 ### 获取手机支持的编解码信息
 
-```java
+```
    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             MediaCodecList list = new MediaCodecList(MediaCodecList.REGULAR_CODECS);
             MediaCodecInfo[] supportCodes = list.getCodecInfos();
@@ -756,7 +756,7 @@ java/org/webrtc/MediaCodecVideoDecoderFactory.java
 
 ### 华为解码 H264-720p 分辨率问题
 
-```java
+```
 AndroidVideoDecoder.java中deliverDecodedFrame方法增加：
 if ((long)decodeTimeMs > 200L) {
 Logging.e("AndroidVideoDecoder", "Very high decode time: " + decodeTimeMs + "ms. Q size: . Might be caused by resuming H264 decoding after a pause.");

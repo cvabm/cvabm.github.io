@@ -459,7 +459,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96B-E325-11CE-BF
 
 ## linux 依赖解决办法
 
-```js
+```
 sudo apt-get -f install
 sudo apt-get update
 sudo apt-get upgrade
@@ -467,7 +467,7 @@ sudo apt-get upgrade
 
 second step
 
-```js
+```
 sudo apt-get update
 sudo apt-get clean
 sudo apt-get autoremove
@@ -475,7 +475,7 @@ sudo apt-get autoremove
 
 third step
 
-```js
+```
 sudo apt --fix-broken install
 sudo apt-get update && sudo apt-get upgrade
 sudo dpkg --configure -a

@@ -1074,7 +1074,7 @@ list.add(name);
 
 1.创建一个我们要使用反射操作的类 `TargetObject`：
 
-```java
+```
 package cn.javaguide;
 
 public class TargetObject {
@@ -1096,7 +1096,7 @@ public class TargetObject {
 
 2.使用反射操作这个类的方法以及参数
 
-```java
+```
 package cn.javaguide;
 
 import java.lang.reflect.Field;

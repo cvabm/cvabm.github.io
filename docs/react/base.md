@@ -31,7 +31,7 @@ npm install express
 
 2、创建并编写 js 文件，例如：server.js
 
-```javascript
+```
 var express = require("express"); //导入express框架
 var bodyParser = require("body-parser"); //http请求参数解析
 var app = express(); //生成实例
@@ -55,7 +55,7 @@ node server.js
 4、浏览器或 PostMan 访问地址，
 <a href="http://localhost:3000/api/getList">http://localhost:3000/api/getList</a>
 
-```js
+```
 npm install ws
 
 const express = require('express');
