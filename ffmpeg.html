@@ -1,22 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FFmpeg Commands</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h2>List Devices</h2>
-    <pre><code>ffmpeg -list_devices true -f dshow -i dummy
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <!-- Created by , GNU Texinfo 7.0.1 -->
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/stackoverflow-light.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    <div class="container">
+      <h3>ffmpeg使用</h3>
+     <p>List Devices</p>
+            <pre><code>ffmpeg -list_devices true -f dshow -i dummy
 ffmpeg -hide_banner -devices</code></pre>
-
-    <h2>Start Recording Camera (AVI Format)</h2>
-    <pre><code>ffmpeg -f dshow -i video="USB2.0 PC CAMERA" -c:v libx264 -preset ultrafast -qp 0 output.avi
-ffmpeg -f dshow -i video="USB2.0 PC CAMERA" -c:v h264 -preset ultrafast -qp 0 output.avi
-ffmpeg -f dshow -i video="USB2.0 PC CAMERA" -c:v h264 -preset medium output.avi</code></pre>
-
-    <h2>Screen Recording (Requires FFmpeg with x11grab)</h2>
-    <pre><code>ffmpeg -f x11grab -framerate 25 -video_size 1366x768 -i :0.0 -c:v libx264 -preset ultrafast out.mp4</code></pre>
-</body>
+            <p>Start Recording Camera (AVI Format)</p>
+            <pre><code>ffmpeg -f dshow -i video="USB2.0 PC CAMERA" -c:v libx264 -preset ultrafast -qp 0 output.avi
+ffmpeg -f dshow -i video="USB2.0 PC CAMERA" -c:v h464 -preset ultrafast -qp 0 output.avi
+ffmpeg -f dshow -i video="USB2.0 PC CAMERA" -c:v h464 -preset medium output.avi</code></pre>
+            <p>Screen Recording (Requires FFmpeg with x11grab)</p>
+            <pre><code>ffmpeg -f x11grab -framerate 25 -video_size 1366x768 -i :0.0 -c:v libx264 -preset ultrafast out.mp4</code></pre>
+        </ul></li>
+        <li><a id="toc-Compilation" href="#Compilation">2 Compilation</a>
+  </body>
 </html>
