@@ -4,24 +4,26 @@
   <head>
     <meta charset="utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="style.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/stackoverflow-light.min.css">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0" /> -->
+    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="mystyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
   </head>
   <body>
     <div class="container">
       <h3>ffmpeg使用</h3>
-     <p>List Devices</p>
+        <li>List Devices</li>
             <pre><code>ffmpeg -list_devices true -f dshow -i dummy
 ffmpeg -hide_banner -devices</code></pre>
-            <p>Start Recording Camera (AVI Format)</p>
+            <li>Start Recording Camera (AVI Format)</li>
             <pre><code>ffmpeg -f dshow -i video="USB2.0 PC CAMERA" -c:v libx264 -preset ultrafast -qp 0 output.avi
 ffmpeg -f dshow -i video="USB2.0 PC CAMERA" -c:v h464 -preset ultrafast -qp 0 output.avi
 ffmpeg -f dshow -i video="USB2.0 PC CAMERA" -c:v h464 -preset medium output.avi</code></pre>
-            <p>Screen Recording (Requires FFmpeg with x11grab)</p>
+            <li>Screen Recording (Requires FFmpeg with x11grab)</li>
             <pre><code>ffmpeg -f x11grab -framerate 25 -video_size 1366x768 -i :0.0 -c:v libx264 -preset ultrafast out.mp4</code></pre>
         </ul></li>
         <li><a id="toc-Compilation" href="#Compilation">2 Compilation</a>
