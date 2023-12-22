@@ -46,13 +46,6 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-text-size-adjust: 100%
 }
-
-@media (max-width: 600px) {
-    body {
-      max-width: 100%; /* 在小屏幕上使用百分比，以适应屏幕宽度 */
-    }
-  }
-
 h1,
 h2,
 h3,
