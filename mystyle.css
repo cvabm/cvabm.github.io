@@ -32,7 +32,7 @@ html:focus-within {
 
 body {
     max-width:1200px;
-    padding: 0 1rem;
+    padding: 0 0rem;
     margin: auto;
     background: var(--b-bg-1);
     font-family: var(--b-font-main);
@@ -190,7 +190,7 @@ hr {
 }
 
 pre {
-    padding: 1rem;
+    padding: 0rem;
     overflow: auto;
     white-space: pre
 }
